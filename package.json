@@ -2,6 +2,12 @@
   "name": "initial",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "dev": "node config/scripts/start.js postcss src/styles/app.css -o src/styles/index.css --watch",
+    "build": "node config/scripts/build.js",
+    "test": "node config/scripts/test.js",
+    "css": "postcss src/app/app.css -o src/app/index.css --watch"
+  },
   "dependencies": {
     "@babel/core": "7.12.3",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
@@ -72,11 +78,6 @@
     "webpack-dev-server": "3.11.1",
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "5.1.4"
-  },
-  "scripts": {
-    "start": "node config/scripts/start.js",
-    "build": "node config/scripts/build.js",
-    "test": "node config/scripts/test.js"
   },
   "eslintConfig": {
     "extends": [
@@ -152,5 +153,11 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.8",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.3"
   }
 }
