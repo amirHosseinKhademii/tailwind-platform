@@ -1,7 +1,7 @@
-import { FC, useState } from "react";
+import { FC, useState, memo } from "react";
 import { ICClose, ICMenu } from "icons";
 
-export const Drawer: FC<{ children?: any }> = ({ children }) => {
+export const Drawer: FC<{ children?: any }> = memo(({ children }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -25,4 +25,4 @@ export const Drawer: FC<{ children?: any }> = ({ children }) => {
       {children}
     </div>
   );
-};
+});
