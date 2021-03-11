@@ -1,9 +1,9 @@
-import { Test } from "components";
+import { Drawer } from "components";
 
 function App() {
   return (
     <div className="App">
-      <Test />
+      <Drawer />
     </div>
   );
 }

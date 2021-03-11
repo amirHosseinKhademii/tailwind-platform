@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node config/scripts/start.js postcss src/styles/app.css -o src/styles/index.css --watch",
+    "dev": "node config/scripts/start.js ",
     "build": "node config/scripts/build.js",
     "test": "node config/scripts/test.js",
-    "css": "postcss src/app/app.css -o src/app/index.css --watch"
+    "css": "postcss src/styles/app.css -o src/styles/index.css --watch"
   },
   "dependencies": {
     "@babel/core": "7.12.3",
