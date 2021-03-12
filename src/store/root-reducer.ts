@@ -1,13 +1,19 @@
+import { types } from "utils";
+
 const rootState = {
-  todos: [],
+  categories: {
+    data: [],
+    loading: false,
+    error: null,
+  },
 };
 
 export const rootReducer = (state = rootState, { type, payload }) => {
   switch (type) {
-    case "FETCH_TODOS":
+    case types.FETCH_CATEGORIES:
       return {
         ...state,
-        todos: payload,
+        categories: { ...state.categories, ...payload },
       };
     default:
       return state;
