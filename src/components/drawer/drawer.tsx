@@ -14,4 +14,7 @@ const Div = styled.div`
   display: flex;
   flex-direction: column;
   width: 20rem;
+  @media ${({ theme }) => theme.screens.md} {
+    width: 10rem;
+  }
 `;

@@ -2,24 +2,23 @@ import { useParams } from "react-router-dom";
 import { Fragment, useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { useAction } from "hooks";
-import { types } from "utils";
+
 import { Loading } from "components";
+import { actions } from "utils";
 
 const Cats = () => {
   const [limit, setlimit] = useState(10);
   const { id } = useParams() as any;
-  const { onFetch } = useAction();
+
   const dispatch = useDispatch();
 
   const { data, loading, error } = useSelector((state: IState) => state.images);
 
   const handleFetch = useCallback(() => {
     dispatch(
-      onFetch({
-        type: types.FETCH_IMAGES,
-        url: `https://api.thecatapi.com/v1/images/search?limit=${limit}&category_ids=${id}`,
-      })
+      actions.fetchImages(
+        `https://api.thecatapi.com/v1/images/search?limit=${limit}&category_ids=${id}`
+      )
     );
   }, [id, limit]);
 
@@ -62,6 +61,9 @@ const Div = styled.div`
   padding-left: 20rem;
   padding-top: 100px;
   justify-content: center;
+  @media ${({ theme }) => theme.screens.md} {
+    padding-left: 10rem;
+  }
 `;
 
 const List = styled.div`

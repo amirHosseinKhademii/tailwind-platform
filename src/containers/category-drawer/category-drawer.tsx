@@ -2,13 +2,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useCallback, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { useAction } from "hooks";
-import { types, urls } from "utils";
+import { types, actions } from "utils";
 import { Drawer, Loading } from "components";
 
 export const CategoryDrawer = () => {
   const dispatch = useDispatch();
-  const { onFetch } = useAction();
   const { push } = useHistory();
 
   const { data, loading, error } = useSelector(
@@ -18,13 +16,7 @@ export const CategoryDrawer = () => {
   const currentCategory = useSelector((state: IState) => state.currentCategory);
 
   const fetchCategories = useCallback(
-    () =>
-      dispatch(
-        onFetch({
-          type: types.FETCH_CATEGORIES,
-          url: urls.categories,
-        })
-      ),
+    () => dispatch(actions.fetchCategories()),
     []
   );
 

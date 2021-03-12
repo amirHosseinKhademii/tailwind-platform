@@ -1,4 +1,4 @@
-import { types } from "utils";
+import { types } from "../utils";
 
 const rootState = {
   categories: {
