@@ -13,8 +13,13 @@ function App() {
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <CategoryDrawer />
-          <Suspense fallback={<Loading>Loading ...</Loading>}>
+          <Suspense fallback={<Loading secondary>Loading ...</Loading>}>
             <Switch>
+              <Route
+                exact
+                path="/"
+                component={lazy(() => import("pages/default-cats"))}
+              />
               <Route
                 exact
                 path="/cats/:id"
