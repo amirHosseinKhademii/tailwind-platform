@@ -6,7 +6,9 @@
     "dev": "node config/scripts/start.js ",
     "build": "node config/scripts/build.js",
     "test": "node config/scripts/test.js",
-    "css": "postcss src/styles/app.css -o src/styles/index.css --watch"
+    "css": "postcss src/styles/app.css -o src/styles/index.css --watch",
+    "start": "serve -s build",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -16,6 +18,7 @@
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "serve": "^11.3.2",
     "styled-components": "^5.2.1",
     "web-vitals": "^1.0.1"
   },
