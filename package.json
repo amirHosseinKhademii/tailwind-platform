@@ -9,6 +9,7 @@
     "css": "postcss src/styles/app.css -o src/styles/index.css --watch"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",

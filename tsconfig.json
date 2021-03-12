@@ -24,7 +24,8 @@
       "utils/*": ["./utils/*"],
       "icons/*": ["./icons/*"],
       "store/*": ["./store/*"],
-      "theme/*": ["./theme/*"]
+      "theme/*": ["./theme/*"],
+      "actions/*": ["./actions/*"]
     }
   },
   "include": ["src"]

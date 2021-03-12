@@ -1,9 +1,13 @@
-export const rootReducer = (state = { count: 0 }, { type, payload }) => {
+const rootState = {
+  todos: [],
+};
+
+export const rootReducer = (state = rootState, { type, payload }) => {
   switch (type) {
-    case "INC":
+    case "FETCH_TODOS":
       return {
         ...state,
-        count: state.count + 1,
+        todos: payload,
       };
     default:
       return state;

@@ -1,15 +1,19 @@
-import styled, { css } from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
+import styled, { css } from "styled-components";
+import { fetchTodos } from "actions";
 
 export const Test = () => {
-  const count = useSelector((state: { count: number }) => state.count);
   const dispatch = useDispatch();
+  const todos = useSelector((state: any) => state.todos);
 
   return (
     <Div>
       <Button secondary>Secondary</Button>
-      <Button onClick={() => dispatch({ type: "INC" })}>{count}</Button>
+      <Button onClick={() => dispatch(fetchTodos())}>Fetch</Button>
       <Link>Test</Link>
+      {(todos || []).map((todo) => (
+        <li key={todo.id}>{todo.title}</li>
+      ))}
     </Div>
   );
 };
@@ -38,17 +42,17 @@ const Button = styled.button`
   &::focus {
     outline: none;
   }
-  ${Div}:hover & {
+  /* ${Div}:hover & {
     color: yellowgreen;
-  }
-  ${({ secondary }) =>
+  } */
+  /* ${({ secondary }) =>
     secondary &&
     css`
       color: green;
-    `}
-  @media ${({ theme }) => theme.screens.sm} {
+    `} */
+  /* @media ${({ theme }) => theme.screens.sm} {
     color: black;
-  }
+  } */
 `;
 
 const Link = styled.a.attrs((props) => ({ target: "_blank" }))`
