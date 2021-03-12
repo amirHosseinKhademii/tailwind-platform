@@ -25,7 +25,8 @@
       "icons/*": ["./icons/*"],
       "store/*": ["./store/*"],
       "theme/*": ["./theme/*"],
-      "constants/*": ["./constants/*"]
+      "constants/*": ["./constants/*"],
+      "pages/*": ["./pages/*"]
     }
   },
   "include": ["src"]

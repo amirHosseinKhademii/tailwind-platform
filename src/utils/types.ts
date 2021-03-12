@@ -1,3 +1,4 @@
 export const types = {
   FETCH_CATEGORIES: "FETCH_CATEGORIES",
+  FETCH_IMAGES: "FETCH_IMAGES",
 };

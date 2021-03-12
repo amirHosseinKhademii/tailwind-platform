@@ -1,18 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useCallback, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { useAction } from "hooks";
 import { types, urls } from "utils";
-import { Drawer } from "components";
-
-interface IState {
-  categories: { data: any[]; error: any; loading: boolean };
-}
+import { Drawer, Loading } from "components";
 
 export const CategoryDrawer = () => {
-  const categories = useSelector((state: IState) => state.categories);
   const dispatch = useDispatch();
   const { onFetch } = useAction();
+  const { push } = useHistory();
+  const { data, loading, error } = useSelector(
+    (state: IState) => state.categories
+  );
 
   const fetchCategories = useCallback(
     () =>
@@ -31,34 +31,38 @@ export const CategoryDrawer = () => {
 
   return (
     <Drawer open>
-      {categories.loading && <Loading>Loading Categories...</Loading>}
-      {categories.error && <Loading>Something went wrong ...</Loading>}
-      <List>
-        {(categories.data || []).map((categoty) => (
-          <ListItem as="button" key={categoty.id}>
-            {categoty.name}
-          </ListItem>
-        ))}
-      </List>
+      {data.length === 0 && loading ? (
+        <Loading>Loading Categories...</Loading>
+      ) : error ? (
+        <Loading>Something went wrong ...</Loading>
+      ) : (
+        <List>
+          <Loading>Categories</Loading>
+          {(data || []).map((categoty) => (
+            <ListItem
+              as="button"
+              key={categoty.id}
+              onClick={() => push(`/cats/${categoty.id}`)}
+            >
+              {categoty.name}
+            </ListItem>
+          ))}
+        </List>
+      )}
     </Drawer>
   );
 };
 
-const Loading = styled.div`
-  margin: 30px auto;
-  color: white;
-`;
-
 const List = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 20px 10px;
 `;
 
 const ListItem = styled.div`
   width: 100%;
   margin: 10px auto;
   background-color: white;
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
 `;

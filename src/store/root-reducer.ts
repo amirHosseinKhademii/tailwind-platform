@@ -6,6 +6,11 @@ const rootState = {
     loading: false,
     error: null,
   },
+  images: {
+    data: [],
+    loading: false,
+    error: null,
+  },
 };
 
 export const rootReducer = (state = rootState, { type, payload }) => {
@@ -14,6 +19,11 @@ export const rootReducer = (state = rootState, { type, payload }) => {
       return {
         ...state,
         categories: { ...state.categories, ...payload },
+      };
+    case types.FETCH_IMAGES:
+      return {
+        ...state,
+        images: { ...state.images, ...payload },
       };
     default:
       return state;
