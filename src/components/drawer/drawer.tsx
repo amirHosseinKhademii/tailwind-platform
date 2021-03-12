@@ -1,9 +1,17 @@
-import { FC, memo } from "react";
+import { FC } from "react";
+import styled from "styled-components";
 
-export const Drawer: FC<IDrawer> = memo(({ children }) => {
-  return (
-    <div className="fixed top-0 left-0 z-50 bg-gray-700  h-full shadow-2xl transition-all duration-500 ease-in-out flex flex-col w-80">
-      {children}
-    </div>
-  );
-});
+export const Drawer: FC<IDrawer> = ({ children }) => {
+  return <Div>{children}</Div>;
+};
+
+const Div = styled.div`
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: gray;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+`;

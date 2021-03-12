@@ -11,6 +11,7 @@ const rootState = {
     loading: false,
     error: null,
   },
+  currentCategory: null,
 };
 
 export const rootReducer = (state = rootState, { type, payload }) => {
@@ -24,6 +25,11 @@ export const rootReducer = (state = rootState, { type, payload }) => {
       return {
         ...state,
         images: { ...state.images, ...payload },
+      };
+    case types.SET_CATEGORY:
+      return {
+        ...state,
+        currentCategory: payload,
       };
     default:
       return state;

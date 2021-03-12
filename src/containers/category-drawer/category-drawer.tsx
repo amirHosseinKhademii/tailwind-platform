@@ -10,9 +10,12 @@ export const CategoryDrawer = () => {
   const dispatch = useDispatch();
   const { onFetch } = useAction();
   const { push } = useHistory();
+
   const { data, loading, error } = useSelector(
     (state: IState) => state.categories
   );
+
+  const currentCategory = useSelector((state: IState) => state.currentCategory);
 
   const fetchCategories = useCallback(
     () =>
@@ -40,9 +43,16 @@ export const CategoryDrawer = () => {
           <Loading>Categories</Loading>
           {(data || []).map((categoty) => (
             <ListItem
+              active={currentCategory === categoty.id}
               as="button"
               key={categoty.id}
-              onClick={() => push(`/cats/${categoty.id}`)}
+              onClick={() => {
+                dispatch({
+                  type: types.SET_CATEGORY,
+                  payload: categoty.id,
+                });
+                push(`/cats/${categoty.id}`);
+              }}
             >
               {categoty.name}
             </ListItem>
@@ -62,7 +72,11 @@ const List = styled.div`
 const ListItem = styled.div`
   width: 100%;
   margin: 10px auto;
-  background-color: white;
+  background-color: ${({ active }) => (active ? "blue" : "white")};
+  color: ${({ active }) => (active ? "white" : "black")};
   padding: 15px;
   border-radius: 5px;
+  &:focus {
+    outline: none;
+  }
 `;
