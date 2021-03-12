@@ -23,7 +23,8 @@
       "providers/*": ["./providers/*"],
       "utils/*": ["./utils/*"],
       "icons/*": ["./icons/*"],
-      "languages/*": ["./languages/*"]
+      "store/*": ["./store/*"],
+      "theme/*": ["./theme/*"]
     }
   },
   "include": ["src"]

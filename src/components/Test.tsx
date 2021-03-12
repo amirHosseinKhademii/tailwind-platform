@@ -1,11 +1,15 @@
 import styled, { css } from "styled-components";
+import { useSelector, useDispatch } from "react-redux";
 
 export const Test = () => {
+  const count = useSelector((state: { count: number }) => state.count);
+  const dispatch = useDispatch();
+
   return (
     <Div>
       <Button secondary>Secondary</Button>
-      <Button>Primary</Button>
-      <Link href="/test">test</Link>
+      <Button onClick={() => dispatch({ type: "INC" })}>{count}</Button>
+      <Link>Test</Link>
     </Div>
   );
 };
