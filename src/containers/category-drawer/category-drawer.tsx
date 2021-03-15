@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useCallback, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { catTypes, actions } from "provider";
+import { actions } from "provider";
 import { Drawer, Loading } from "components";
 
 export const CategoryDrawer = () => {
@@ -41,10 +41,7 @@ export const CategoryDrawer = () => {
               as="button"
               key={categoty.id}
               onClick={() => {
-                dispatch({
-                  type: catTypes.SET_CATEGORY,
-                  payload: categoty.id,
-                });
+                dispatch(actions.setCategory(categoty.id));
                 push(`/cats/${categoty.id}`);
               }}
             >

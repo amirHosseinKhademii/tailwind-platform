@@ -1,5 +1,5 @@
 import axios from "axios";
-import { catTypes } from "../types";
+import { catTypes } from "../../types";
 
 const fetchImages = (url) => async (dispatch) => {
   dispatch({ type: catTypes.FETCH_IMAGES, payload: { loading: true } });
@@ -44,8 +44,14 @@ const fetchTest = () => async (dispatch) => {
   });
 };
 
+const setCategory = (payload) => ({
+  type: catTypes.SET_CATEGORY,
+  payload,
+});
+
 export const actions = {
   fetchCategories,
   fetchImages,
   fetchTest,
+  setCategory,
 };

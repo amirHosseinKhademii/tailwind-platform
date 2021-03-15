@@ -1,5 +1,5 @@
 import { cat } from "./cat";
-import { catTypes } from "../types";
+import { catTypes } from "../../types";
 
 const initialState = {
   categories: {

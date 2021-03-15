@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import fetchMock from "fetch-mock";
 import expect from "expect";
 import { actions } from ".";
-import { catTypes } from "../types";
+import { catTypes } from "../../types";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
