@@ -20,12 +20,10 @@
       "containers/*": ["./containers/*"],
       "helper/*": ["./helper/*"],
       "hooks/*": ["./hooks/*"],
-      "providers/*": ["./providers/*"],
       "utils/*": ["./utils/*"],
       "icons/*": ["./icons/*"],
-      "store/*": ["./store/*"],
       "theme/*": ["./theme/*"],
-      "constants/*": ["./constants/*"],
+      "provider/*": ["./provider/*"],
       "pages/*": ["./pages/*"]
     }
   },

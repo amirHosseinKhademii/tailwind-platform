@@ -1,5 +1,5 @@
-import { rootReducer } from "./root-reducer";
-import { types } from "../utils";
+import { cat } from "./cat";
+import { catTypes } from "../types";
 
 const initialState = {
   categories: {
@@ -17,15 +17,15 @@ const initialState = {
 
 describe("set current", () => {
   it("should return the initial state", () => {
-    expect(
-      rootReducer(initialState, { type: undefined, payload: undefined })
-    ).toEqual(initialState);
+    expect(cat(initialState, { type: undefined, payload: undefined })).toEqual(
+      initialState
+    );
   });
 
   it("should set the current category", () => {
     expect(
-      rootReducer(initialState, {
-        type: types.SET_CATEGORY,
+      cat(initialState, {
+        type: catTypes.SET_CATEGORY,
         payload: "Run the tests",
       })
     ).toEqual({

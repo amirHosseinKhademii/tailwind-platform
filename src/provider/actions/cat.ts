@@ -1,15 +1,17 @@
 import axios from "axios";
-import { types } from "./types";
-import { urls } from "./urls";
+import { catTypes } from "../types";
 
 const fetchImages = (url) => async (dispatch) => {
-  dispatch({ type: types.FETCH_IMAGES, payload: { loading: true } });
+  dispatch({ type: catTypes.FETCH_IMAGES, payload: { loading: true } });
   try {
     const { data } = await axios.get(url);
-    dispatch({ type: types.FETCH_IMAGES, payload: { data, loading: false } });
+    dispatch({
+      type: catTypes.FETCH_IMAGES,
+      payload: { data, loading: false },
+    });
   } catch (error) {
     dispatch({
-      type: types.FETCH_IMAGES,
+      type: catTypes.FETCH_IMAGES,
       payload: { error, loading: false },
     });
   }
@@ -17,27 +19,27 @@ const fetchImages = (url) => async (dispatch) => {
 
 const fetchCategories = () => async (dispatch) => {
   dispatch({
-    type: types.FETCH_CATEGORIES,
+    type: catTypes.FETCH_CATEGORIES,
     payload: { loading: true },
   });
   try {
-    const { data } = await axios.get(urls.categories);
+    const { data } = await axios.get("https://api.thecatapi.com/v1/categories");
     dispatch({
-      type: types.FETCH_CATEGORIES,
+      type: catTypes.FETCH_CATEGORIES,
       payload: { data, loading: false },
     });
   } catch (error) {
     dispatch({
-      type: types.FETCH_CATEGORIES,
+      type: catTypes.FETCH_CATEGORIES,
       payload: { error, loading: false },
     });
   }
 };
 
 const fetchTest = () => async (dispatch) => {
-  const { data } = await axios.get(urls.categories);
+  const { data } = await axios.get("https://api.thecatapi.com/v1/categories");
   dispatch({
-    type: types.FETCH_CATEGORIES,
+    type: catTypes.FETCH_CATEGORIES,
     payload: { data },
   });
 };

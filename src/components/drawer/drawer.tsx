@@ -2,7 +2,11 @@ import { FC } from "react";
 import styled from "styled-components";
 
 export const Drawer: FC<IDrawer> = ({ children }) => {
-  return <Div>{children}</Div>;
+  return (
+    <Div as="div" test="drawer">
+      {children}
+    </Div>
+  );
 };
 
 const Div = styled.div`

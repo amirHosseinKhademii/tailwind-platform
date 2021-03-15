@@ -2,9 +2,8 @@ import { useParams } from "react-router-dom";
 import { Fragment, useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-
 import { Loading } from "components";
-import { actions } from "utils";
+import { actions } from "provider";
 
 const Cats = () => {
   const [limit, setlimit] = useState(10);
@@ -12,7 +11,9 @@ const Cats = () => {
 
   const dispatch = useDispatch();
 
-  const { data, loading, error } = useSelector((state: IState) => state.images);
+  const { data, loading, error } = useSelector(
+    (state: IState) => state.cat.images
+  );
 
   const handleFetch = useCallback(() => {
     dispatch(

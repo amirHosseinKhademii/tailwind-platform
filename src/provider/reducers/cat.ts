@@ -1,6 +1,6 @@
-import { types } from "../utils";
+import { catTypes } from "../types";
 
-const rootState = {
+const initialState = {
   categories: {
     data: [],
     loading: false,
@@ -14,19 +14,19 @@ const rootState = {
   currentCategory: null,
 };
 
-export const rootReducer = (state = rootState, { type, payload }) => {
+export const cat = (state = initialState, { type, payload }) => {
   switch (type) {
-    case types.FETCH_CATEGORIES:
+    case catTypes.FETCH_CATEGORIES:
       return {
         ...state,
         categories: { ...state.categories, ...payload },
       };
-    case types.FETCH_IMAGES:
+    case catTypes.FETCH_IMAGES:
       return {
         ...state,
         images: { ...state.images, ...payload },
       };
-    case types.SET_CATEGORY:
+    case catTypes.SET_CATEGORY:
       return {
         ...state,
         currentCategory: payload,

@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { Provider } from "react-redux";
-import { store } from "store";
+import { store } from "provider";
 import { theme } from "theme";
 import { CategoryDrawer } from "containers";
 import { Loading } from "components";

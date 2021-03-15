@@ -2,7 +2,8 @@ import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import fetchMock from "fetch-mock";
 import expect from "expect";
-import { actions, types } from ".";
+import { actions } from ".";
+import { catTypes } from "../types";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -26,7 +27,7 @@ describe("async actions", () => {
 
     const expectedActions = [
       {
-        type: types.FETCH_CATEGORIES,
+        type: catTypes.FETCH_CATEGORIES,
         payload: {
           data,
         },

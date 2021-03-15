@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useCallback, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { types, actions } from "utils";
+import { catTypes, actions } from "provider";
 import { Drawer, Loading } from "components";
 
 export const CategoryDrawer = () => {
@@ -10,10 +10,12 @@ export const CategoryDrawer = () => {
   const { push } = useHistory();
 
   const { data, loading, error } = useSelector(
-    (state: IState) => state.categories
+    (state: IState) => state.cat.categories
   );
 
-  const currentCategory = useSelector((state: IState) => state.currentCategory);
+  const currentCategory = useSelector(
+    (state: IState) => state.cat.currentCategory
+  );
 
   const fetchCategories = useCallback(
     () => dispatch(actions.fetchCategories()),
@@ -40,7 +42,7 @@ export const CategoryDrawer = () => {
               key={categoty.id}
               onClick={() => {
                 dispatch({
-                  type: types.SET_CATEGORY,
+                  type: catTypes.SET_CATEGORY,
                   payload: categoty.id,
                 });
                 push(`/cats/${categoty.id}`);
