@@ -24,7 +24,8 @@
       "icons/*": ["./icons/*"],
       "theme/*": ["./theme/*"],
       "provider/*": ["./provider/*"],
-      "pages/*": ["./pages/*"]
+      "pages/*": ["./pages/*"],
+      "test/*": ["./test/*"]
     }
   },
   "include": ["src"]
