@@ -1,3 +1,3 @@
-const shallowFinder = (component, attr) => component.find(`[test='${attr}']`);
+const shallowFinder = (component, attr) => component.find(`[id='${attr}']`);
 
 export { shallowFinder };

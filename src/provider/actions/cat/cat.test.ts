@@ -7,6 +7,7 @@ import { catTypes } from "../../types";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+
 const data = [
   { id: 5, name: "boxes" },
   { id: 15, name: "clothes" },

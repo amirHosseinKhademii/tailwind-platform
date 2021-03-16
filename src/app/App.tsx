@@ -1,34 +1,18 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
 import { Provider } from "react-redux";
 import { store } from "provider";
-import { theme } from "theme";
-import { CategoryDrawer } from "containers";
-import { Loading } from "components";
 
 function App() {
   return (
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <BrowserRouter>
-          <CategoryDrawer />
-          <Suspense fallback={<Loading secondary>Loading ...</Loading>}>
-            <Switch>
-              <Route
-                exact
-                path="/"
-                component={lazy(() => import("pages/default-cats"))}
-              />
-              <Route
-                exact
-                path="/cats/:id"
-                component={lazy(() => import("pages/cats"))}
-              />
-            </Switch>
-          </Suspense>
-        </BrowserRouter>
-      </ThemeProvider>
+      <BrowserRouter>
+        <Suspense fallback={<div>Loading ...</div>}>
+          <Switch>
+            <Route exact path="/" component={() => <div>test</div>} />
+          </Switch>
+        </Suspense>
+      </BrowserRouter>
     </Provider>
   );
 }

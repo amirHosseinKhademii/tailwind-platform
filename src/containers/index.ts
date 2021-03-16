@@ -1,1 +1,1 @@
-export * from "./category-drawer";
+export const test = {};
