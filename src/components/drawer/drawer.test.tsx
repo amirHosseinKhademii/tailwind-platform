@@ -1,6 +1,5 @@
-import renderer from "react-test-renderer";
 import { Drawer } from "components";
-import { shallowFinder, useHook, setUp } from "test";
+import { shallowFinder, useHook, setUp, useTree } from "test";
 import { useDrawer } from "./use-drawer";
 
 const hook = useHook(useDrawer);
@@ -9,10 +8,9 @@ describe("Drawer", () => {
   let component;
   beforeEach(() => (component = setUp(Drawer, {})));
 
-  it("SHOUD RENDER <Drawer/>", () => {
-    const drawer = renderer.create(<Drawer />);
-    let tree = drawer.toJSON();
-    expect(tree).toMatchSnapshot();
+  it("SHOUD Match <Drawer/> TO SNAPSHOT", () => {
+    let drawer = useTree(Drawer);
+    expect(drawer).toMatchSnapshot();
   });
 
   it("OPEN SHOULD BE False INITIALY", () => {
