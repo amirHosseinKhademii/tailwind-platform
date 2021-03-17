@@ -1,2 +1,1 @@
-export * from  "./urls";
-export * from "./test";
+export * from "./urls";
