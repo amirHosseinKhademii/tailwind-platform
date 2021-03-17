@@ -8,7 +8,8 @@ const shallowFinder = (component, attr) => component.find(`[id='${attr}']`);
 
 const itif = (condition) => (condition ? it : it.skip);
 
-const useHook = (hook) => renderHook(() => hook());
+const useHook = (hook, initialState?: any) =>
+  renderHook(() => hook(initialState));
 
 const useTree = (Component) => {
   const instance = renderer.create(<Component />);
