@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { ICMenu, ICBack } from "icons";
-import { useDrawer } from "./use-drawer";
+import { ICMenu, ICArrowLeft } from "icons";
+import { useToggle } from "hooks";
 
 export const Drawer: FC<IDrawer> = ({ children }) => {
-  const { open, toggle } = useDrawer(true);
+  const { open, toggle } = useToggle(true);
 
   return (
     <div
@@ -13,10 +13,10 @@ export const Drawer: FC<IDrawer> = ({ children }) => {
       }`}
     >
       {open ? (
-        <ICBack
+        <ICArrowLeft
           id="close"
           onClick={() => toggle()}
-          className="w-10 h-10 text-white cursor-pointer self-end mr-4  "
+          className="w-8 h-8 text-gray-600 cursor-pointer self-end mr-4  "
         />
       ) : (
         <ICMenu
@@ -25,7 +25,7 @@ export const Drawer: FC<IDrawer> = ({ children }) => {
           className="w-10 h-10 text-white cursor-pointer self-center"
         />
       )}
-      {children}
+      {open && children}
     </div>
   );
 };

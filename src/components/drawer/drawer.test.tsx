@@ -1,8 +1,5 @@
 import { Drawer } from "components";
-import { shallowFinder, useHook, setUp, useTree } from "test";
-import { useDrawer } from "./use-drawer";
-
-const hook = useHook(useDrawer);
+import { shallowFinder, setUp, useTree } from "test";
 
 describe("Drawer", () => {
   let component;

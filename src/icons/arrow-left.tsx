@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { ICWrapper } from "./wrapper";
 
-export const ICBack: FC<IIcon> = ({ className, onClick }) => {
+export const ICArrowLeft: FC<IIcon> = ({ className, onClick }) => {
   return (
     <ICWrapper className={className} onClick={onClick}>
       <path
