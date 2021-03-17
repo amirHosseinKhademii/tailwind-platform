@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 
-export const useDrawer = () => {
-  const [open, setOpen] = useState(false);
+export const useDrawer = (initialState) => {
+  const [open, setOpen] = useState(initialState);
 
   return {
     open,
