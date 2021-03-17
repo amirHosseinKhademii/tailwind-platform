@@ -8,14 +8,14 @@ export const DropDown: FC<IDropdown> = ({ className, label, children }) => {
   return (
     <div className="w-full  flex flex-col">
       <div
-        className={`w-full flex justify-between items-center cursor-pointer ${className}`}
+        className={`w-full flex justify-between items-center cursor-pointer text-gray-400 hover:text-indigo-500 ${className}`}
         onClick={() => toggle()}
       >
-        <span className="text-gray-400 text-lg">{label}</span>
+        <span className=" text-lg">{label}</span>
         {open ? (
-          <ICArrowDown className="text-gray-400  w-6 h-6" />
+          <ICArrowDown className="w-6 h-6" />
         ) : (
-          <ICExpand className="text-gray-400  w-4 h-4 mr-1" />
+          <ICExpand className=" w-4 h-4 mr-1" />
         )}
       </div>
       <div

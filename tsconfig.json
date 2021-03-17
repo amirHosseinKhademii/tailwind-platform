@@ -25,7 +25,8 @@
       "theme/*": ["./theme/*"],
       "provider/*": ["./provider/*"],
       "pages/*": ["./pages/*"],
-      "test/*": ["./test/*"]
+      "test/*": ["./test/*"],
+      "layouts/*": ["./layouts/*"]
     }
   },
   "include": ["src"]

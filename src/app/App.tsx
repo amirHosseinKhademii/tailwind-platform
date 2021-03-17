@@ -1,17 +1,22 @@
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Dashboard } from "containers";
+import { UiProvider } from "provider";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Dashboard />
-      <Suspense fallback={<div>Loading ...</div>}>
-        <Switch>
-          <Route exact path="/" component={() => <div>test</div>} />
-        </Switch>
-      </Suspense>
-    </BrowserRouter>
+    <UiProvider>
+      <BrowserRouter>
+        <Suspense fallback={<div>Loading ...</div>}>
+          <Switch>
+            <Route
+              exact
+              path="/patients"
+              component={lazy(() => import("pages/patients"))}
+            />
+          </Switch>
+        </Suspense>
+      </BrowserRouter>
+    </UiProvider>
   );
 }
 

@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       width: {
-        drawer: "calc(100% - 20rem)",
+        drawer: "calc(100% - 4rem)",
+        "drawer-open": "calc(100% - 20rem)",
       },
     },
   },
