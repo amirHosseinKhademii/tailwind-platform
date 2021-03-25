@@ -11,7 +11,7 @@ export const SelectOption: FC<ISelectOption> = ({
   return (
     <span
       key={key}
-      className={`cursor-pointer py-2 flex items-center hover:text-indigo-700 w-full ${
+      className={`cursor-pointer py-2 flex items-center hover:text-indigo-700  w-full ${
         selected ? "text-indigo-700 font-semibold" : " text-gray-600"
       }`}
       onClick={() => {
