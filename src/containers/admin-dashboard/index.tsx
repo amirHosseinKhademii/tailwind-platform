@@ -11,8 +11,8 @@ export const AdminDashboard = () => {
       <div className="px-6 my-10">
         <DropDown label="Patients">
           <DropDownOption
-            onClick={() => push("/patients")}
-            active={pathname === "/patients"}
+            onClick={() => push("/admin/patients/add")}
+            active={pathname === "/admin/patients/add"}
           >
             Add patien
           </DropDownOption>

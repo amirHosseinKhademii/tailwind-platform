@@ -1,4 +1,4 @@
-import { AdminDashboard } from "containers";
+import { AdminDashboard } from "containers/admin-dashboard";
 import { useUi } from "hooks";
 
 export const AdminLayout = ({ children }) => {

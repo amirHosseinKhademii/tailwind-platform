@@ -8,7 +8,7 @@ export const Drawer: FC<IDrawer> = ({ children }) => {
 
   return (
     <div
-      id="drawer"
+      role="drawer"
       className={`fixed top-0 left-0 h-full flex flex-col pt-4  shadow-2xl bg-gray-800 transition-all ease-linear duration-300 ${
         open ? "w-80" : "w-16 "
       }`}
