@@ -4,10 +4,7 @@ import { ICWrapper } from "./wrapper";
 export const ICArrowDown: FC<IIcon> = ({ className, onClick }) => {
   return (
     <ICWrapper className={className} onClick={onClick}>
-      <path
-        fillRule="evenodd"
-        d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
-      />
+      <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659l4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z" />
     </ICWrapper>
   );
 };

@@ -1,10 +1,12 @@
-import { Input, Form } from "components";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
+import { Input, Form, Select, SelectOption } from "components";
 
 export const AddPatientForm = () => {
-  const { handleSubmit, register } = useForm();
+  const { handleSubmit, register, control } = useForm();
 
   const onSubmit = handleSubmit((state) => console.log(state));
+
+  const state = useWatch({ control });
 
   return (
     <Form
@@ -69,11 +71,29 @@ export const AddPatientForm = () => {
         register={register}
       />
       <Input label="Insulin" name="Insulin" register={register} />
-      <Input
-        label="Current CGM Wear MDT, Dexcom, Libre"
-        name="CurrentCGMWearMDTDexcomLibre"
+      <Select
+        label="Current CGM Wear"
+        name="CurrentCGMWear"
         register={register}
-      />
+        control={control}
+        value={state["CurrentCGMWear"]}
+      >
+        <SelectOption value="MDT" selected={state["CurrentCGMWear"] === "MDT"}>
+          MDT
+        </SelectOption>
+        <SelectOption
+          value="Dexcom"
+          selected={state["CurrentCGMWear"] === "Dexcom"}
+        >
+          Dexcom
+        </SelectOption>
+        <SelectOption
+          value="Libre"
+          selected={state["CurrentCGMWear"] === "Libre"}
+        >
+          Libre
+        </SelectOption>
+      </Select>
       <Input label="Past CGM Wear" name="PastCGMWear" register={register} />
       <Input
         label="Frequency Of SBGM"

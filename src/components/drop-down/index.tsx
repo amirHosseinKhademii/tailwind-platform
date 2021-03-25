@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useToggle } from "hooks";
-import { ICArrowDown, ICExpand } from "icons";
+import { ICArrowDown, ICArrowUp, ICExpand } from "icons";
 
 export const DropDown: FC<IDropdown> = ({
   className,
@@ -18,9 +18,9 @@ export const DropDown: FC<IDropdown> = ({
       >
         <span className=" text-lg">{label}</span>
         {open ? (
-          <ICArrowDown className="w-6 h-6" />
+          <ICArrowUp className="w-5 h-5" />
         ) : (
-          <ICExpand className=" w-4 h-4 mr-1" />
+          <ICArrowDown className=" w-5 h-5 " />
         )}
       </div>
       <div

@@ -12,7 +12,7 @@ export const Input: FC<IInput> = ({
 }) => {
   return (
     <div className={`flex flex-col items-start w-full ${wrapperClass}`}>
-      {label && <label className="text-gray-600 mb-2">{label}</label>}
+      {label && <label className="text-gray-800 mb-2">{label}</label>}
       <input
         type={type}
         placeholder={placeholder}
@@ -22,7 +22,7 @@ export const Input: FC<IInput> = ({
           error
             ? "border-red-400 "
             : "border-gray-400 focus:ring-1  focus:ring-indigo-400"
-        } w-full h-12 border  rounded  focus:outline-none focus:shadow px-4 `}
+        } w-full h-12 border  rounded  focus:outline-none focus:shadow px-4 text-gray-600 `}
       />
     </div>
   );

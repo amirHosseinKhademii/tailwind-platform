@@ -4,3 +4,4 @@ export * from "./arrow-right";
 export * from "./arrow-left";
 export * from "./arrow-down";
 export * from "./expand";
+export * from "./arrow-up";
