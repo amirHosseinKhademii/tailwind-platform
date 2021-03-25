@@ -2,8 +2,13 @@ import { FC } from "react";
 import { useToggle } from "hooks";
 import { ICArrowDown, ICExpand } from "icons";
 
-export const DropDown: FC<IDropdown> = ({ className, label, children }) => {
-  const { open, toggle } = useToggle();
+export const DropDown: FC<IDropdown> = ({
+  className,
+  label,
+  children,
+  active = false,
+}) => {
+  const { open, toggle } = useToggle(active);
 
   return (
     <div className="w-full  flex flex-col">

@@ -1,1 +1,2 @@
-export * from "./admin-dashboard";
+export * from "./dashboards";
+export * from "./patients";

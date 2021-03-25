@@ -9,7 +9,7 @@ export const AdminDashboard = () => {
   return (
     <Drawer>
       <div className="px-6 my-10">
-        <DropDown label="Patients">
+        <DropDown label="Patients" active={pathname.includes("patients")}>
           <DropDownOption
             onClick={() => push("/admin/patients/add")}
             active={pathname === "/admin/patients/add"}
