@@ -12,7 +12,7 @@ export const Select: FC<ISelect> = ({
   children,
   value,
 }) => {
-  const {open, toggle} = useToggle();
+  const { open, toggle } = useToggle();
 
   const SelectBox = () => (
     <div
@@ -25,7 +25,7 @@ export const Select: FC<ISelect> = ({
   );
 
   const DropBox = ({ onChange }) => (
-    <div className="w-full h-auto rounded flex flex-col items-start px-4 py-2  z-50 pt-18px  absolute top-1px border-2 shadow border-indigo-400 bg-white">
+    <div className="w-full h-auto max-h-60 overflow-auto overflow-x-hidden rounded flex flex-col items-start px-4 py-2  z-50 pt-18px  absolute top-1px border-2 shadow border-indigo-400 bg-white">
       {children.length
         ? children.map((child, index) =>
             cloneElement(child, { onChange, toggle, key: index })

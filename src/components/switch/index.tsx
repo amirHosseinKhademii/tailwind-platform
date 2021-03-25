@@ -21,7 +21,9 @@ export const Switch: FC<ISwitch> = ({
           <div className="flex flex-row self-end items-center">
             <span className="text-gray-600">No</span>
             <div
-              className="w-18 h-10 rounded-full bg-white border border-gray-400 mx-4 flex items-center justify-between  cursor-pointer px-0.5"
+              className={`w-18 h-10 rounded-full  border border-gray-400 mx-4 flex items-center justify-between  cursor-pointer px-0.5 ${
+                open ? "bg-indigo-300" : "bg-gray-300"
+              }`}
               onClick={() => {
                 onChange(!open);
                 toggle();

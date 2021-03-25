@@ -78,28 +78,107 @@ export const AddPatientForm = () => {
 
       <Input label="State" name="State" register={register} />
 
-      <Switch
-        label="Will Come To St Vincent"
-        name="WillComeToStVincent"
-        control={control}
-        checked={state["WillComeToStVincent"]}
-      />
-
       <Input
         label="Date Of Diagnosis Of T1D"
         name="DateOfDiagnosisOfT1D"
         register={register}
       />
 
-      <Input label="CHO Counting" name="CHOCounting" register={register} />
+      <Select
+        label="CHO Counting"
+        name="CHOCounting"
+        control={control}
+        value={state["CHOCounting"]}
+      >
+        <SelectOption value="No" selected={state["CHOCounting"] === "No"}>
+          No
+        </SelectOption>
+        <SelectOption
+          value="Beginner"
+          selected={state["CHOCounting"] === "Beginner"}
+        >
+          Beginner
+        </SelectOption>
+        <SelectOption
+          value="Intermediate"
+          selected={state["CHOCounting"] === "Intermediate"}
+        >
+          Intermediate
+        </SelectOption>
+        <SelectOption
+          value="Proficient"
+          selected={state["CHOCounting"] === "Proficient"}
+        >
+          Proficient
+        </SelectOption>
+        <SelectOption value="Other" selected={state["CHOCounting"] === "Other"}>
+          Other
+        </SelectOption>
+      </Select>
 
       <Input label="Exercise" name="Exercise" register={register} />
 
-      <Input
-        label="Diabetes Management Pump"
-        name="DiabetesManagementPump"
-        register={register}
-      />
+      <Select
+        label="Diabetes Management"
+        name="DiabetesManagement"
+        control={control}
+        value={state["DiabetesManagement"]}
+      >
+        <SelectOption
+          value="640G"
+          selected={state["DiabetesManagement"] === "640G"}
+        >
+          640G
+        </SelectOption>
+        <SelectOption
+          value="670G"
+          selected={state["DiabetesManagement"] === "670G"}
+        >
+          670G
+        </SelectOption>
+        <SelectOption
+          value="770G"
+          selected={state["DiabetesManagement"] === "770G"}
+        >
+          770G
+        </SelectOption>
+        <SelectOption
+          value="MDT AHCL"
+          selected={state["DiabetesManagement"] === "MDT AHCL"}
+        >
+          MDT AHCL
+        </SelectOption>
+        <SelectOption
+          value="Tslim X2"
+          selected={state["DiabetesManagement"] === "Tslim X2"}
+        >
+          Tslim X2
+        </SelectOption>
+        <SelectOption
+          value="Tslim BasallQ"
+          selected={state["DiabetesManagement"] === "Tslim BasallQ"}
+        >
+          Tslim BasallQ
+        </SelectOption>
+        <SelectOption
+          value="Ypsomed"
+          selected={state["DiabetesManagement"] === "Ypsomed"}
+        >
+          Ypsomed
+        </SelectOption>
+        <SelectOption
+          value="Looping"
+          selected={state["DiabetesManagement"] === "Looping"}
+        >
+          Looping
+        </SelectOption>
+        <SelectOption
+          value="MDI"
+          selected={state["DiabetesManagement"] === "MDI"}
+        >
+          MDI
+        </SelectOption>
+      </Select>
 
       <Input label="Insulin" name="Insulin" register={register} />
 
@@ -185,6 +264,13 @@ export const AddPatientForm = () => {
       <Input label="Subrub" name="third" register={register} />
 
       <Input label="Subrub" name="third" register={register} />
+
+      <Switch
+        label="Will Come To St Vincent"
+        name="WillComeToStVincent"
+        control={control}
+        checked={state["WillComeToStVincent"]}
+      />
 
       <button type="submit">Sub</button>
     </Form>
