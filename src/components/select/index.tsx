@@ -1,7 +1,7 @@
-import { FC, cloneElement } from "react";
+import { FC, cloneElement, useState } from "react";
 import { Controller } from "react-hook-form";
+import { ICArrowDown } from "icons";
 import { useToggle } from "hooks";
-import { ICArrowDown } from "icons/arrow-down";
 
 export const Select: FC<ISelect> = ({
   error,
@@ -12,7 +12,7 @@ export const Select: FC<ISelect> = ({
   children,
   value,
 }) => {
-  const { open, toggle } = useToggle();
+  const {open, toggle} = useToggle();
 
   const SelectBox = () => (
     <div
@@ -34,6 +34,13 @@ export const Select: FC<ISelect> = ({
     </div>
   );
 
+  const BackDrop = () => (
+    <div
+      className="opacity-0 absolute inset-0 z-0"
+      onClick={() => toggle()}
+    ></div>
+  );
+
   return (
     <div className={`flex flex-col items-start w-full ${className}`}>
       {label && <label className="text-gray-800 mb-2">{label}</label>}
@@ -46,6 +53,7 @@ export const Select: FC<ISelect> = ({
           </div>
         )}
       />
+      {open && <BackDrop />}
     </div>
   );
 };

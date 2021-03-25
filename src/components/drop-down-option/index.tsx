@@ -7,7 +7,7 @@ export const DropDownOption: FC<IDropdownOption> = ({
 }) => {
   return (
     <span
-      className={` my-2 cursor-pointer  p-4 ${
+      className={` my-2 cursor-pointer  px-4 ${
         active
           ? "text-indigo-500  rounded  hover:text-indigo-700"
           : " hover:text-indigo-700 text-gray-400"

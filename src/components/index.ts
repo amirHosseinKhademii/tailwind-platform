@@ -6,3 +6,4 @@ export * from "./input";
 export * from "./form";
 export * from "./select";
 export * from "./select-option";
+export * from "./switch";

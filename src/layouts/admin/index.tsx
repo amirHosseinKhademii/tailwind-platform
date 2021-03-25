@@ -9,7 +9,7 @@ export const AdminLayout = ({ children }) => {
     <div>
       <AdminDashboard />
       <div
-        className={` transition-all ease-linear duration-300  ${
+        className={` transition-all ease-in-out duration-100  ${
           open
             ? "transform translate-x-80 w-drawer-open"
             : "transform translate-x-16 w-drawer"

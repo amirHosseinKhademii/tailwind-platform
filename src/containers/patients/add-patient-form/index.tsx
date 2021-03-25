@@ -1,5 +1,5 @@
 import { useForm, useWatch } from "react-hook-form";
-import { Input, Form, Select, SelectOption } from "components";
+import { Input, Form, Select, SelectOption, Switch } from "components";
 
 export const AddPatientForm = () => {
   const { handleSubmit, register, control } = useForm();
@@ -14,63 +14,95 @@ export const AddPatientForm = () => {
       onSubmit={onSubmit}
     >
       <Input label="Patient Id" name="PatientId" register={register} />
+
       <Input label="Surname" name="Surname" register={register} />
+
       <Input label="Christian Name" name="ChristianName" register={register} />
+
       <Input label="Current Study" name="CurrentStudy" register={register} />
+
       <Input
         label="Previous Study 1"
         name="PreviousStudy1"
         register={register}
       />
+
       <Input
         label="Previous Study 2"
         name="PreviousStudy2"
         register={register}
       />
+
       <Input
         label="Previous Study 3"
         name="PreviousStudy3"
         register={register}
       />
+
       <Input label="Date Of Birth" name="DateOfBirth" register={register} />
-      <Input label="Gender" name="Gender" register={register} />
+
+      <Select
+        control={control}
+        label="Gender"
+        name="Gender"
+        value={state["Gender"]}
+      >
+        <SelectOption value="Male">Male</SelectOption>
+        <SelectOption value="Female">Female</SelectOption>
+        <SelectOption value="Other">Other</SelectOption>
+      </Select>
+
       <Input label="Phone Number" name="PhoneNumber" register={register} />
+
       <Input
         label="Prefered Contact Time"
         name="PreferedContactTime"
         register={register}
       />
+
       <Input
         label="Prefered Contact Method"
         name="PreferedContactMethod"
         register={register}
       />
+
       <Input
         label="Date Details Updated"
         name="DateDetailsUpdated"
         register={register}
       />
+
       <Input label="Email Address" name="EmailAddress" register={register} />
+
       <Input label="Subrub" name="Subrub" register={register} />
+
       <Input label="State" name="State" register={register} />
-      <Input
+
+      <Switch
         label="Will Come To St Vincent"
         name="WillComeToStVincent"
-        register={register}
+        control={control}
+        checked={state["WillComeToStVincent"]}
       />
+
       <Input
         label="Date Of Diagnosis Of T1D"
         name="DateOfDiagnosisOfT1D"
         register={register}
       />
+
       <Input label="CHO Counting" name="CHOCounting" register={register} />
+
       <Input label="Exercise" name="Exercise" register={register} />
+
       <Input
         label="Diabetes Management Pump"
         name="DiabetesManagementPump"
         register={register}
       />
+
       <Input label="Insulin" name="Insulin" register={register} />
+
       <Select
         label="Current CGM Wear"
         name="CurrentCGMWear"
@@ -94,32 +126,66 @@ export const AddPatientForm = () => {
           Libre
         </SelectOption>
       </Select>
-      <Input label="Past CGM Wear" name="PastCGMWear" register={register} />
+
+      <Select
+        label="Past CGM Wear"
+        name="PastCGMWear"
+        register={register}
+        control={control}
+        value={state["PastCGMWear"]}
+      >
+        <SelectOption value="MDT" selected={state["PastCGMWear"] === "MDT"}>
+          MDT
+        </SelectOption>
+        <SelectOption
+          value="Dexcom"
+          selected={state["PastCGMWear"] === "Dexcom"}
+        >
+          Dexcom
+        </SelectOption>
+        <SelectOption value="Libre" selected={state["PastCGMWear"] === "Libre"}>
+          Libre
+        </SelectOption>
+      </Select>
+
       <Input
         label="Frequency Of SBGM"
         name="FrequencyOfSBGM"
         register={register}
       />
+
       <Input
         label="Endocrinologist"
         name="Endocrinologist"
         register={register}
       />
+
       <Input
         label="Diabetes Educator"
         name="DiabetesEducator"
         register={register}
       />
+
       <Input label="DKA Expreience" name="DKAExpreience" register={register} />
+
       <Input label="Exercise" name="Exercise" register={register} />
+
       <Input label="Subrub" name="third" register={register} />
+
       <Input label="Subrub" name="third" register={register} />
+
       <Input label="Exercise" name="Exercise" register={register} />
+
       <Input label="Subrub" name="third" register={register} />
+
       <Input label="Subrub" name="third" register={register} />
+
       <Input label="Exercise" name="Exercise" register={register} />
+
       <Input label="Subrub" name="third" register={register} />
+
       <Input label="Subrub" name="third" register={register} />
+
       <button type="submit">Sub</button>
     </Form>
   );

@@ -11,8 +11,8 @@ export const SelectOption: FC<ISelectOption> = ({
   return (
     <span
       key={key}
-      className={`cursor-pointer h-12 flex items-center hover:text-blue-700 w-full ${
-        selected ? "text-red-600" : " text-gray-600"
+      className={`cursor-pointer h-12 flex items-center hover:text-indigo-700 w-full ${
+        selected ? "text-indigo-700 font-semibold" : " text-gray-600"
       }`}
       onClick={() => {
         toggle();
