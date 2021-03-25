@@ -10,7 +10,7 @@ export const AddPatientForm = () => {
 
   return (
     <Form
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 w-full mt-12 border-t border-gray-400 pt-12"
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 w-full mt-12 border-t border-gray-400 py-12"
       onSubmit={onSubmit}
     >
       <Input label="Patient Id" name="PatientId" register={register} />
@@ -39,7 +39,12 @@ export const AddPatientForm = () => {
         register={register}
       />
 
-      <Input label="Date Of Birth" name="DateOfBirth" register={register} />
+      <Input
+        label="Date Of Birth"
+        type="date"
+        name="DateOfBirth"
+        register={register}
+      />
 
       <Select
         control={control}
@@ -47,16 +52,28 @@ export const AddPatientForm = () => {
         name="Gender"
         value={state["Gender"]}
       >
-        <SelectOption value="Male">Male</SelectOption>
-        <SelectOption value="Female">Female</SelectOption>
-        <SelectOption value="Other">Other</SelectOption>
+        <SelectOption value="Male" selected={state["Gender"] === "Male"}>
+          Male
+        </SelectOption>
+        <SelectOption value="Female" selected={state["Gender"] === "Female"}>
+          Female
+        </SelectOption>
+        <SelectOption value="Other" selected={state["Gender"] === "Other"}>
+          Other
+        </SelectOption>
       </Select>
 
-      <Input label="Phone Number" name="PhoneNumber" register={register} />
+      <Input
+        label="Phone Number"
+        name="PhoneNumber"
+        type="number"
+        register={register}
+      />
 
       <Input
         label="Prefered Contact Time"
         name="PreferedContactTime"
+        type="date"
         register={register}
       />
 
@@ -69,10 +86,16 @@ export const AddPatientForm = () => {
       <Input
         label="Date Details Updated"
         name="DateDetailsUpdated"
+        type="date"
         register={register}
       />
 
-      <Input label="Email Address" name="EmailAddress" register={register} />
+      <Input
+        label="Email Address"
+        name="EmailAddress"
+        type="email"
+        register={register}
+      />
 
       <Input label="Subrub" name="Subrub" register={register} />
 
@@ -81,6 +104,7 @@ export const AddPatientForm = () => {
       <Input
         label="Date Of Diagnosis Of T1D"
         name="DateOfDiagnosisOfT1D"
+        type="date"
         register={register}
       />
 
@@ -247,30 +271,142 @@ export const AddPatientForm = () => {
 
       <Input label="DKA Expreience" name="DKAExpreience" register={register} />
 
-      <Input label="Exercise" name="Exercise" register={register} />
-
-      <Input label="Subrub" name="third" register={register} />
-
-      <Input label="Subrub" name="third" register={register} />
-
-      <Input label="Exercise" name="Exercise" register={register} />
-
-      <Input label="Subrub" name="third" register={register} />
-
-      <Input label="Subrub" name="third" register={register} />
-
-      <Input label="Exercise" name="Exercise" register={register} />
-
-      <Input label="Subrub" name="third" register={register} />
-
-      <Input label="Subrub" name="third" register={register} />
+      <Switch
+        label="Had Severe Hypoglycaemia Events Requiring 3rd Party Assistance?"
+        name="HadSevereHypoglycaemiaEvents"
+        control={control}
+        checked={state["HadSevereHypoglycaemiaEvents"]}
+      />
 
       <Switch
-        label="Will Come To St Vincent"
+        label="Had Unaware Hypo?"
+        name="HadUnawareHypo"
+        control={control}
+        checked={state["HadUnawareHypo"]}
+      />
+
+      <Switch
+        label="Had Abnormal kidney Function Diagnosis?"
+        name="HadAbnormalkidney"
+        control={control}
+        checked={state["HadAbnormalkidney"]}
+      />
+
+      <Switch
+        label="Had Retionopathy Diagnosis?"
+        name="HadRetionopathyDiagnosis"
+        control={control}
+        checked={state["HadRetionopathyDiagnosis"]}
+      />
+
+      <Switch
+        label="Had Feet Neuropathy?"
+        name="HadFeetNeuropathy"
+        control={control}
+        checked={state["HadFeetNeuropathy"]}
+      />
+
+      <Switch
+        label="Will Come To St Vincent?"
         name="WillComeToStVincent"
         control={control}
         checked={state["WillComeToStVincent"]}
       />
+
+      <Switch
+        label="Has Internet Access?"
+        name="HasInternetAccess"
+        control={control}
+        checked={state["HasInternetAccess"]}
+      />
+
+      <Switch
+        label="Will Come To St Vincent?"
+        name="WillComeToStVincent"
+        control={control}
+        checked={state["WillComeToStVincent"]}
+      />
+
+      <div />
+
+      <Input label="Computer Type" name="ComputerType" register={register} />
+
+      <Input
+        label="Knows Of PWOD Interseted in Study"
+        name="KnowsOfPWOD"
+        register={register}
+      />
+
+      <Input
+        label="Discussion held and what was discussed"
+        name="Discussionheld"
+        register={register}
+      />
+
+      <Input
+        label="Contact Date"
+        type="date"
+        name="ContactDate"
+        register={register}
+      />
+
+      <Input
+        label="Study For Consideration"
+        name="StudyForConsideration"
+        register={register}
+      />
+
+      <Input label="Next Step" name="NextStep" register={register} />
+
+      <Input
+        label="Latest HbA1c Reading"
+        name="LatestHbA1cReading"
+        type="number"
+        register={register}
+      />
+
+      <Input
+        label="Latest HbA1c Reading Date"
+        name="LatestHbA1cReadingDate"
+        type="date"
+        register={register}
+      />
+
+      <Input
+        label="Do Not Call Until"
+        name="DoNotCallUntil"
+        type="date"
+        register={register}
+      />
+
+      <Select
+        control={control}
+        name="InteractionType"
+        label="Interaction Type"
+        value={state["InteractionType"]}
+      >
+        <SelectOption value="Type 1">Type 1</SelectOption>
+        <SelectOption value="Type 2">Type 2</SelectOption>
+      </Select>
+
+      <Input
+        label="Interaction Date Time"
+        name="InteractionDateTime"
+        type="date"
+        register={register}
+      />
+
+      <Input label="Caller" name="Caller" register={register} />
+
+      <Input label="Summary" name="Summary" register={register} />
+
+      <Input
+        label="Other Medical Issue"
+        name="OtherMedicalIssue"
+        register={register}
+      />
+
+      <Input label="Notes" name="Notes" register={register} />
 
       <button type="submit">Sub</button>
     </Form>

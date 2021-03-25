@@ -18,10 +18,10 @@ export const Switch: FC<ISwitch> = ({
       render={({ onChange }) => (
         <div className={`w-full flex flex-col justify-between ${className}`}>
           <span className="text-gray-800 self-start">{label}</span>
-          <div className="flex flex-row self-end items-center">
+          <div className="flex flex-row self-end items-center mt-2">
             <span className="text-gray-600">No</span>
             <div
-              className={`w-18 h-10 rounded-full  border border-gray-400 mx-4 flex items-center justify-between  cursor-pointer px-0.5 ${
+              className={`w-14 h-8 rounded-full  border border-gray-400 mx-4 flex items-center justify-between  cursor-pointer px-0.5 ${
                 open ? "bg-indigo-300" : "bg-gray-300"
               }`}
               onClick={() => {
@@ -32,10 +32,10 @@ export const Switch: FC<ISwitch> = ({
               {open ? (
                 <div />
               ) : (
-                <div className="w-9 h-9 rounded-full bg-gray-500 " />
+                <div className="w-7 h-7 rounded-full bg-gray-500 " />
               )}
               {open ? (
-                <div className="w-9 h-9 rounded-full bg-indigo-500" />
+                <div className="w-7 h-7 rounded-full bg-indigo-500" />
               ) : (
                 <div />
               )}
