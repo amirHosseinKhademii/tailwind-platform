@@ -8,5 +8,6 @@ interface ISelect {
   id?: string;
   control: any;
   children?: any;
-  value?:any
+  value?: any;
+  multiple?: boolean;
 }

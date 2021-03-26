@@ -11,6 +11,7 @@ export const Select: FC<ISelect> = ({
   name,
   children,
   value,
+  multiple = false,
 }) => {
   const { open, toggle } = useToggle();
 
@@ -19,7 +20,17 @@ export const Select: FC<ISelect> = ({
       onClick={() => toggle()}
       className="focus:outline-none  w-full flex flex-row items-center justify-between h-12 cursor-pointer px-4  text-gray-300 rounded border border-gray-400"
     >
-      <span className="text-gray-600">{value}</span>
+      {multiple ? (
+        <div>
+          {(value || []).map((val, index) => (
+            <span className="text-gray-600 pr-2" key={index}>
+              {val}
+            </span>
+          ))}
+        </div>
+      ) : (
+        <span className="text-gray-600">{value}</span>
+      )}
       <ICArrowDown className="w-5 h-5 text-gray-500" />
     </div>
   );
@@ -28,9 +39,15 @@ export const Select: FC<ISelect> = ({
     <div className="w-full h-auto max-h-60 overflow-auto overflow-x-hidden rounded flex flex-col items-start px-4 py-2  z-50 pt-18px  absolute top-1px border-2 shadow border-indigo-400 bg-white">
       {children.length
         ? children.map((child, index) =>
-            cloneElement(child, { onChange, toggle, key: index })
+            cloneElement(child, {
+              onChange,
+              toggle,
+              key: index,
+              multiple,
+              state: value,
+            })
           )
-        : cloneElement(children, { onChange, toggle })}
+        : cloneElement(children, { onChange, toggle, multiple, state: value })}
     </div>
   );
 

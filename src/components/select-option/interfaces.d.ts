@@ -5,4 +5,6 @@ interface ISelectOption {
   toggle?: any;
   key?: any;
   selected?: boolean;
+  multiple?: boolean;
+  state?: any;
 }
