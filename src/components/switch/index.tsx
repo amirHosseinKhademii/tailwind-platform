@@ -38,7 +38,9 @@ export const Switch: FC<ISwitch> = memo(
         name={name}
         control={control}
         render={({ onChange }) => (
-          <div className={`w-full flex flex-col justify-between ${className}`}>
+          <div
+            className={`w-full flex flex-col justify-between max-h-18 ${className}`}
+          >
             <span className="text-gray-800 self-start">{label}</span>
             <div className="flex items-center justify-between">
               {error && typeof error === "string" ? (
