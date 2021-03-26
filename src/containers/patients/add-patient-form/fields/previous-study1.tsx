@@ -1,13 +1,15 @@
 import { Select, SelectOption } from "components";
 
-export const PreviousStudy1 = ({ state, control }) => {
+export const PreviousStudy1 = ({ state, control, errors }) => {
   return (
     <Select
       label="Previous Study 1"
       name="PreviousStudy1"
       control={control}
-      multiple
       value={state["PreviousStudy1"]}
+      error={errors["PreviousStudy1"]?.message}
+      required
+      multiple
     >
       <SelectOption
         value="Study 1"

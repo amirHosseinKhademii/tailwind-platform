@@ -7,4 +7,7 @@ interface ITextArea {
   error?: string;
   name?: string;
   id?: string;
+  required?: boolean;
+  max?: string | number;
+  min?: string | number;
 }

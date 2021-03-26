@@ -1,12 +1,14 @@
 import { Select, SelectOption } from "components";
 
-export const PastCGMWear = ({ control, state }) => {
+export const PastCGMWear = ({ control, state, errors }) => {
   return (
     <Select
       label="Past CGM Wear"
       name="PastCGMWear"
       control={control}
       value={state["PastCGMWear"]}
+      error={errors["PastCGMWear"]?.message}
+      required
     >
       <SelectOption value="MDT" selected={state["PastCGMWear"] === "MDT"}>
         MDT

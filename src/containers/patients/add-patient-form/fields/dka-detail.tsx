@@ -1,7 +1,15 @@
 import { TextArea } from "components";
 
-export const DKADetail = ({ state, register }) => {
+export const DKADetail = ({ state, register, errors }) => {
   if (state["DKAExpreience"])
-    return <TextArea label="DKA Detail" name="DKADetail" register={register} />;
+    return (
+      <TextArea
+        label="DKA Detail"
+        name="DKADetail"
+        register={register}
+        error={errors["DKADetail"]?.message}
+        required
+      />
+    );
   else return null;
 };

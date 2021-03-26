@@ -1,6 +1,5 @@
 interface IInput {
   className?: string;
-  wrapperClass?: string;
   label?: string;
   register?: any;
   value?: string;
@@ -9,4 +8,7 @@ interface IInput {
   error?: string;
   name?: string;
   id?: string;
+  required?: boolean;
+  max?: string | number;
+  min?: string | number;
 }

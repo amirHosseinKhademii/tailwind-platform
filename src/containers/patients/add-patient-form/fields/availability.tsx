@@ -1,12 +1,14 @@
 import { Select, SelectOption } from "components";
 
-export const Availability = ({ control, state }) => {
+export const Availability = ({ control, state, errors }) => {
   return (
     <Select
       label="Availability"
       name="Availability"
       control={control}
       value={state["Availability"]}
+      error={errors["Availability"]?.message}
+      required
     >
       <SelectOption value="Daily" selected={state["Availability"] === "Daily"}>
         Daily

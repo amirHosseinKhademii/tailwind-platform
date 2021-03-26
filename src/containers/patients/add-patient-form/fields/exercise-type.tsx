@@ -1,12 +1,14 @@
 import { Select, SelectOption } from "components";
 
-export const ExerciseType = ({ state, control }) => {
+export const ExerciseType = ({ state, control, errors }) => {
   return (
     <Select
       label="Exercise Type"
       name="ExerciseType"
       control={control}
       value={state["ExerciseType"]}
+      error={errors["ExerciseType"]?.message}
+      required
     >
       <SelectOption
         value="Casual"

@@ -1,12 +1,14 @@
 import { Select, SelectOption } from "components";
 
-export const CHOCounting = ({ control, state }) => {
+export const CHOCounting = ({ control, state, errors }) => {
   return (
     <Select
       label="CHO Counting"
       name="CHOCounting"
       control={control}
       value={state["CHOCounting"]}
+      error={errors["CHOCounting"]?.message}
+      required
     >
       <SelectOption value="No" selected={state["CHOCounting"] === "No"}>
         No

@@ -1,12 +1,14 @@
 import { Select, SelectOption } from "components";
 
-export const PreferedContactMethod = ({ control, state }) => {
+export const PreferedContactMethod = ({ control, state, errors }) => {
   return (
     <Select
       label="Prefered Contact Method"
       name="PreferedContactMethod"
       control={control}
       value={state["PreferedContactMethod"]}
+      error={errors["PreferedContactMethod"]?.message}
+      required
     >
       <SelectOption
         value="Email"

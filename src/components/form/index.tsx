@@ -1,9 +1,9 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 
-export const Form: FC<IForm> = ({ className, onSubmit, children }) => {
+export const Form: FC<IForm> = memo(({ className, onSubmit, children }) => {
   return (
     <form onSubmit={onSubmit} className={className}>
       {children}
     </form>
   );
-};
+});

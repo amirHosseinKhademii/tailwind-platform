@@ -1,12 +1,14 @@
 import { Select, SelectOption } from "components";
 
-export const DiabetesManagementPump = ({ control, state }) => {
+export const DiabetesManagementPump = ({ control, state, errors }) => {
   return (
     <Select
       label="Diabetes Management Pump"
       name="DiabetesManagementPump"
       control={control}
       value={state["DiabetesManagementPump"]}
+      error={errors["DiabetesManagementPump"]?.message}
+      required
     >
       <SelectOption
         value="640G"

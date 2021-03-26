@@ -1,5 +1,13 @@
 import { Input } from "components";
 
-export const Surname = ({ register }) => {
-  return <Input label="Surname" name="Surname" register={register} />;
+export const Surname = ({ register, errors }) => {
+  return (
+    <Input
+      label="Surname"
+      name="Surname"
+      register={register}
+      error={errors["Surname"]?.message}
+      required
+    />
+  );
 };

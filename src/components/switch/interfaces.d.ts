@@ -5,4 +5,6 @@ interface ISwitch {
   label?: string;
   name?: string;
   control?: any;
+  error?: any;
+  onChange?: any;
 }

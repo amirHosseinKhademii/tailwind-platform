@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { ICMenu, ICArrowLeft } from "icons";
 import { useUi } from "hooks";
 
-export const Drawer: FC<IDrawer> = ({ children }) => {
+export const Drawer: FC<IDrawer> = memo(({ children }) => {
   const { uiState, toggleDrawer } = useUi();
   const { open } = uiState.drawer;
 
@@ -29,4 +29,4 @@ export const Drawer: FC<IDrawer> = ({ children }) => {
       {open && children}
     </div>
   );
-};
+});
