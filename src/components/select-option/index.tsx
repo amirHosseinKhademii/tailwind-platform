@@ -1,4 +1,5 @@
-import { FC, useCallback } from "react";
+import { FC } from "react";
+import { useSelectOption } from "./use-select-option";
 
 export const SelectOption: FC<ISelectOption> = ({
   children,
@@ -10,16 +11,7 @@ export const SelectOption: FC<ISelectOption> = ({
   multiple = false,
   state = [],
 }) => {
-  const handleChange = useCallback(() => {
-    const existed =
-      state !== undefined &&
-      state.length > 0 &&
-      state.find((item) => item === value);
-    const payload = existed
-      ? [...state.filter((item) => item !== value)]
-      : [...state, value];
-    onChange(payload);
-  }, [state]);
+  const { handleChange } = useSelectOption({ state });
 
   if (multiple)
     return (
@@ -34,7 +26,7 @@ export const SelectOption: FC<ISelectOption> = ({
           className={`cursor-pointer py-2 flex items-center hover:text-indigo-700  w-full ${
             selected ? "text-indigo-700 font-semibold" : " text-gray-600"
           }`}
-          onClick={() => handleChange()}
+          onClick={() => handleChange({ value, onChange })}
         >
           {children}
         </span>

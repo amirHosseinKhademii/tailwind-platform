@@ -1,5 +1,5 @@
-import { useForm, useWatch } from "react-hook-form";
 import { Form } from "components";
+import { useAddPatient } from "./use-add-patient";
 import {
   CHOCounting,
   ChristianName,
@@ -52,14 +52,11 @@ import {
   DiscussionHeld,
   StudyForConsideration,
   DoNotCallUntil,
+  Submit,
 } from "./fields";
 
 export const AddPatientForm = () => {
-  const { handleSubmit, register, control } = useForm();
-
-  const onSubmit = handleSubmit((state) => console.log(state));
-
-  const state = useWatch({ control });
+  const { onSubmit, state, register, control, dirty } = useAddPatient();
 
   return (
     <Form
@@ -117,7 +114,7 @@ export const AddPatientForm = () => {
       <Availability control={control} state={state} />
       <AvailabilityDetail register={register} />
       <DoNotCallUntil register={register} />
-      <button type="submit">Sub</button>
+      <Submit dirty={dirty} />
     </Form>
   );
 };
