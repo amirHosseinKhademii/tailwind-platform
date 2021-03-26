@@ -1,10 +1,10 @@
 import { UiProvider } from "provider";
 import { Router } from "./router";
 
-const App = () => (
+const Bootstrap = () => (
   <UiProvider>
     <Router />
   </UiProvider>
 );
 
-export { App };
+export { Bootstrap };

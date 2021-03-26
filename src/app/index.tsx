@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
-import { App } from "./app";
+import { Bootstrap } from "./Bootstrap";
 import "../styles/index.css";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Bootstrap />, document.getElementById("root"));
 
 reportWebVitals();
