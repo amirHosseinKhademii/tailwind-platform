@@ -9,7 +9,7 @@ export const Drawer: FC<IDrawer> = ({ children }) => {
   return (
     <div
       role="drawer"
-      className={`fixed top-0 left-0 h-full flex flex-col pt-4  shadow-2xl bg-gray-800 transition-all duration-100 ease-in-out ${
+      className={`fixed top-0 left-0 h-full flex flex-col pt-4  shadow-2xl bg-gray-800 transition-all duration-300 ease-in-out ${
         open ? "w-80" : "w-16 "
       }`}
     >

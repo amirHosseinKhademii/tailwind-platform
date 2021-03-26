@@ -10,6 +10,18 @@ module.exports = {
         drawer: "calc(100% - 4rem)",
         "drawer-open": "calc(100% - 20rem)",
       },
+      minHeight: {
+        0: "0px",
+        12: "3rem",
+        full: "100%",
+        screen: "100vh",
+      },
+      minWidth: {
+        0: "0px",
+        full: "100%",
+        min: "min-content",
+        max: "max-content",
+      },
     },
   },
   variants: {

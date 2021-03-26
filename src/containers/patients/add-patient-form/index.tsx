@@ -1,5 +1,12 @@
 import { useForm, useWatch } from "react-hook-form";
-import { Input, Form, Select, SelectOption, Switch } from "components";
+import {
+  Input,
+  Form,
+  Select,
+  SelectOption,
+  Switch,
+  TextArea,
+} from "components";
 
 export const AddPatientForm = () => {
   const { handleSubmit, register, control } = useForm();
@@ -13,7 +20,7 @@ export const AddPatientForm = () => {
       className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 w-full mt-12 border-t border-gray-400 py-12"
       onSubmit={onSubmit}
     >
-      <Input label="Patient Id" name="PatientId" register={register} />
+      <Input label="Patient Bio" name="PatientBio" register={register} />
 
       <Input label="Surname" name="Surname" register={register} />
 
@@ -102,6 +109,12 @@ export const AddPatientForm = () => {
       <Input label="State" name="State" register={register} />
 
       <Input
+        label="Diabetic & Medical History"
+        name="DiabeticHistory"
+        register={register}
+      />
+
+      <Input
         label="Date Of Diagnosis Of T1D"
         name="DateOfDiagnosisOfT1D"
         type="date"
@@ -140,69 +153,77 @@ export const AddPatientForm = () => {
         </SelectOption>
       </Select>
 
-      <Input label="Exercise" name="Exercise" register={register} />
+      <Input label="Exercise Type" name="ExerciseType" register={register} />
+
+      <TextArea
+        label="Exercise Detail"
+        name="ExerciseDetail"
+        register={register}
+      />
 
       <Select
-        label="Diabetes Management"
-        name="DiabetesManagement"
+        label="Diabetes Management Pump"
+        name="DiabetesManagementPump"
         control={control}
-        value={state["DiabetesManagement"]}
+        value={state["DiabetesManagementPump"]}
       >
         <SelectOption
           value="640G"
-          selected={state["DiabetesManagement"] === "640G"}
+          selected={state["DiabetesManagementPump"] === "640G"}
         >
           640G
         </SelectOption>
         <SelectOption
           value="670G"
-          selected={state["DiabetesManagement"] === "670G"}
+          selected={state["DiabetesManagementPump"] === "670G"}
         >
           670G
         </SelectOption>
         <SelectOption
           value="770G"
-          selected={state["DiabetesManagement"] === "770G"}
+          selected={state["DiabetesManagementPump"] === "770G"}
         >
           770G
         </SelectOption>
         <SelectOption
           value="MDT AHCL"
-          selected={state["DiabetesManagement"] === "MDT AHCL"}
+          selected={state["DiabetesManagementPump"] === "MDT AHCL"}
         >
           MDT AHCL
         </SelectOption>
         <SelectOption
           value="Tslim X2"
-          selected={state["DiabetesManagement"] === "Tslim X2"}
+          selected={state["DiabetesManagementPump"] === "Tslim X2"}
         >
           Tslim X2
         </SelectOption>
         <SelectOption
           value="Tslim BasallQ"
-          selected={state["DiabetesManagement"] === "Tslim BasallQ"}
+          selected={state["DiabetesManagementPump"] === "Tslim BasallQ"}
         >
           Tslim BasallQ
         </SelectOption>
         <SelectOption
           value="Ypsomed"
-          selected={state["DiabetesManagement"] === "Ypsomed"}
+          selected={state["DiabetesManagementPump"] === "Ypsomed"}
         >
           Ypsomed
         </SelectOption>
         <SelectOption
           value="Looping"
-          selected={state["DiabetesManagement"] === "Looping"}
+          selected={state["DiabetesManagementPump"] === "Looping"}
         >
           Looping
         </SelectOption>
         <SelectOption
           value="MDI"
-          selected={state["DiabetesManagement"] === "MDI"}
+          selected={state["DiabetesManagementPump"] === "MDI"}
         >
           MDI
         </SelectOption>
       </Select>
+
+      <TextArea label="Pump Details" name="PumpDetails" register={register} />
 
       <Input label="Insulin" name="Insulin" register={register} />
 
@@ -269,7 +290,27 @@ export const AddPatientForm = () => {
         register={register}
       />
 
-      <Input label="DKA Expreience" name="DKAExpreience" register={register} />
+      <Input
+        label="Latest HbA1c Reading"
+        name="LatestHbA1cReading"
+        type="number"
+        register={register}
+      />
+
+      <Input
+        label="Latest HbA1c Reading Date"
+        name="LatestHbA1cReadingDate"
+        type="date"
+        register={register}
+      />
+
+      <Input
+        label="DKA Expreience In Past 12 Month Requiring Hospitalization"
+        name="DKAExpreience"
+        register={register}
+      />
+
+      <TextArea label="DKA Detail" name="DKADetail" register={register} />
 
       <Switch
         label="Had Severe Hypoglycaemia Events Requiring 3rd Party Assistance?"
@@ -306,6 +347,17 @@ export const AddPatientForm = () => {
         checked={state["HadFeetNeuropathy"]}
       />
 
+      <div />
+
+      <TextArea
+        className="col-span-2"
+        label="Other Medical Issue"
+        name="OtherMedicalIssue"
+        register={register}
+      />
+
+      <Input label="Logistics" name="Logistics" register={register} />
+
       <Switch
         label="Will Come To St Vincent?"
         name="WillComeToStVincent"
@@ -320,24 +372,13 @@ export const AddPatientForm = () => {
         checked={state["HasInternetAccess"]}
       />
 
-      <Switch
-        label="Will Come To St Vincent?"
-        name="WillComeToStVincent"
-        control={control}
-        checked={state["WillComeToStVincent"]}
-      />
-
       <div />
 
       <Input label="Computer Type" name="ComputerType" register={register} />
 
-      <Input
-        label="Knows Of PWOD Interseted in Study"
-        name="KnowsOfPWOD"
-        register={register}
-      />
+      <TextArea label="PWOD Referral" name="PWODReferral" register={register} />
 
-      <Input
+      <TextArea
         label="Discussion held and what was discussed"
         name="Discussionheld"
         register={register}
@@ -350,7 +391,7 @@ export const AddPatientForm = () => {
         register={register}
       />
 
-      <Input
+      <TextArea
         label="Study For Consideration"
         name="StudyForConsideration"
         register={register}
@@ -358,17 +399,11 @@ export const AddPatientForm = () => {
 
       <Input label="Next Step" name="NextStep" register={register} />
 
-      <Input
-        label="Latest HbA1c Reading"
-        name="LatestHbA1cReading"
-        type="number"
-        register={register}
-      />
+      <Input label="Availability" name="Availability" register={register} />
 
-      <Input
-        label="Latest HbA1c Reading Date"
-        name="LatestHbA1cReadingDate"
-        type="date"
+      <TextArea
+        label="Availability Detail"
+        name="AvailabilityDetail"
         register={register}
       />
 
@@ -378,35 +413,6 @@ export const AddPatientForm = () => {
         type="date"
         register={register}
       />
-
-      <Select
-        control={control}
-        name="InteractionType"
-        label="Interaction Type"
-        value={state["InteractionType"]}
-      >
-        <SelectOption value="Type 1">Type 1</SelectOption>
-        <SelectOption value="Type 2">Type 2</SelectOption>
-      </Select>
-
-      <Input
-        label="Interaction Date Time"
-        name="InteractionDateTime"
-        type="date"
-        register={register}
-      />
-
-      <Input label="Caller" name="Caller" register={register} />
-
-      <Input label="Summary" name="Summary" register={register} />
-
-      <Input
-        label="Other Medical Issue"
-        name="OtherMedicalIssue"
-        register={register}
-      />
-
-      <Input label="Notes" name="Notes" register={register} />
 
       <button type="submit">Sub</button>
     </Form>
