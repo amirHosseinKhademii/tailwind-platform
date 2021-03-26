@@ -54,7 +54,7 @@ const defaultValues = {
 };
 
 export const useAddPatient = () => {
-  const { handleSubmit, register, control, formState,errors } = useForm({
+  const { handleSubmit, register, control, formState, errors } = useForm({
     defaultValues,
   });
 
