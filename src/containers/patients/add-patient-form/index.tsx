@@ -63,9 +63,12 @@ export const AddPatientForm = () => {
       className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 w-full mt-12 border-t border-gray-400 py-12"
       onSubmit={onSubmit}
     >
-      <PatientBio register={register} errors={errors} />
-      <Surname register={register} errors={errors} />
-      <ChristianName register={register} errors={errors} />
+      <PatientBio register={register} error={errors["PatientBio"]?.message} />
+      <Surname register={register} error={errors["Surname"]?.message} />
+      <ChristianName
+        register={register}
+        error={errors["ChristianName"]?.message}
+      />
       <CurrentStudy control={control} state={state} errors={errors} />
       <PreviousStudy1 control={control} state={state} errors={errors} />
       <PreviousStudy2 control={control} state={state} errors={errors} />
