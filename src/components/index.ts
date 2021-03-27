@@ -9,3 +9,4 @@ export * from "./select-option";
 export * from "./switch";
 export * from "./text-area";
 export * from "./button";
+export * from "./error";

@@ -9,7 +9,7 @@ export const Switch: FC<ISwitch> = memo(
     const SwitchBox: FC<ISwitch> = memo(({ onChange }) => (
       <div className="flex flex-row self-start items-center mt-2">
         <div
-          className={`w-14 h-8 rounded-full  border flex flex-row items-center justify-between  cursor-pointer px-0.5 ${
+          className={`w-14 h-8 rounded-full  border flex flex-row items-center justify-between  cursor-pointer px-1 ${
             error ? "border-red-400 shadow" : "border-gray-400"
           } ${open ? "bg-indigo-300" : error ? "bg-red-300" : "bg-gray-300"}`}
           onClick={() => {
@@ -20,10 +20,10 @@ export const Switch: FC<ISwitch> = memo(
           {open ? (
             <div />
           ) : (
-            <div className="w-7 h-7 rounded-full bg-gray-500 " />
+            <div className="w-6 h-6 rounded-full bg-gray-500 " />
           )}
           {open ? (
-            <div className="w-7 h-7 rounded-full bg-indigo-500" />
+            <div className="w-6 h-6 rounded-full bg-indigo-500" />
           ) : (
             <div />
           )}

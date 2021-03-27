@@ -2,6 +2,7 @@ import { FC, cloneElement, memo } from "react";
 import { Controller } from "react-hook-form";
 import { ICArrowDown } from "icons";
 import { useToggle, useValidation } from "hooks";
+import { Error } from "components";
 
 export const Select: FC<ISelect> = memo(
   ({
@@ -39,9 +40,7 @@ export const Select: FC<ISelect> = memo(
           )}
           <ICArrowDown className="w-5 h-5 text-gray-500" />
         </div>
-        {error && typeof error === "string" && (
-          <p className="text-red-600 text-sm mt-2">{error}</p>
-        )}
+        <Error error={error} />
       </div>
     ));
 

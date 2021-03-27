@@ -1,5 +1,6 @@
 import { useValidation } from "hooks";
 import { FC, memo } from "react";
+import { Error } from "components";
 
 export const Input: FC<IInput> = memo(
   ({
@@ -14,8 +15,7 @@ export const Input: FC<IInput> = memo(
     max,
     min,
   }) => {
-
-    const {validate}=useValidation({required,max,min})
+    const { validate } = useValidation({ required, max, min });
 
     return (
       <div className={`flex flex-col items-start w-full ${className}`}>
@@ -31,9 +31,7 @@ export const Input: FC<IInput> = memo(
               : "border-gray-400 focus:ring-1  focus:ring-indigo-400"
           } w-full h-12 border  rounded  focus:outline-none focus:shadow px-4 text-gray-600 `}
         />
-        {error && typeof error === "string" && (
-          <p className="text-red-600 text-sm mt-2">{error}</p>
-        )}
+        <Error error={error} />
       </div>
     );
   }
