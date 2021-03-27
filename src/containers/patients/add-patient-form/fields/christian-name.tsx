@@ -9,6 +9,7 @@ export const ChristianName: FC<IPatientField> = memo(({ register, error }) => {
       register={register}
       error={error}
       required
+      max={50}
     />
   );
 });

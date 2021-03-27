@@ -9,6 +9,7 @@ export const Endocrinologist: FC<IPatientField> = memo(
         name="Endocrinologist"
         register={register}
         error={error}
+        max={50}
         required
       />
     );

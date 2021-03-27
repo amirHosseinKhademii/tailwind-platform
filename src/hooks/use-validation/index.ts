@@ -10,11 +10,11 @@ export const useValidation = (props: {
   return {
     validate: useCallback(
       (value) => {
-        if (!value && required) return "This Field Is Required.";
+        if (required && !value) return "This Field Is Required.";
         if (max && value.length > max)
-          return `This Filed Must Be Less Than ${max} Characters.`;
+          return `This Filed Must Be Equal Or Less Than ${max} Characters.`;
         if (min && value.length < min)
-          return `This Filed Must Be More Than ${min} Characters.`;
+          return `This Filed Must Be Equal Or More Than ${min} Characters.`;
       },
       [required, min, max]
     ),

@@ -9,6 +9,7 @@ export const FrequencyOfSGBM: FC<IPatientField> = memo(
         name="FrequencyOfSBGM"
         register={register}
         error={error}
+        max={50}
         required
       />
     );

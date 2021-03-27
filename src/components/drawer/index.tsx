@@ -8,9 +8,8 @@ export const Drawer: FC<IDrawer> = memo(({ children }) => {
 
   return (
     <div
-      role="drawer"
-      className={`fixed top-0 left-0 h-full flex flex-col pt-4  shadow-2xl bg-gray-800 transition-all duration-300 ease-in-out ${
-        open ? "w-80" : "w-16 "
+      className={`fixed top-0 left-0 h-full flex  flex-col pt-4  shadow-2xl bg-gray-800 transition ease-linear duration-400  z-50  ${
+        open ? "w-52 md:w-80" : "w-16 "
       }`}
     >
       {open ? (
@@ -26,7 +25,7 @@ export const Drawer: FC<IDrawer> = memo(({ children }) => {
           className="w-10 h-10 text-white cursor-pointer self-center"
         />
       )}
-      {open && children}
+      {open && <div>{children}</div>}
     </div>
   );
 });

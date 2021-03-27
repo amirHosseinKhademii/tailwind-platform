@@ -8,6 +8,7 @@ export const State: FC<IPatientField> = memo(({ register, error }) => {
       name="State"
       register={register}
       error={error}
+      max={10}
       required
     />
   );

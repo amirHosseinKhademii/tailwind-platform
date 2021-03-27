@@ -8,6 +8,7 @@ export const ExerciseDetail: FC<IPatientField> = memo(({ register, error }) => {
       name="ExerciseDetail"
       register={register}
       error={error}
+      max={2000}
       required
     />
   );

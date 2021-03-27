@@ -8,6 +8,7 @@ export const Subrub: FC<IPatientField> = memo(({ register, error }) => {
       name="Subrub"
       register={register}
       error={error}
+      max={20}
       required
     />
   );

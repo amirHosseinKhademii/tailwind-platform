@@ -7,10 +7,9 @@ export const Switch: FC<ISwitch> = memo(
     const { open, toggle } = useToggle(checked);
 
     const SwitchBox: FC<ISwitch> = memo(({ onChange }) => (
-      <div className="flex flex-row self-end items-center mt-2">
-        <span className="text-gray-600">No</span>
+      <div className="flex flex-row self-start items-center mt-2">
         <div
-          className={`w-14 h-8 rounded-full  border  mx-4 flex items-center justify-between  cursor-pointer px-0.5 ${
+          className={`w-14 h-8 rounded-full  border flex flex-row items-center justify-between  cursor-pointer px-0.5 ${
             error ? "border-red-400 shadow" : "border-gray-400"
           } ${open ? "bg-indigo-300" : error ? "bg-red-300" : "bg-gray-300"}`}
           onClick={() => {
@@ -29,7 +28,6 @@ export const Switch: FC<ISwitch> = memo(
             <div />
           )}
         </div>
-        <span className="text-gray-600">Yes</span>
       </div>
     ));
 
@@ -38,11 +36,9 @@ export const Switch: FC<ISwitch> = memo(
         name={name}
         control={control}
         render={({ onChange }) => (
-          <div
-            className={`w-full flex flex-col justify-between max-h-18 ${className}`}
-          >
-            <span className="text-gray-800 self-start">{label}</span>
-            <div className="flex items-center justify-between">
+          <div className={`grid grid-cols-6 h-20 overflow-hidden ${className}`}>
+            <span className="text-gray-800 self-start col-span-4">{label}</span>
+            <div className="flex items-center justify-between col-span-2">
               {error && typeof error === "string" ? (
                 <p className="text-red-600 text-sm mt-2">{error}</p>
               ) : (

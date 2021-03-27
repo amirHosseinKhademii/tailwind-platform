@@ -9,6 +9,7 @@ export const EmailAddress: FC<IPatientField> = memo(({ register, error }) => {
       type="email"
       register={register}
       error={error}
+      max={50}
       required
     />
   );

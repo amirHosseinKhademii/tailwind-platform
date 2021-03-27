@@ -10,6 +10,7 @@ export const DKADetail: FC<IPatientField> = memo(
           name="DKADetail"
           register={register}
           error={error}
+          max={200}
           required
         />
       );

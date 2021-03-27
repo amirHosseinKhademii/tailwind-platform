@@ -10,6 +10,7 @@ export const PumpDetail: FC<IPatientField> = memo(
           name="PumpDetails"
           register={register}
           error={error}
+          max={250}
           required
         />
       );

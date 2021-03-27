@@ -9,6 +9,7 @@ export const AvailabilityDetail: FC<IPatientField> = memo(
         name="AvailabilityDetail"
         register={register}
         error={error}
+        max={2000}
         required
       />
     );
