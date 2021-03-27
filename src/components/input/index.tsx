@@ -20,7 +20,20 @@ export const Input: FC<IInput> = memo(
           type={type}
           placeholder={placeholder}
           ref={register({
-            required: required ? "This Field Is Required." : false,
+            required: required ? "This Field Is Required." : undefined,
+            validate: (value) => {
+              if (!value) return "This Field Is Required.";
+              if (max) {
+                if (value.length > max)
+                  return `This Filed Must Be Less Than ${max} Character.`;
+                else return undefined;
+              }
+              if (min) {
+                if (value.length < min)
+                  return `This Filed Must Be More Than ${min} Character.`;
+                else return undefined;
+              }
+            },
           })}
           name={name}
           className={` ${
