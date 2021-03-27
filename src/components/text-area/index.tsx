@@ -1,4 +1,5 @@
 import { FC, memo } from "react";
+import { useValidation } from "hooks";
 
 export const TextArea: FC<ITextArea> = memo(
   ({
@@ -12,26 +13,14 @@ export const TextArea: FC<ITextArea> = memo(
     max,
     min,
   }) => {
+    const { validate } = useValidation({ required, max, min });
+
     return (
       <div className={`flex flex-col items-start w-full ${className}`}>
         {label && <label className="text-gray-800 mb-2">{label}</label>}
         <textarea
           placeholder={placeholder}
-          ref={register({
-            validate: (value) => {
-              if (!value) return "This Field Is Required.";
-              if (max) {
-                if (value.length > max)
-                  return `This Filed Must Be Less Than ${max} Character.`;
-                else return undefined;
-              }
-              if (min) {
-                if (value.length < min)
-                  return `This Filed Must Be More Than ${min} Character.`;
-                else return undefined;
-              }
-            },
-          })}
+          ref={register({ validate })}
           name={name}
           className={` ${
             error

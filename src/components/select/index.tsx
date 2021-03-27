@@ -1,8 +1,7 @@
 import { FC, cloneElement, memo } from "react";
 import { Controller } from "react-hook-form";
 import { ICArrowDown } from "icons";
-import { useToggle } from "hooks";
-import { useSelect } from "./use-select";
+import { useToggle, useValidation } from "hooks";
 
 export const Select: FC<ISelect> = memo(
   ({
@@ -17,7 +16,7 @@ export const Select: FC<ISelect> = memo(
     multiple = false,
   }) => {
     const { open, toggle } = useToggle();
-    const { validate } = useSelect({ required });
+    const { validate } = useValidation({ required });
 
     const SelectBox = memo(() => (
       <div className="w-full flex flex-col">
