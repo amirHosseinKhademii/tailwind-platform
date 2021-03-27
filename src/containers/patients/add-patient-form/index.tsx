@@ -69,54 +69,170 @@ export const AddPatientForm = () => {
         register={register}
         error={errors["ChristianName"]?.message}
       />
-      <CurrentStudy control={control} state={state} errors={errors} />
-      <PreviousStudy1 control={control} state={state} errors={errors} />
-      <PreviousStudy2 control={control} state={state} errors={errors} />
-      <PreviousStudy3 control={control} state={state} errors={errors} />
-      <DateOfBirth register={register} errors={errors} />
-      <Gender control={control} state={state} errors={errors} />
-      <PhoneNumber register={register} errors={errors} />
-      <PreferedContactTime register={register} errors={errors} />
-      <PreferedContactMethod control={control} state={state} errors={errors} />
-      <DateDetailsUpdated register={register} errors={errors} />
-      <EmailAddress register={register} errors={errors} />
-      <Subrub register={register} errors={errors} />
-      <State register={register} errors={errors} />
-      <DiabeticMedicalHistory register={register} errors={errors} />
-      <DateOfDiagnosisOfT1D register={register} errors={errors} />
-      <CHOCounting control={control} state={state} errors={errors} />
-      <ExerciseType control={control} state={state} errors={errors} />
-      <ExerciseDetail register={register} errors={errors} />
-      <DiabetesManagementPump control={control} state={state} errors={errors} />
-      <PumpDetail state={state} register={register} errors={errors} />
-      <Insulin register={register} errors={errors} />
-      <CurrentCGMWear control={control} state={state} errors={errors} />
-      <PastCGMWear control={control} state={state} errors={errors} />
-      <FrequencyOfSGBM register={register} errors={errors} />
-      <Endocrinologist register={register} errors={errors} />
-      <DiabetesEducator register={register} errors={errors} />
-      <LatestHBA1CReading register={register} errors={errors} />
-      <LatestHBA1CReadingDate register={register} errors={errors} />
-      <DKAExperience control={control} state={state} errors={errors} />
-      <DKADetail state={state} register={register} errors={errors} />
-      <HadSevereHypo control={control} state={state} />
-      <HadUnawareHypo control={control} state={state} />
-      <HadAbnormalKidney control={control} state={state} />
-      <HadretionopathyDiag control={control} state={state} />
-      <HadFeetNeuropathy control={control} state={state} />
-      <OtherMedicalIssue register={register} errors={errors} />
-      <Logistics register={register} errors={errors} />
-      <WillComeToSt control={control} state={state} />
-      <HasInternetAccess control={control} state={state} />
-      <ComputerType register={register} errors={errors} />
-      <PWODReferal register={register} errors={errors} />
-      <DiscussionHeld register={register} errors={errors} />
-      <ContactDate register={register} errors={errors} />
-      <StudyForConsideration register={register} errors={errors} />
-      <NextStep register={register} errors={errors} />
-      <Availability control={control} state={state} errors={errors} />
-      <AvailabilityDetail register={register} errors={errors} />
-      <DoNotCallUntil register={register} errors={errors} />
+      <CurrentStudy
+        control={control}
+        state={state["CurrentStudy"]}
+        error={errors["CurrentStudy"]?.message}
+      />
+      <PreviousStudy1
+        control={control}
+        state={state["PreviousStudy1"]}
+        error={errors["PreviousStudy1"]?.message}
+      />
+      <PreviousStudy2
+        control={control}
+        state={state["PreviousStudy2"]}
+        error={errors["PreviousStudy2"]?.message}
+      />
+      <PreviousStudy3
+        control={control}
+        state={state["PreviousStudy3"]}
+        error={errors["PreviousStudy3"]?.message}
+      />
+      <DateOfBirth register={register} error={errors["DateOfBirth"]?.message} />
+      <Gender
+        control={control}
+        state={state["Gender"]}
+        error={errors["Gender"]?.message}
+      />
+      <PhoneNumber register={register} error={errors["PhoneNumber"]?.message} />
+      <PreferedContactTime
+        register={register}
+        error={errors["PreferedContactTime"]?.message}
+      />
+      <PreferedContactMethod
+        control={control}
+        state={state["PreferedContactMethod"]}
+        error={errors["PreferedContactMethod"]?.message}
+      />
+      <DateDetailsUpdated
+        register={register}
+        error={errors["DateDetailsUpdated"]?.message}
+      />
+      <EmailAddress
+        register={register}
+        error={errors["EmailAddress"]?.message}
+      />
+      <Subrub register={register} error={errors["Subrub"]?.message} />
+      <State register={register} error={errors["State"]?.message} />
+      <DiabeticMedicalHistory
+        register={register}
+        error={errors["DiabeticHistory"]?.message}
+      />
+      <DateOfDiagnosisOfT1D
+        register={register}
+        error={errors["DateOfDiagnosisOfT1D"]?.message}
+      />
+      <CHOCounting
+        control={control}
+        state={state["CHOCounting"]}
+        error={errors["CHOCounting"]?.message}
+      />
+      <ExerciseType
+        control={control}
+        state={state["ExerciseType"]}
+        error={errors["ExerciseType"]?.message}
+      />
+      <ExerciseDetail
+        register={register}
+        error={errors["ExerciseDetail"]?.message}
+      />
+      <DiabetesManagementPump
+        control={control}
+        state={state["DiabetesManagementPump"]}
+        error={errors["DiabetesManagementPump"]?.message}
+      />
+      <PumpDetail
+        register={register}
+        state={state["DiabetesManagementPump"]}
+        error={errors["PumpDetails"]?.message}
+      />
+      <Insulin register={register} error={errors["Insulin"]?.message} />
+      <CurrentCGMWear
+        control={control}
+        state={state["CurrentCGMWear"]}
+        error={errors["CurrentCGMWear"]?.message}
+      />
+      <PastCGMWear
+        control={control}
+        state={state["PastCGMWear"]}
+        error={errors["PastCGMWear"]?.message}
+      />
+      <FrequencyOfSGBM
+        register={register}
+        error={errors["FrequencyOfSBGM"]?.message}
+      />
+      <Endocrinologist
+        register={register}
+        error={errors["Endocrinologist"]?.message}
+      />
+      <DiabetesEducator
+        register={register}
+        error={errors["DiabetesEducator"]?.message}
+      />
+      <LatestHBA1CReading
+        register={register}
+        error={errors["LatestHbA1cReading"]?.message}
+      />
+      <LatestHBA1CReadingDate
+        register={register}
+        error={errors["LatestHbA1cReadingDate"]?.message}
+      />
+      <DKAExperience control={control} state={state["DKAExpreience"]} />
+      <DKADetail
+        register={register}
+        state={state["DKAExpreience"]}
+        error={errors["DKADetail"]?.message}
+      />
+      <HadSevereHypo
+        control={control}
+        state={state["HadSevereHypoglycaemiaEvents"]}
+      />
+      <HadUnawareHypo control={control} state={state["HadUnawareHypo"]} />
+      <HadAbnormalKidney control={control} state={state["HadAbnormalkidney"]} />
+      <HadretionopathyDiag
+        control={control}
+        state={state["HadRetionopathyDiagnosis"]}
+      />
+      <HadFeetNeuropathy control={control} state={state["HadFeetNeuropathy"]} />
+      <OtherMedicalIssue
+        register={register}
+        error={errors["OtherMedicalIssue"]?.message}
+      />
+      <Logistics register={register} error={errors["Logistics"]?.message} />
+      <WillComeToSt control={control} state={state["WillComeToStVincent"]} />
+      <HasInternetAccess control={control} state={state["HasInternetAccess"]} />
+      <ComputerType
+        register={register}
+        error={errors["ComputerType"]?.message}
+      />
+      <PWODReferal
+        register={register}
+        error={errors["PWODReferral"]?.message}
+      />
+      <DiscussionHeld
+        register={register}
+        error={errors["Discussionheld"]?.message}
+      />
+      <ContactDate register={register} error={errors["ContactDate"]?.message} />
+      <StudyForConsideration
+        register={register}
+        error={errors["StudyForConsideration"]?.message}
+      />
+      <NextStep register={register} error={errors["NextStep"]?.message} />
+      <Availability
+        control={control}
+        state={state["Availability"]}
+        error={errors["Availability"]?.message}
+      />
+      <AvailabilityDetail
+        register={register}
+        error={errors["AvailabilityDetail"]?.message}
+      />
+      <DoNotCallUntil
+        register={register}
+        error={errors["DoNotCallUntil"]?.message}
+      />
       <Submit dirty={dirty} />
     </Form>
   );

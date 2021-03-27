@@ -1,39 +1,33 @@
 import { Select, SelectOption } from "components";
+import { FC, memo } from "react";
 
-export const CHOCounting = ({ control, state, errors }) => {
-  return (
-    <Select
-      label="CHO Counting"
-      name="CHOCounting"
-      control={control}
-      value={state["CHOCounting"]}
-      error={errors["CHOCounting"]?.message}
-      required
-    >
-      <SelectOption value="No" selected={state["CHOCounting"] === "No"}>
-        No
-      </SelectOption>
-      <SelectOption
-        value="Beginner"
-        selected={state["CHOCounting"] === "Beginner"}
+export const CHOCounting: FC<IPatientField> = memo(
+  ({ control, state, error }) => {
+    return (
+      <Select
+        label="CHO Counting"
+        name="CHOCounting"
+        control={control}
+        value={state}
+        error={error}
+        required
       >
-        Beginner
-      </SelectOption>
-      <SelectOption
-        value="Intermediate"
-        selected={state["CHOCounting"] === "Intermediate"}
-      >
-        Intermediate
-      </SelectOption>
-      <SelectOption
-        value="Proficient"
-        selected={state["CHOCounting"] === "Proficient"}
-      >
-        Proficient
-      </SelectOption>
-      <SelectOption value="Other" selected={state["CHOCounting"] === "Other"}>
-        Other
-      </SelectOption>
-    </Select>
-  );
-};
+        <SelectOption value="No" selected={state === "No"}>
+          No
+        </SelectOption>
+        <SelectOption value="Beginner" selected={state === "Beginner"}>
+          Beginner
+        </SelectOption>
+        <SelectOption value="Intermediate" selected={state === "Intermediate"}>
+          Intermediate
+        </SelectOption>
+        <SelectOption value="Proficient" selected={state === "Proficient"}>
+          Proficient
+        </SelectOption>
+        <SelectOption value="Other" selected={state === "Other"}>
+          Other
+        </SelectOption>
+      </Select>
+    );
+  }
+);

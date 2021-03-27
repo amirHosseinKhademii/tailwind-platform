@@ -1,15 +1,18 @@
 import { TextArea } from "components";
+import { FC, memo } from "react";
 
-export const DKADetail = ({ state, register, errors }) => {
-  if (state["DKAExpreience"])
-    return (
-      <TextArea
-        label="DKA Detail"
-        name="DKADetail"
-        register={register}
-        error={errors["DKADetail"]?.message}
-        required
-      />
-    );
-  else return null;
-};
+export const DKADetail: FC<IPatientField> = memo(
+  ({ state, register, error }) => {
+    if (state)
+      return (
+        <TextArea
+          label="DKA Detail"
+          name="DKADetail"
+          register={register}
+          error={error}
+          required
+        />
+      );
+    else return null;
+  }
+);

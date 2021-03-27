@@ -1,13 +1,14 @@
 import { Input } from "components/input";
+import { FC, memo } from "react";
 
-export const ComputerType = ({ register, errors }) => {
+export const ComputerType: FC<IPatientField> = memo(({ register, error }) => {
   return (
     <Input
       label="Computer Type"
       name="ComputerType"
       register={register}
-      error={errors["ComputerType"]?.message}
+      error={error}
       required
     />
   );
-};
+});

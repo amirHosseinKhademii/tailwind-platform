@@ -1,13 +1,16 @@
 import { Input } from "components";
+import { FC, memo } from "react";
 
-export const DiabetesEducator = ({ register, errors }) => {
-  return (
-    <Input
-      label="Diabetes Educator"
-      name="DiabetesEducator"
-      register={register}
-      error={errors["DiabetesEducator"]?.message}
-      required
-    />
-  );
-};
+export const DiabetesEducator: FC<IPatientField> = memo(
+  ({ register, error }) => {
+    return (
+      <Input
+        label="Diabetes Educator"
+        name="DiabetesEducator"
+        register={register}
+        error={error}
+        required
+      />
+    );
+  }
+);

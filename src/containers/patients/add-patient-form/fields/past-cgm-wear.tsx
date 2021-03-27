@@ -1,24 +1,27 @@
 import { Select, SelectOption } from "components";
+import { FC, memo } from "react";
 
-export const PastCGMWear = ({ control, state, errors }) => {
-  return (
-    <Select
-      label="Past CGM Wear"
-      name="PastCGMWear"
-      control={control}
-      value={state["PastCGMWear"]}
-      error={errors["PastCGMWear"]?.message}
-      required
-    >
-      <SelectOption value="MDT" selected={state["PastCGMWear"] === "MDT"}>
-        MDT
-      </SelectOption>
-      <SelectOption value="Dexcom" selected={state["PastCGMWear"] === "Dexcom"}>
-        Dexcom
-      </SelectOption>
-      <SelectOption value="Libre" selected={state["PastCGMWear"] === "Libre"}>
-        Libre
-      </SelectOption>
-    </Select>
-  );
-};
+export const PastCGMWear: FC<IPatientField> = memo(
+  ({ control, state, error }) => {
+    return (
+      <Select
+        label="Past CGM Wear"
+        name="PastCGMWear"
+        control={control}
+        value={state}
+        error={error}
+        required
+      >
+        <SelectOption value="MDT" selected={state === "MDT"}>
+          MDT
+        </SelectOption>
+        <SelectOption value="Dexcom" selected={state === "Dexcom"}>
+          Dexcom
+        </SelectOption>
+        <SelectOption value="Libre" selected={state === "Libre"}>
+          Libre
+        </SelectOption>
+      </Select>
+    );
+  }
+);

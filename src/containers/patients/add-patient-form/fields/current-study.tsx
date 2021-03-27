@@ -1,32 +1,28 @@
 import { Select, SelectOption } from "components";
+import { FC, memo } from "react";
 
-export const CurrentStudy = ({ control, state, errors }) => {
-  return (
-    <Select
-      label="Current Study"
-      name="CurrentStudy"
-      control={control}
-      multiple
-      value={state["CurrentStudy"]}
-      error={errors["CurrentStudy"]?.message}
-      required
-    >
-      <SelectOption
-        value="Study 1"
-        selected={
-          state["CurrentStudy"] && state["CurrentStudy"].includes("Study 1")
-        }
+export const CurrentStudy: FC<IPatientField> = memo(
+  ({ control, state, error }) => {
+    return (
+      <Select
+        label="Current Study"
+        name="CurrentStudy"
+        control={control}
+        multiple
+        value={state}
+        error={error}
+        required
       >
-        Study 1
-      </SelectOption>
-      <SelectOption
-        value="Other"
-        selected={
-          state["CurrentStudy"] && state["CurrentStudy"].includes("Other")
-        }
-      >
-        Other
-      </SelectOption>
-    </Select>
-  );
-};
+        <SelectOption
+          value="Study 1"
+          selected={state && state.includes("Study 1")}
+        >
+          Study 1
+        </SelectOption>
+        <SelectOption value="Other" selected={state && state.includes("Other")}>
+          Other
+        </SelectOption>
+      </Select>
+    );
+  }
+);

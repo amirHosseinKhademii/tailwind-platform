@@ -1,13 +1,14 @@
 import { Input } from "components";
+import { FC, memo } from "react";
 
-export const Logistics = ({ register, errors }) => {
+export const Logistics: FC<IPatientField> = memo(({ register, error }) => {
   return (
     <Input
       label="Logistics"
       name="Logistics"
       register={register}
-      error={errors["Logistics"]?.message}
+      error={error}
       required
     />
   );
-};
+});

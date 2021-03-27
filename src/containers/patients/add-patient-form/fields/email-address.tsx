@@ -1,14 +1,15 @@
 import { Input } from "components/input";
+import { FC, memo } from "react";
 
-export const EmailAddress = ({ register, errors }) => {
+export const EmailAddress: FC<IPatientField> = memo(({ register, error }) => {
   return (
     <Input
       label="Email Address"
       name="EmailAddress"
       type="email"
       register={register}
-      error={errors["EmailAddress"]?.message}
+      error={error}
       required
     />
   );
-};
+});

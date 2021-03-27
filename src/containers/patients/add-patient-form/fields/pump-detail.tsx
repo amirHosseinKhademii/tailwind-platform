@@ -1,15 +1,18 @@
 import { TextArea } from "components";
+import { FC, memo } from "react";
 
-export const PumpDetail = ({ state, register, errors }) => {
-  if (state["DiabetesManagementPump"] === "Looping")
-    return (
-      <TextArea
-        label="Pump Details"
-        name="PumpDetails"
-        register={register}
-        error={errors["PumpDetails"]?.message}
-        required
-      />
-    );
-  else return null;
-};
+export const PumpDetail: FC<IPatientField> = memo(
+  ({ state, register, error }) => {
+    if (state === "Looping")
+      return (
+        <TextArea
+          label="Pump Details"
+          name="PumpDetails"
+          register={register}
+          error={error}
+          required
+        />
+      );
+    else return null;
+  }
+);

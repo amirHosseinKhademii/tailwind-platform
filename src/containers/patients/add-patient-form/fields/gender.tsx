@@ -1,21 +1,22 @@
 import { Select, SelectOption } from "components";
+import { FC, memo } from "react";
 
-export const Gender = ({ control, state, errors }) => {
+export const Gender: FC<IPatientField> = memo(({ control, state, error }) => {
   return (
     <Select
       control={control}
       label="Gender"
       name="Gender"
-      value={state["Gender"]}
-      error={errors["Gender"]?.message}
+      value={state}
+      error={error}
       required
     >
-      <SelectOption value="Male" selected={state["Gender"] === "Male"}>
+      <SelectOption value="Male" selected={state === "Male"}>
         Male
       </SelectOption>
-      <SelectOption value="Female" selected={state["Gender"] === "Female"}>
+      <SelectOption value="Female" selected={state === "Female"}>
         Female
       </SelectOption>
     </Select>
   );
-};
+});

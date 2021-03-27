@@ -1,27 +1,24 @@
 import { Select, SelectOption } from "components";
+import { FC, memo } from "react";
 
-export const ExerciseType = ({ state, control, errors }) => {
-  return (
-    <Select
-      label="Exercise Type"
-      name="ExerciseType"
-      control={control}
-      value={state["ExerciseType"]}
-      error={errors["ExerciseType"]?.message}
-      required
-    >
-      <SelectOption
-        value="Casual"
-        selected={state["ExerciseType"] === "Casual"}
+export const ExerciseType: FC<IPatientField> = memo(
+  ({ state, control, error }) => {
+    return (
+      <Select
+        label="Exercise Type"
+        name="ExerciseType"
+        control={control}
+        value={state}
+        error={error}
+        required
       >
-        Casual
-      </SelectOption>
-      <SelectOption
-        value="Structured"
-        selected={state["ExerciseType"] === "Structured"}
-      >
-        Structured
-      </SelectOption>
-    </Select>
-  );
-};
+        <SelectOption value="Casual" selected={state === "Casual"}>
+          Casual
+        </SelectOption>
+        <SelectOption value="Structured" selected={state === "Structured"}>
+          Structured
+        </SelectOption>
+      </Select>
+    );
+  }
+);

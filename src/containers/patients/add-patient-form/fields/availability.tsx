@@ -1,36 +1,30 @@
 import { Select, SelectOption } from "components";
+import { FC, memo } from "react";
 
-export const Availability = ({ control, state, errors }) => {
-  return (
-    <Select
-      label="Availability"
-      name="Availability"
-      control={control}
-      value={state["Availability"]}
-      error={errors["Availability"]?.message}
-      required
-    >
-      <SelectOption value="Daily" selected={state["Availability"] === "Daily"}>
-        Daily
-      </SelectOption>
-      <SelectOption
-        value="Weekly"
-        selected={state["Availability"] === "Weekly"}
+export const Availability: FC<IPatientField> = memo(
+  ({ control, state, error }) => {
+    return (
+      <Select
+        label="Availability"
+        name="Availability"
+        control={control}
+        value={state}
+        error={error}
+        required
       >
-        Weekly
-      </SelectOption>
-      <SelectOption
-        value="Fortnightly"
-        selected={state["Availability"] === "Fortnightly"}
-      >
-        Fortnightly
-      </SelectOption>
-      <SelectOption
-        value="Monthly"
-        selected={state["Availability"] === "Monthly"}
-      >
-        Monthly
-      </SelectOption>
-    </Select>
-  );
-};
+        <SelectOption value="Daily" selected={state === "Daily"}>
+          Daily
+        </SelectOption>
+        <SelectOption value="Weekly" selected={state === "Weekly"}>
+          Weekly
+        </SelectOption>
+        <SelectOption value="Fortnightly" selected={state === "Fortnightly"}>
+          Fortnightly
+        </SelectOption>
+        <SelectOption value="Monthly" selected={state === "Monthly"}>
+          Monthly
+        </SelectOption>
+      </Select>
+    );
+  }
+);

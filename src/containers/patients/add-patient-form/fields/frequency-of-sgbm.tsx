@@ -1,13 +1,16 @@
 import { Input } from "components";
+import { FC, memo } from "react";
 
-export const FrequencyOfSGBM = ({ register, errors }) => {
-  return (
-    <Input
-      label="Frequency Of SBGM"
-      name="FrequencyOfSBGM"
-      register={register}
-      error={errors["FrequencyOfSBGM"]?.message}
-      required
-    />
-  );
-};
+export const FrequencyOfSGBM: FC<IPatientField> = memo(
+  ({ register, error }) => {
+    return (
+      <Input
+        label="Frequency Of SBGM"
+        name="FrequencyOfSBGM"
+        register={register}
+        error={error}
+        required
+      />
+    );
+  }
+);

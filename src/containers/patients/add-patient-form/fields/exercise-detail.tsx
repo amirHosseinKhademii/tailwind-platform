@@ -1,13 +1,14 @@
 import { TextArea } from "components";
+import { FC, memo } from "react";
 
-export const ExerciseDetail = ({ register, errors }) => {
+export const ExerciseDetail: FC<IPatientField> = memo(({ register, error }) => {
   return (
     <TextArea
       label="Exercise Detail"
       name="ExerciseDetail"
       register={register}
-      error={errors["ExerciseDetail"]?.message}
+      error={error}
       required
     />
   );
-};
+});
