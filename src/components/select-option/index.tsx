@@ -17,7 +17,7 @@ export const SelectOption: FC<ISelectOption> = memo(
     if (multiple)
       return (
         <div
-          className="flex flex-row items-center justify-start w-full"
+          className="flex flex-row items-center justify-start w-full z-50"
           onClick={() => handleChange({ value, onChange })}
         >
           {selected ? (
@@ -39,7 +39,7 @@ export const SelectOption: FC<ISelectOption> = memo(
       return (
         <span
           key={key}
-          className={`cursor-pointer py-2 flex items-center hover:text-indigo-700  w-full ${
+          className={`cursor-pointer py-2 flex items-center hover:text-indigo-700  w-full z-50 ${
             selected ? "text-indigo-700 font-semibold" : " text-gray-600"
           }`}
           onClick={() => {

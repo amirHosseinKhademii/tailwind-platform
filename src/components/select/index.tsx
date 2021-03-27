@@ -1,8 +1,8 @@
 import { FC, cloneElement, memo } from "react";
 import { Controller } from "react-hook-form";
-import { ICArrowDown } from "icons";
 import { useToggle, useValidation } from "hooks";
 import { Error } from "components";
+import { ICArrowDown } from "icons";
 
 export const Select: FC<ISelect> = memo(
   ({
@@ -67,7 +67,7 @@ export const Select: FC<ISelect> = memo(
 
     const BackDrop = memo(() => (
       <div
-        className="opacity-0 absolute inset-0 z-0"
+        className="opacity-0 absolute inset-0 z-20"
         onClick={() => toggle()}
       ></div>
     ));
