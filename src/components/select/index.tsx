@@ -31,7 +31,7 @@ export const Select: FC<ISelect> = memo(
             <div>
               {(value || []).map((val, index) => (
                 <span className="text-gray-600 pr-2" key={index}>
-                  {val}
+                  {val},
                 </span>
               ))}
             </div>
@@ -45,7 +45,7 @@ export const Select: FC<ISelect> = memo(
     ));
 
     const DropBox: FC<ISelect> = memo(({ onChange }) => (
-      <div className="w-full h-auto max-h-60 overflow-auto overflow-x-hidden rounded flex flex-col items-start px-4 py-2  z-50 pt-18px  absolute top-1px border-2 shadow border-indigo-400 bg-white">
+      <div className="w-full flex flex-col items-start min-h-12 max-h-60 overflow-y-auto rounded  px-4 py-2  z-50 pt-18px  absolute top-1px border-2 shadow border-indigo-400 bg-white">
         {children.length
           ? children.map((child, index) =>
               cloneElement(child, {
