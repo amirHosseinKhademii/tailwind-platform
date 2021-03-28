@@ -10,7 +10,6 @@ export const Availability: FC<IPatientField> = memo(
         control={control}
         value={state}
         error={error}
-        required
       >
         <SelectOption value="Daily" selected={state === "Daily"}>
           Daily

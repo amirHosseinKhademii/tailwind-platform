@@ -8,8 +8,6 @@ export const DiabeticMedicalHistory: FC<IPatientField> = memo(
         label="Diabetic & Medical History"
         name="DiabeticHistory"
         register={register}
-        error={error}
-        required
       />
     );
   }

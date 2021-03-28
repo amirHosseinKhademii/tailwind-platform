@@ -9,8 +9,6 @@ export const LatestHBA1CReading: FC<IPatientField> = memo(
         name="LatestHbA1cReading"
         type="number"
         register={register}
-        error={error}
-        required
       />
     );
   }

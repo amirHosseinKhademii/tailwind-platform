@@ -7,8 +7,6 @@ export const DiscussionHeld: FC<IPatientField> = memo(({ register, error }) => {
       label="Discussion held and what was discussed"
       name="Discussionheld"
       register={register}
-      error={error}
-      required
     />
   );
 });

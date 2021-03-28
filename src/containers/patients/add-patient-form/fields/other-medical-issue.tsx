@@ -8,8 +8,7 @@ export const OtherMedicalIssue: FC<IPatientField> = memo(
         label="Other Medical Issue"
         name="OtherMedicalIssue"
         register={register}
-        error={error}
-        required
+        
       />
     );
   }

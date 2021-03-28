@@ -11,7 +11,6 @@ export const DKADetail: FC<IPatientField> = memo(
           register={register}
           error={error}
           max={200}
-          required
         />
       );
     else return null;

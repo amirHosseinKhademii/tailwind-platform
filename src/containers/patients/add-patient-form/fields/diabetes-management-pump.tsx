@@ -9,8 +9,6 @@ export const DiabetesManagementPump: FC<IPatientField> = memo(
         name="DiabetesManagementPump"
         control={control}
         value={state}
-        error={error}
-        required
       >
         <SelectOption value="640G" selected={state === "640G"}>
           640G

@@ -9,8 +9,6 @@ export const DateOfDiagnosisOfT1D: FC<IPatientField> = memo(
         name="DateOfDiagnosisOfT1D"
         type="date"
         register={register}
-        error={error}
-        required
       />
     );
   }

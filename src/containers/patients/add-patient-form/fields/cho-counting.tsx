@@ -10,22 +10,22 @@ export const CHOCounting: FC<IPatientField> = memo(
         control={control}
         value={state}
         error={error}
-        required
       >
+        <SelectOption value="DAFNE" selected={state === "DAFNE"}>
+          DAFNE
+        </SelectOption>
+        <SelectOption value="Food App" selected={state === "Food App"}>
+          Food App
+        </SelectOption>
+        <SelectOption
+          value="Other with text option"
+          selected={state === "Other with text option"}
+        >
+          Other with text option
+        </SelectOption>
+
         <SelectOption value="No" selected={state === "No"}>
           No
-        </SelectOption>
-        <SelectOption value="Beginner" selected={state === "Beginner"}>
-          Beginner
-        </SelectOption>
-        <SelectOption value="Intermediate" selected={state === "Intermediate"}>
-          Intermediate
-        </SelectOption>
-        <SelectOption value="Proficient" selected={state === "Proficient"}>
-          Proficient
-        </SelectOption>
-        <SelectOption value="Other" selected={state === "Other"}>
-          Other
         </SelectOption>
       </Select>
     );

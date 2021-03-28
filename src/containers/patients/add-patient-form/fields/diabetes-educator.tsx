@@ -10,7 +10,7 @@ export const DiabetesEducator: FC<IPatientField> = memo(
         register={register}
         error={error}
         max={50}
-        required
+       
       />
     );
   }

@@ -8,8 +8,6 @@ export const DoNotCallUntil: FC<IPatientField> = memo(({ register, error }) => {
       name="DoNotCallUntil"
       type="date"
       register={register}
-      error={error}
-      required
     />
   );
 });

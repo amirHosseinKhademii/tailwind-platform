@@ -9,7 +9,6 @@ export const ContactDate: FC<IPatientField> = memo(({ register, error }) => {
       name="ContactDate"
       register={register}
       error={error}
-      required
     />
   );
 });

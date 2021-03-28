@@ -10,7 +10,6 @@ export const AvailabilityDetail: FC<IPatientField> = memo(
         register={register}
         error={error}
         max={2000}
-        required
       />
     );
   }

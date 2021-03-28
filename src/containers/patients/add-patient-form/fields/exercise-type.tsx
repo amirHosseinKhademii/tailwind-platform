@@ -9,8 +9,6 @@ export const ExerciseType: FC<IPatientField> = memo(
         name="ExerciseType"
         control={control}
         value={state}
-        error={error}
-        required
       >
         <SelectOption value="Casual" selected={state === "Casual"}>
           Casual

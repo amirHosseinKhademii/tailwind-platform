@@ -7,8 +7,7 @@ export const NextStep: FC<IPatientField> = memo(({ register, error }) => {
       label="Next Step"
       name="NextStep"
       register={register}
-      error={error}
-      required
+     
     />
   );
 });

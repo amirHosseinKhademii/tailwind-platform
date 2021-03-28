@@ -23,9 +23,9 @@ export const Select: FC<ISelect> = memo(
       <div className="w-full flex flex-col">
         <div
           onClick={() => toggle()}
-          className={`focus:outline-none  w-full flex flex-row items-center justify-between h-12 cursor-pointer px-4  text-gray-300 rounded border ${
+          className={`focus:outline-none overflow-hidden  w-full flex flex-row items-center justify-between  cursor-pointer px-4  text-gray-300 rounded border ${
             error ? "border-red-400 shadow" : "border-gray-400"
-          }`}
+          } ${multiple ? "min-h-12" : "h-12"}`}
         >
           {multiple ? (
             <div>

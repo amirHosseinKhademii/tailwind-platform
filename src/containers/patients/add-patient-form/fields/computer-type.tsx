@@ -8,7 +8,6 @@ export const ComputerType: FC<IPatientField> = memo(({ register, error }) => {
       name="ComputerType"
       register={register}
       error={error}
-      required
     />
   );
 });

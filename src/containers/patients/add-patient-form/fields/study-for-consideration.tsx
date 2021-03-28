@@ -10,8 +10,6 @@ export const StudyForConsideration: FC<IPatientField> = ({
       label="Study For Consideration"
       name="StudyForConsideration"
       register={register}
-      error={error}
-      required
     />
   );
 };
