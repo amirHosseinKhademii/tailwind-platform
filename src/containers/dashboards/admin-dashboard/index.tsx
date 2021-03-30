@@ -20,7 +20,7 @@ export const AdminDashboard = () => {
             onClick={() => push("/admin/patients/add")}
             active={pathname === "/admin/patients/add"}
           >
-            Add Patient
+            Add
           </DropDownOption>
         </DropDown>
       </div>
