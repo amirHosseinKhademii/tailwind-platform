@@ -16,7 +16,7 @@ export const Drawer: FC<IDrawer> = memo(({ children }) => {
         <ICArrowLeft
           id="close"
           onClick={() => toggleDrawer()}
-          className="w-8 h-8 text-gray-600 cursor-pointer self-end mr-4  "
+          className="w-6 h-6 text-gray-400 cursor-pointer self-end mr-4  "
         />
       ) : (
         <ICMenu

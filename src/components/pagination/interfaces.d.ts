@@ -1,0 +1,3 @@
+interface IPagination {
+  className?: string;
+}

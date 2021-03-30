@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { ICWrapper } from "./wrapper";
 
-export const ICMenu: FC<IIcon> = ({ className, onClick }) => {
+export const ICMenu: FC<IIcon> = memo(({ className, onClick }) => {
   return (
     <ICWrapper className={className} onClick={onClick}>
       <path
@@ -10,4 +10,4 @@ export const ICMenu: FC<IIcon> = ({ className, onClick }) => {
       />
     </ICWrapper>
   );
-};
+});

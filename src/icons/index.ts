@@ -5,3 +5,5 @@ export * from "./arrow-left";
 export * from "./arrow-down";
 export * from "./expand";
 export * from "./arrow-up";
+export * from "./delete";
+export * from "./edit";

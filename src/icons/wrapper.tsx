@@ -1,6 +1,6 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 
-export const ICWrapper: FC<IIcon> = ({ children, onClick, className }) => {
+export const ICWrapper: FC<IIcon> = memo(({ children, onClick, className }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,4 +12,4 @@ export const ICWrapper: FC<IIcon> = ({ children, onClick, className }) => {
       {children}
     </svg>
   );
-};
+});
