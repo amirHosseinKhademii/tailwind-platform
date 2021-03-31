@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button SHOUD Match <Button/> TO SNAPSHOT 1`] = `
+<button
+  className=" px-2 min-h-12 rounded focus:outline-none shadow flex items-center justify-center  undefined hover:opacity-80"
+  id="button"
+/>
+`;

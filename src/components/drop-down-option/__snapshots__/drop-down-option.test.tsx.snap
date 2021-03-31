@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Drop down option SHOUD Match <DropDownOption/> TO SNAPSHOT 1`] = `
+<span
+  className=" my-2 cursor-pointer  px-4  hover:text-indigo-700 text-gray-400"
+  id="drop-down-option"
+/>
+`;
