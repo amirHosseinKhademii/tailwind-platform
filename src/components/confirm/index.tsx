@@ -14,13 +14,13 @@ export const Confirm: FC<IConfirm> = memo(
         <span className="pt-10 text-gray-600">{description}</span>
         <div className="flex flex-row justify-around w-full mt-10">
           <Button
-            className="h-10 bg-gray-300  w-40"
+            className="h-10 bg-gray-300 w-20 lg:w-40"
             onClick={() => toggleDialog({ open: false, type: null })}
           >
             Cancel
           </Button>
           <Button
-            className="h-10 bg-red-600 text-white w-40"
+            className="h-10 bg-red-600 text-white w-20 lg:w-40"
             onClick={() => {
               onConfirm();
               toggleDialog({ open: false, type: null });

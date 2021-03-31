@@ -7,10 +7,10 @@ const modalRoot = document.getElementById("modal-root");
 export const Modal: FC<IModal> = memo(
   ({ children, onClose, className, size }) => {
     return createPortal(
-      <div className="fixed inset-0 flex justify-center items-start z-40 py-40  ">
+      <div className="fixed inset-0 flex justify-center items-start z-40 py-10 md:py-40  ">
         <div
           slot="modal"
-          className={` flex flex-col items-center bg-white z-50 rounded  border border-gray-400 max-h-192  ${
+          className={` flex flex-col items-center bg-white z-50 rounded  border border-gray-400 max-h-130 md:max-h-192  ${
             size === "xl"
               ? "w-10/12"
               : size === "lg"
@@ -28,7 +28,7 @@ export const Modal: FC<IModal> = memo(
               slot="header"
             >
               <ICClose
-                className="w-10 h-10  text-gray-600 mr-8 my-6 cursor-pointer"
+                className=" w-6 h-6 md:w-10 md:h-10  text-gray-600 mr-2 md:mr-8 my-4 md:my-6 cursor-pointer"
                 onClick={onClose}
               />
             </div>
