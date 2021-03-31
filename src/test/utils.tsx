@@ -4,7 +4,11 @@ import renderer from "react-test-renderer";
 
 const setUp = (Component, props) => shallow(<Component {...props} />);
 
-const shallowFinder = (component, attr) => component.find(`[id='${attr}']`);
+const idFinder = (component, attr) => component.find(`[id='${attr}']`);
+
+const classFinder = (component, attr) => component.find(attr);
+
+const typeFinder = (component, attr) => component.find(`[type='${attr}']`);
 
 const itif = (condition) => (condition ? it : it.skip);
 
@@ -16,4 +20,4 @@ const useTree = (Component) => {
   return instance.toJSON();
 };
 
-export { shallowFinder, itif, useHook, setUp, useTree };
+export { idFinder, classFinder, itif, useHook, setUp, useTree, typeFinder };

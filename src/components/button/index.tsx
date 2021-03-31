@@ -10,6 +10,7 @@ export const Button: FC<IButton> = memo(
         disabled={disabled}
         onClick={onClick}
         type={type}
+        id="button"
       >
         {children}
       </button>
