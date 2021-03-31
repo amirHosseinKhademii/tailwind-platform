@@ -51,7 +51,7 @@ import {
   Submit,
 } from "./fields";
 
-export const AddPatientForm = () => {
+export const PatientForm = () => {
   const { onSubmit, state, register, control, dirty, errors } = useAddPatient();
 
   return (

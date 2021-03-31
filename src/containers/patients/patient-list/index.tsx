@@ -1,10 +1,11 @@
-import { List, ListItem, Text } from "components";
+import { Fragment, memo } from "react";
+import { List, ListItem, Pagination, Text } from "components";
+import { useUi } from "hooks";
 import { ICDelete, ICEdit } from "icons";
-import { Fragment } from "react";
-import { useHistory } from "react-router";
 
-export const PatientsList = () => {
-  const { push } = useHistory();
+export const PatientList = memo(() => {
+  const { toggleDialog } = useUi();
+
   return (
     <Fragment>
       <Text
@@ -25,19 +26,24 @@ export const PatientsList = () => {
               </span>
               <span className="text-gray-600 pl-8 ">1990-04-05</span>
             </div>
-            <div
-              slot="action"
-              className=" h-full flex items-center cursor-pointer"
-            >
+            <div slot="action" className=" h-full flex items-center ">
               <ICEdit
-                className="text-gray-600 w-5 h-5 mr-4"
-                onClick={() => push("/admin/patients/add")}
+                className="text-gray-600 w-5 h-5 mr-4 cursor-pointer"
+                onClick={() =>
+                  toggleDialog({ open: true, type: "patient-edit" })
+                }
               />
-              <ICDelete className="text-red-500 w-5 h-5" />
+              <ICDelete
+                className="text-red-500 w-5 h-5 cursor-pointer"
+                onClick={() =>
+                  toggleDialog({ open: true, type: "patient-delete" })
+                }
+              />
             </div>
           </ListItem>
         ))}
       </List>
+      <Pagination className="my-20" total={7} page={1} />
     </Fragment>
   );
-};
+});

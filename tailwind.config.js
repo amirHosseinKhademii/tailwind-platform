@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       spacing: {
         18: "4.5rem",
+        192: "48rem",
       },
       width: {
         drawer: "calc(100% - 4rem)",

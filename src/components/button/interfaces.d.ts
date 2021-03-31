@@ -3,5 +3,5 @@ interface IButton {
   onClick?: any;
   children?: any;
   disabled?: boolean;
-  type: "submit" | "button" | "reset";
+  type?: "submit" | "button" | "reset";
 }
