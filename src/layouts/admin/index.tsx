@@ -6,7 +6,7 @@ export const AdminLayout = ({ children }) => {
   const { open } = uiState.drawer;
 
   return (
-    <div>
+    <div className="">
       <AdminDashboard />
       <div
         className={` transition ease-linear duration-400  ${

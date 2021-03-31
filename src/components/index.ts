@@ -15,3 +15,4 @@ export * from "./text";
 export * from "./list";
 export * from "./list-item";
 export * from "./pagination";
+export * from "./modal";

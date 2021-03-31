@@ -8,7 +8,7 @@ export const Drawer: FC<IDrawer> = memo(({ children }) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 h-full flex  flex-col pt-4  shadow-2xl bg-gray-800 transition ease-linear duration-400  z-50  ${
+      className={`fixed top-0 left-0 h-full flex  flex-col pt-4  shadow-2xl bg-gray-800 transition ease-linear duration-400  z-30  ${
         open ? "w-52 md:w-80" : "w-16 "
       }`}
     >
