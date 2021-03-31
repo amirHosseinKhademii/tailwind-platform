@@ -14,12 +14,12 @@ export const Modal: FC<IModal> = memo(
             size === "xl"
               ? "w-10/12"
               : size === "lg"
-              ? "w-8/12"
+              ? "w-10/12 lg:w-8/12"
               : size === "md"
-              ? "w-1/2"
+              ? "w-10/12 lg:w-1/2"
               : size === "sm"
-              ? "w-4/12"
-              : "w-1/2"
+              ? "w-10/12 lg:w-4/12"
+              : "w-10/12 lg:w-1/2"
           } `}
         >
           {onClose && (
