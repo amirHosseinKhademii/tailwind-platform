@@ -14,7 +14,7 @@ export const PatientList = memo(() => {
       >
         Patinets List
       </Text>
-      <List className="mt-8 px-0 lg:px-80">
+      <List className="mt-8 px-0 lg:px-26 xl:px-40">
         {Array.from(new Array(10)).map((item, index) => (
           <ListItem
             key={index}

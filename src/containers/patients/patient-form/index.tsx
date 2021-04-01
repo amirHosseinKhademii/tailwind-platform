@@ -55,7 +55,7 @@ export const PatientForm = () => {
   const { onSubmit, state, register, control, dirty, errors } = useAddPatient();
 
   return (
-    <Form className="w-full mt-10" onSubmit={onSubmit}>
+    <Form className="w-full my-10" onSubmit={onSubmit}>
       <Text size="header">Patient Bio</Text>
       <Grid className=" pt-6 mt-4 border-t border-gray-400">
         <Surname register={register} error={errors["Surname"]?.message} />
