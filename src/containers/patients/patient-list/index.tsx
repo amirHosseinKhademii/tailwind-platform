@@ -12,7 +12,7 @@ export const PatientList = memo(() => {
         size="header"
         className="w-full flex flex-col items-start mt-10 border-b border-gray-400 pb-6"
       >
-        Patinets List
+        Patients List
       </Text>
       <List className="mt-8 px-0 lg:px-26 xl:px-40">
         {Array.from(new Array(10)).map((item, index) => (
