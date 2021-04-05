@@ -11,7 +11,7 @@ export const Header = () => {
   return (
     <header
       className={` h-14 bg-gray-800 flex items-center justify-between pr-4 md:pr-10 $${
-        open
+        open && !pathname.includes("login")
           ? "w-full lg:transform lg:translate-x-80 lg:w-drawer-open pl-4 md:pl-10"
           : "w-full pl-2"
       }`}
@@ -26,7 +26,7 @@ export const Header = () => {
                 className="w-8 h-8 text-white cursor-pointer self-center mr-4 md:mr-10"
               />
             )}
-        <LinkNav size="title" className="">
+        <LinkNav size="title" path="/">
           Home
         </LinkNav>
       </div>
