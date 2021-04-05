@@ -19,20 +19,22 @@ export const Header = () => {
       <div className="flex items-center">
         {open
           ? null
-          : pathname.includes("admin") && (
+          : !pathname.includes("login") && (
               <ICMenu
                 id="menu"
                 onClick={() => toggleDrawer()}
-                className="w-10 h-10 text-white cursor-pointer self-center mr-4 md:mr-10"
+                className="w-8 h-8 text-white cursor-pointer self-center mr-4 md:mr-10"
               />
             )}
         <LinkNav size="title" className="">
           Home
         </LinkNav>
       </div>
-      <LinkNav size="small" path="/login">
-        Sign in
-      </LinkNav>
+      {!pathname.includes("login") && (
+        <LinkNav size="small" path="/login">
+          Sign in
+        </LinkNav>
+      )}
     </header>
   );
 };

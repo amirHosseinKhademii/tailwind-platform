@@ -27,7 +27,7 @@ export const useValidation = (props: {
           const currentYear = new Date().getFullYear();
           const year = new Date(value).getFullYear();
           if (start <= today) {
-            return "The ate should be later than today.";
+            return "The date should be later than today.";
           }
           if (year < currentYear - 100 || year > currentYear + 100)
             return "Bad format";
