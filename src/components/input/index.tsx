@@ -14,8 +14,9 @@ export const Input: FC<IInput> = memo(
     required,
     max,
     min,
+    later,
   }) => {
-    const { validate } = useValidation({ required, max, min });
+    const { validate } = useValidation({ required, max, min, later });
 
     return (
       <div className={`flex flex-col items-start w-full ${className}`}>

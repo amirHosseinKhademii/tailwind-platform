@@ -8,6 +8,7 @@ interface IInput {
   error?: string;
   name?: string;
   id?: string;
+  later?: boolean | undefined;
   required?: boolean | undefined;
   max?: string | number | undefined;
   min?: string | number | undefined;
