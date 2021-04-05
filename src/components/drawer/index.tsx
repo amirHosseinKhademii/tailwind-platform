@@ -1,5 +1,5 @@
 import { FC, memo } from "react";
-import { ICMenu, ICArrowLeft } from "icons";
+import { ICMenu, ICClose } from "icons";
 import { useUi } from "hooks";
 
 export const Drawer: FC<IDrawer> = memo(({ children }) => {
@@ -13,7 +13,7 @@ export const Drawer: FC<IDrawer> = memo(({ children }) => {
       }`}
     >
       {open ? (
-        <ICArrowLeft
+        <ICClose
           id="close"
           onClick={() => toggleDrawer()}
           className="w-6 h-6 text-gray-400 cursor-pointer self-end mr-4  "

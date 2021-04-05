@@ -9,7 +9,7 @@ export const DropDown: FC<IDropdown> = memo(
     return (
       <div className="w-full  flex flex-col " id="drop-down">
         <button
-          className={`w-full flex justify-between items-center cursor-pointer text-gray-400 hover:text-indigo-500 focus:outline-none ${className}`}
+          className={`w-full flex justify-between items-center cursor-pointer text-white hover:text-indigo-500 focus:outline-none ${className}`}
           onClick={() => toggle()}
           id="button"
         >
@@ -21,7 +21,7 @@ export const DropDown: FC<IDropdown> = memo(
           )}
         </button>
         <div
-          className={`w-full  rounded transition-all ease-linear duration-200 pl-4 py-2   ${
+          className={`w-full  rounded transition-all ease-linear duration-200 pl-1 py-2   ${
             open ? " h-auto min-h-10" : "h-0"
           }`}
         >
