@@ -17,3 +17,5 @@ export * from "./list-item";
 export * from "./pagination";
 export * from "./modal";
 export * from "./confirm";
+export * from "./header";
+export * from "./link-nav";
