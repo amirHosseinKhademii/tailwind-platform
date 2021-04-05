@@ -1,9 +1,10 @@
 import { useLocation, matchPath } from "react-router-dom";
 import { routes } from "./routes";
-import { AdminLayout } from "layouts";
+import { AdminLayout, AuthLayout } from "layouts";
 
 const layouts = {
   admin: AdminLayout,
+  auth: AuthLayout,
 };
 
 const DefaultLayout = ({ children }) => <>{children}</>;
