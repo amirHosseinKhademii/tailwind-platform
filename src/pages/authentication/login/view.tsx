@@ -6,7 +6,7 @@ const Login = () => {
 
   return (
     <Form
-      className="w-full px-130 grid grid-cols-1 gap-y-8"
+      className="w-full grid grid-cols-1 gap-y-8"
       onSubmit={handleSubmit((state) => console.log(state))}
     >
       <Text className="text-center mb-10" size="title">

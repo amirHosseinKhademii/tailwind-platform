@@ -1,0 +1,38 @@
+import { LinkNav } from "components";
+import { useUi } from "hooks";
+import { ICMenu } from "icons";
+import { useLocation } from "react-router";
+
+export const Header = () => {
+  const { pathname } = useLocation();
+  const { toggleDrawer, uiState } = useUi();
+  const { open } = uiState.drawer;
+
+  return (
+    <header
+      className={` h-14 bg-gray-800 flex items-center justify-between pr-4 md:pr-10 $${
+        open
+          ? "w-full lg:transform lg:translate-x-80 lg:w-drawer-open pl-4 md:pl-10"
+          : "w-full pl-2"
+      }`}
+    >
+      <div className="flex items-center">
+        {open
+          ? null
+          : pathname.includes("admin") && (
+              <ICMenu
+                id="menu"
+                onClick={() => toggleDrawer()}
+                className="w-10 h-10 text-white cursor-pointer self-center mr-4 md:mr-10"
+              />
+            )}
+        <LinkNav size="title" className="">
+          Home
+        </LinkNav>
+      </div>
+      <LinkNav size="small" path="/login">
+        Sign in
+      </LinkNav>
+    </header>
+  );
+};
