@@ -15,9 +15,9 @@ export const DropDown: FC<IDropdown> = memo(
         >
           <span className=" text-lg">{label}</span>
           {open ? (
-            <ICArrowUp className="w-5 h-5" id="arrow-up" />
+            <ICArrowUp className="w-4 h-4" id="arrow-up" />
           ) : (
-            <ICArrowDown className=" w-5 h-5 " id="arrow-down" />
+            <ICArrowDown className=" w-4 h-4 " id="arrow-down" />
           )}
         </button>
         <div

@@ -30,7 +30,11 @@ export const Header = () => {
           Home
         </LinkNav>
       </div>
-      {!pathname.includes("login") && (
+      {pathname.includes("login") ? (
+        <LinkNav size="small" path="/admin/patients">
+          Patients
+        </LinkNav>
+      ) : (
         <LinkNav size="small" path="/login">
           Sign in
         </LinkNav>

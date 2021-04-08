@@ -1,5 +1,5 @@
 interface IPagination {
   className?: string;
-  total?: number | string;
+  total?: any;
   page?: number | string;
 }
