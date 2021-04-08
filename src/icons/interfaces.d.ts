@@ -1,6 +1,6 @@
 interface IIcon {
   className?: string;
   onClick?: () => void;
-  children?: JSX.Element;
+  children?: any;
   id?: string;
 }

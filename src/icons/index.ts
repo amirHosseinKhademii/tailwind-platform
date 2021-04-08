@@ -7,3 +7,5 @@ export * from "./expand";
 export * from "./arrow-up";
 export * from "./delete";
 export * from "./edit";
+export * from "./plus";
+export * from "./check";
