@@ -12,8 +12,8 @@ export const AdminLayout = ({ children }) => {
       <div
         className={` transition ease-linear duration-200  ${
           open
-            ? "w-full lg:transform lg:translate-x-80 lg:w-drawer-open"
-            : "w-full"
+            ? "w-full md:transform md:translate-x-64 md:w-drawer-open"
+            : "w-full md:transform md:translate-x-16 md:w-drawer"
         }`}
       >
         {children}

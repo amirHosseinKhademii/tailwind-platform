@@ -7,7 +7,7 @@ export const LinkNav: FC<ILinkNav> = ({ children, size, path }) => {
   return (
     <button
       onClick={() => (path ? push(path) : {})}
-      className={`text-white cursor-pointer focus:outline-none hover:text-gray-300 ${
+      className={` cursor-pointer focus:outline-none  ${
         size === "title"
           ? "text-lg"
           : size === "small"

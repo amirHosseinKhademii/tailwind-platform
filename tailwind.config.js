@@ -1,8 +1,12 @@
+const colors = require("tailwindcss/colors");
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        "blue-gray": colors.blueGray,
+      },
       spacing: {
         18: "4.5rem",
         110: "30rem",
@@ -12,7 +16,7 @@ module.exports = {
       },
       width: {
         drawer: "calc(100% - 4rem)",
-        "drawer-open": "calc(100% - 20rem)",
+        "drawer-open": "calc(100% - 16rem)",
       },
       minHeight: {
         0: "0px",
