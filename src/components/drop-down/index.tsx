@@ -24,9 +24,9 @@ export const DropDown: FC<IDropdown> = memo(
           </div>
 
           {open ? (
-            <ICChevronDown className="w-4 h-4" id="arrow-up" />
+            <ICChevronDown className="w-3 h-3" id="arrow-up" />
           ) : (
-            <ICChevronRight className=" w-4 h-4 " id="arrow-down" />
+            <ICChevronRight className="w-3 h-3 " id="arrow-down" />
           )}
         </button>
         <div

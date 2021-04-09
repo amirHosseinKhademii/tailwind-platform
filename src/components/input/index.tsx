@@ -29,7 +29,7 @@ export const Input: FC<IInput> = memo(
           className={` ${
             error
               ? "border-red-400 shadow "
-              : "border-gray-400 focus:ring-1  focus:ring-indigo-400"
+              : "border-gray-300 focus:ring-1  focus:ring-indigo-400"
           } w-full h-12 border  rounded  focus:outline-none focus:shadow px-4 text-gray-600 `}
         />
         <Error error={error} />
