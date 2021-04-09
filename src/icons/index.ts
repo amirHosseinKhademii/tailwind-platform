@@ -9,3 +9,7 @@ export * from "./delete";
 export * from "./edit";
 export * from "./plus";
 export * from "./check";
+export * from "./chevron-right";
+export * from "./chevron-up";
+export * from "./chevron-down";
+export * from "./peoples";
