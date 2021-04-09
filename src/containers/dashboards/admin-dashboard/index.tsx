@@ -21,13 +21,13 @@ export const AdminDashboard = () => {
           <DropDown
             label="Patients"
             active={pathname.includes("patients")}
-            icon={() => <ICPeoples className="w-6 h-6 mx-2 text-gray-400  " />}
+            icon={() => <ICPeoples className="w-6 h-6 mx-3 text-gray-400  " />}
           >
             <DropDownOption
               onClick={() => push("/admin/patients")}
               active={pathname === "/admin/patients"}
             >
-              Patients
+              Patients list
             </DropDownOption>
             <DropDownOption
               onClick={() => push("/admin/patients/add")}
