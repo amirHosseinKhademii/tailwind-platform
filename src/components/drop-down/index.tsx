@@ -34,7 +34,7 @@ export const DropDown: FC<IDropdown> = memo(
             open ? " h-auto min-h-10" : "h-0"
           }`}
         >
-          {open && <div className="flex flex-col pt-2">{children}</div>}
+          {open && <div className="flex flex-col pt-2 pl-4">{children}</div>}
         </div>
       </div>
     );

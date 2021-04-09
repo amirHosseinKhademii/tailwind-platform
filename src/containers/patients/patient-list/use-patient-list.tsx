@@ -25,11 +25,11 @@ export const usePatientList = () => {
         render: () => (
           <Fragment>
             <ICEdit
-              className="text-gray-600 w-5 h-5 mr-4 cursor-pointer"
+              className="text-amber-500 w-5 h-5 mr-4 cursor-pointer "
               onClick={() => toggleDialog({ open: true, type: "patient-edit" })}
             />
             <ICDelete
-              className="text-red-500 w-5 h-5 cursor-pointer"
+              className="text-red-500 w-5 h-5 cursor-pointer "
               onClick={() =>
                 toggleDialog({ open: true, type: "patient-delete" })
               }

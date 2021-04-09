@@ -6,6 +6,12 @@ module.exports = {
     extend: {
       colors: {
         "blue-gray": colors.blueGray,
+        rose: colors.rose,
+        teal: colors.teal,
+        lime: colors.lime,
+        orange: colors.orange,
+        amber: colors.amber,
+        cyan: colors.cyan,
       },
       spacing: {
         18: "4.5rem",

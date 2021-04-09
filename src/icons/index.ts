@@ -13,3 +13,5 @@ export * from "./chevron-right";
 export * from "./chevron-up";
 export * from "./chevron-down";
 export * from "./peoples";
+export * from "./chevron-left";
+export * from "./person";

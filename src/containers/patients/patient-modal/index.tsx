@@ -19,7 +19,7 @@ export const PatientModal = memo(() => {
   else if (uiState.dialog.open && uiState.dialog.type === "patient-delete")
     return (
       <Confirm
-        description="You Are Deleting This Patinet."
+        description="You are deleting this patient."
         onConfirm={() => console.log("Deleted")}
       />
     );

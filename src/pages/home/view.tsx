@@ -1,5 +1,5 @@
 const View = () => {
-  return <div>Home</div>;
+  return <div></div>;
 };
 
 export default View;
