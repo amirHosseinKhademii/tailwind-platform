@@ -24,7 +24,7 @@ export const Input: FC<IInput> = memo(
         <input
           type={type}
           placeholder={placeholder}
-          ref={register({ validate })}
+          ref={register && register({ validate })}
           name={name}
           className={` ${
             error

@@ -13,7 +13,7 @@ export const AdminDashboard = () => {
 
   return (
     <Drawer>
-      <p className="text-white text-xl bg-indigo-900 h-14 flex items-center justify-center">
+      <p className="text-white text-xl bg-cyan-700 h-14 flex items-center justify-center">
         DTRG
       </p>
       {open ? (

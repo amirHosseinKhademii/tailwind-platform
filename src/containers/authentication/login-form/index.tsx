@@ -10,7 +10,7 @@ export const LoginForm = memo(() => {
       className="w-11/12 md:w-2/3 lg:w-1/2 mx-auto mt-20 grid grid-cols-1 gap-y-8 border border-gray-300 rounded shadow "
       onSubmit={handleSubmit((state) => console.log(state))}
     >
-      <div className="text-center pt-6 pb-3  bg-indigo-700 h-18 text-white rounded-t text-lg font-semibold ">
+      <div className="text-center pt-6 pb-3  bg-cyan-600 h-18 text-white rounded-t text-lg font-semibold ">
         Log in
       </div>
       <div className="grid grid-cols-1 gap-y-8 px-10 py-4">
