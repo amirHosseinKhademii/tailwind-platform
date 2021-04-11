@@ -25,7 +25,7 @@ export const PatientList = memo(() => {
         </div>
       </div>
       <div className=" w-full my-10">
-        <Table data={data} columns={columns} />
+        <Table data={data} columns={columns} expandable />
       </div>
     </Fragment>
   );

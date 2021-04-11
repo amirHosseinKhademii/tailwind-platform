@@ -10,6 +10,7 @@ interface ITable {
   columns?: Array<TColumn>;
   className?: string;
   data?: any;
+  expandable?: boolean;
 }
 
 interface ITableCell {
@@ -22,6 +23,8 @@ interface ITableCell {
 interface ITableRow {
   item?: any;
   columns?: Array<TColumn>;
+  index?: any;
+  expandable?: boolean;
 }
 
 interface ITableHead {
