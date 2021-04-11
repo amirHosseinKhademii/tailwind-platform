@@ -21,7 +21,15 @@ export const AdminDashboard = () => {
           <DropDown
             label="Patients"
             active={pathname.includes("patients")}
-            icon={() => <ICPeoples className="w-6 h-6 mx-3 text-gray-400  " />}
+            icon={() => (
+              <ICPeoples
+                className="w-6 h-6 mx-3 text-gray-400 cursor-pointer "
+                onClick={(e) => {
+                  e.stopPropagation();
+                  push("/admin/patients");
+                }}
+              />
+            )}
           >
             <DropDownOption
               onClick={() => push("/admin/patients")}
@@ -39,7 +47,10 @@ export const AdminDashboard = () => {
         </Fragment>
       ) : (
         <div className=" flex flex-col items-center">
-          <ICPeoples className="w-6 h-6 mt-4  text-gray-400 " />
+          <ICPeoples
+            className="w-6 h-6 mt-4  text-gray-400 cursor-pointer"
+            onClick={() => push("/admin/patients")}
+          />
         </div>
       )}
     </Drawer>
