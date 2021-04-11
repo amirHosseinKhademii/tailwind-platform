@@ -20,6 +20,9 @@ module.exports = {
         170: "40rem",
         192: "48rem",
       },
+      fontSize: {
+        "2xs": ["0.6rem", { lineHeight: "0.85rem" }],
+      },
       width: {
         drawer: "calc(100% - 4rem)",
         "drawer-open": "calc(100% - 16rem)",

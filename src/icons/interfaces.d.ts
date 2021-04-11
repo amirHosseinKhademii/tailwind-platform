@@ -1,6 +1,6 @@
 interface IIcon {
   className?: string;
-  onClick?: () => void;
+  onClick?: any;
   children?: any;
   id?: string;
 }

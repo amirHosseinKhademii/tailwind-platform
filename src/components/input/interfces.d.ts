@@ -12,4 +12,6 @@ interface IInput {
   required?: boolean | undefined;
   max?: string | number | undefined;
   min?: string | number | undefined;
+  size?: "small" | "default" | "large";
+  disabled?:boolean
 }

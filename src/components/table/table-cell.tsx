@@ -1,5 +1,4 @@
 import { FC, memo, useCallback, useState } from "react";
-import { ICCheck } from "icons";
 import { Check } from "components/check";
 
 export const TableCell: FC<ITableCell> = memo(
@@ -7,7 +6,8 @@ export const TableCell: FC<ITableCell> = memo(
     const [checkList, setCheckList] = useState([]);
 
     const handleCheck = useCallback(
-      (id) => {
+      (id) => (e) => {
+        e.stopPropagation();
         const exist = id && checkList.find((item) => item == id);
         if (exist) setCheckList((prev) => prev.filter((item) => item != id));
         else setCheckList((prev) => [...prev, id]);
@@ -21,10 +21,10 @@ export const TableCell: FC<ITableCell> = memo(
           index === columns.length - 1 ? " justify-end" : "justify-start"
         }`}
       >
-        {column.check && (
+        {column.checkable && (
           <Check
             checked={checkList.find((it) => it == item.id) ? true : false}
-            onClick={() => handleCheck(item.id)}
+            onClick={handleCheck(item.id)}
             className="mr-2"
           />
         )}
