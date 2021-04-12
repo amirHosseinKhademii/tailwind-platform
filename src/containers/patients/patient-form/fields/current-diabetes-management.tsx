@@ -1,12 +1,12 @@
 import { Select, SelectOption } from "components";
 import { FC, memo } from "react";
 
-export const DiabetesManagementPump: FC<IPatientField> = memo(
+export const CurrentDiabetesManagement: FC<IPatientField> = memo(
   ({ control, state, error }) => {
     return (
       <Select
-        label="Diabetes Management Pump"
-        name="DiabetesManagementPump"
+        label="Current Diabetes Management"
+        name="CurrentDiabetesManagement"
         control={control}
         value={state}
       >

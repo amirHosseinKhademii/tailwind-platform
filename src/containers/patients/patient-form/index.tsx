@@ -7,30 +7,28 @@ import {
   CurrentStudy,
   DateOfBirth,
   DiabetesEducator,
-  DiabetesManagementPump,
+  CurrentDiabetesManagement,
   DKADetail,
   DKAExperience,
   EmailAddress,
   Endocrinologist,
   ExerciseDetail,
   ExerciseType,
-  FrequencyOfSGBM,
+  FrequencyOfDailyFingerstick,
   Gender,
   HadAbnormalKidney,
   HadFeetNeuropathy,
   HadretionopathyDiag,
   HadSevereHypo,
   HadUnawareHypo,
-  Insulin,
+  CurrentInsulinUse,
   LatestHBA1CReading,
   LatestHBA1CReadingDate,
   PastCGMWear,
   PhoneNumber,
   PreferedContactMethod,
-  PreferedContactTime,
+  PreferedContactDate,
   PreviousStudy1,
-  PreviousStudy2,
-  PreviousStudy3,
   PumpDetail,
   State,
   Subrub,
@@ -72,18 +70,8 @@ export const PatientForm = () => {
         />
         <PreviousStudy1
           control={control}
-          state={state["PreviousStudy1"]}
-          error={errors["PreviousStudy1"]?.message}
-        />
-        <PreviousStudy2
-          control={control}
-          state={state["PreviousStudy2"]}
-          error={errors["PreviousStudy2"]?.message}
-        />
-        <PreviousStudy3
-          control={control}
-          state={state["PreviousStudy3"]}
-          error={errors["PreviousStudy3"]?.message}
+          state={state["PreviousStudy"]}
+          error={errors["PreviousStudy"]?.message}
         />
       </Grid>
       <Grid className=" pt-6 mt-4">
@@ -102,9 +90,9 @@ export const PatientForm = () => {
           register={register}
           error={errors["PhoneNumber"]?.message}
         />
-        <PreferedContactTime
+        <PreferedContactDate
           register={register}
-          error={errors["PreferedContactTime"]?.message}
+          error={errors["PreferedContactDate"]?.message}
         />
         <PreferedContactMethod
           control={control}
@@ -121,7 +109,7 @@ export const PatientForm = () => {
         <State register={register} error={errors["State"]?.message} />
       </Grid>
       <Text size="header" className="mt-10">
-        Diabetic & Medical History
+        Medical History
       </Text>
       <Grid className=" pt-6 mt-4 border-t border-gray-400">
         <DateOfDiagnosisOfT1D
@@ -146,19 +134,22 @@ export const PatientForm = () => {
         />
       </Grid>
       <Grid className=" pt-6 mt-4">
-        <DiabetesManagementPump
+        <CurrentDiabetesManagement
           control={control}
-          state={state["DiabetesManagementPump"]}
-          error={errors["DiabetesManagementPump"]?.message}
+          state={state["CurrentDiabetesManagement"]}
+          error={errors["CurrentDiabetesManagement"]?.message}
         />
         <PumpDetail
           register={register}
-          state={state["DiabetesManagementPump"]}
+          state={state["PumpDetails"]}
           error={errors["PumpDetails"]?.message}
         />
       </Grid>
       <Grid className=" pt-6 mt-4">
-        <Insulin control={control} state={state["Insulin"]} />
+        <CurrentInsulinUse
+          control={control}
+          state={state["CurrentInsulinUse"]}
+        />
       </Grid>
       <Grid className=" pt-6 mt-4">
         <CurrentCGMWear
@@ -173,7 +164,10 @@ export const PatientForm = () => {
         />
       </Grid>
       <Grid className=" pt-6 mt-4">
-        <FrequencyOfSGBM control={control} state={state["FrequencyOfSBGM"]} />
+        <FrequencyOfDailyFingerstick
+          control={control}
+          state={state["FrequencyOfDailyFingerstick"]}
+        />
       </Grid>
       <Grid className=" pt-6 mt-4">
         <Endocrinologist
@@ -229,7 +223,7 @@ export const PatientForm = () => {
         />
       </Grid>
       <Text size="header" className="mt-10">
-        Logistic
+        Logistics
       </Text>
       <Grid className=" pt-6 mt-4 border-t border-gray-400">
         <WillComeToSt control={control} state={state["WillComeToStVincent"]} />
@@ -240,8 +234,9 @@ export const PatientForm = () => {
           state={state["HasInternetAccess"]}
         />
         <ComputerType
-          register={register}
+          control={control}
           error={errors["ComputerType"]?.message}
+          state={state["ComputerType"]}
         />
       </Grid>
       <Grid className=" pt-6 mt-4">
