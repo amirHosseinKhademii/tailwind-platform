@@ -13,6 +13,7 @@ export const SelectOption: FC<ISelectOption> = memo(
     multiple = false,
     state = [],
     disabled,
+    onClick,
   }) => {
     const { handleChange } = useSelectOption({ state });
 
@@ -23,7 +24,10 @@ export const SelectOption: FC<ISelectOption> = memo(
             disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"
           }`}
           onClick={() => {
-            if (!disabled) handleChange({ value, onChange });
+            if (!disabled) {
+              handleChange({ value, onChange });
+              onClick && onClick(toggle);
+            }
           }}
         >
           <Check checked={selected} className="mr-3" />
@@ -45,8 +49,9 @@ export const SelectOption: FC<ISelectOption> = memo(
             selected ? "text-indigo-700 font-semibold" : " text-gray-600"
           } ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
           onClick={() => {
-            toggle();
             onChange(value);
+            toggle();
+            onClick && onClick(toggle);
           }}
         >
           {children}

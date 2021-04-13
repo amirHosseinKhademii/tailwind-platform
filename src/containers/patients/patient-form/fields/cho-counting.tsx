@@ -1,17 +1,22 @@
 import { Select, SelectOption } from "components";
-import { FC, memo } from "react";
+import { FC, memo, useState } from "react";
 
 export const CHOCounting: FC<IPatientField> = memo(
-  ({ control, state, error }) => {
+  ({ control, state, error, register, setValue }) => {
+    const [isOther, setIsOther] = useState(false);
+
     return (
       <Select
         label="CHO Counting"
         name="CHOCounting"
         control={control}
+        register={register}
+        setValue={setValue}
         value={state}
         error={error}
+        isInput={isOther}
+        onCancel={() => setIsOther(!isOther)}
         multiple
-        input
       >
         <SelectOption value="DAFNE" selected={state && state.includes("DAFNE")}>
           DAFNE
@@ -39,7 +44,8 @@ export const CHOCounting: FC<IPatientField> = memo(
         <SelectOption
           value="Other"
           selected={state && state.includes("Other")}
-          click={(toggle) => toggle()}
+          onClick={() => setIsOther(!isOther)}
+          disabled={state && state.length > 0}
         >
           Other
         </SelectOption>

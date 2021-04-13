@@ -50,7 +50,15 @@ import {
 } from "./fields";
 
 export const PatientForm = () => {
-  const { onSubmit, state, register, control, dirty, errors } = useAddPatient();
+  const {
+    onSubmit,
+    state,
+    register,
+    control,
+    dirty,
+    errors,
+    setValue,
+  } = useAddPatient();
 
   return (
     <Form className="w-full " onSubmit={onSubmit}>
@@ -121,6 +129,7 @@ export const PatientForm = () => {
           state={state["CHOCounting"]}
           error={errors["CHOCounting"]?.message}
           register={register}
+          setValue={setValue}
         />
       </Grid>
       <Grid className=" pt-6 mt-4">
