@@ -3,14 +3,9 @@ import { memo } from "react";
 
 export const PatientDetails = memo(() => {
   return (
-    <div className="grid grid-cols-5 gap-3 w-full">
-      <Input size="small" disabled label="Surname" value="Amir" />
-      <Input size="small" disabled label="Christian name" value="Khademi" />
+    <div className="grid gird-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3 w-full">
       <Input size="small" disabled label="Current Study" value="Amir" />
-      <Input size="small" disabled label="Previous Styudy 1" value="Amir" />
-      <Input size="small" disabled label="Previous Styudy 2" value="Amir" />
-      <Input size="small" disabled label="Previous Styudy 3" value="Amir" />
-      <Input size="small" disabled label="Date of birth" value="1990-04-05" />
+      <Input size="small" disabled label="Previous Styudy" value="Amir" />
       <Input size="small" disabled label="Gender" value="Male" />
       <Input size="small" disabled label="Phone number" value="123456789" />
       <Input
@@ -114,32 +109,45 @@ export const PatientDetails = memo(() => {
       <Input
         size="small"
         disabled
-        label="DKA Expreience In Past 12 Month Requiring Hospitalization"
+        label="In the past 12 months, have you had Diabetic Ketoacidosis (DKA) requiring a hospital admission?"
         value="Yes"
         className="max-h-12"
       />
       <Input
         size="small"
         disabled
-        label="Had Severe Hypoglycaemia Events Requiring 3rd Party Assistance?"
-        value="Yes"
-        className="max-h-12"
-      />
-      <Input size="small" disabled label="Had Unaware Hypo?" value="No" />
-      <Input
-        size="small"
-        disabled
-        label="Had Abnormal kidney Function Diagnosis?"
+        label="In the past 12 months, have you had a severe Hypoglycaemic event requiring 3rd party assistance?"
         value="Yes"
         className="max-h-12"
       />
       <Input
         size="small"
         disabled
-        label="Had Retionopathy Diagnosis?"
+        label="Have you ever been diagnosed with Hypo-unawareness?"
         value="No"
+        className="max-h-12"
       />
-      <Input size="small" disabled label="Had Feet Neuropathy?" value="Yes" />
+      <Input
+        size="small"
+        disabled
+        label="Have you ever been diagnosed with abnormal kidney function?"
+        value="Yes"
+        className="max-h-12"
+      />
+      <Input
+        size="small"
+        disabled
+        label="Have you ever been diagnosed with Retinopathy?"
+        value="No"
+        className="max-h-12"
+      />
+      <Input
+        size="small"
+        disabled
+        label="Have you ever been diagnosed with foot neuropathy?"
+        value="Yes"
+        className="max-h-12"
+      />
       <Input size="small" disabled label="Other Medical Issue" value="Test" />
       <Input
         size="small"

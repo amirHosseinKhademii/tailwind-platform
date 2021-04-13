@@ -82,6 +82,9 @@ export const CurrentStudy: FC<IPatientField> = memo(
         >
           Insulet
         </SelectOption>
+        <SelectOption value="Zeus" selected={state && state.includes("Zeus")}>
+          Zeus
+        </SelectOption>
         <SelectOption value="Other" selected={state && state.includes("Other")}>
           Other
         </SelectOption>

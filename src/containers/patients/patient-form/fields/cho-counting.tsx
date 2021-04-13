@@ -1,31 +1,53 @@
 import { Select, SelectOption } from "components";
-import { FC, memo } from "react";
+import { FC, memo, useState } from "react";
 
 export const CHOCounting: FC<IPatientField> = memo(
-  ({ control, state, error }) => {
+  ({ control, state, error, register, setValue }) => {
+    const [isOther, setIsOther] = useState(false);
+
     return (
       <Select
         label="CHO Counting"
         name="CHOCounting"
         control={control}
+        register={register}
+        setValue={setValue}
         value={state}
         error={error}
+        isInput={isOther}
+        onCancel={() => setIsOther(!isOther)}
+        multiple
       >
-        <SelectOption value="DAFNE" selected={state === "DAFNE"}>
+        <SelectOption value="DAFNE" selected={state && state.includes("DAFNE")}>
           DAFNE
         </SelectOption>
-        <SelectOption value="Food App" selected={state === "Food App"}>
+        <SelectOption
+          value="Food App"
+          selected={state && state.includes("Food App")}
+        >
           Food App
         </SelectOption>
         <SelectOption
-          value="Other with text option"
-          selected={state === "Other with text option"}
+          value="Yes"
+          selected={state && state.includes("Yes")}
+          disabled={state && state.includes("No")}
         >
-          Other with text option
+          Yes
         </SelectOption>
-
-        <SelectOption value="No" selected={state === "No"}>
+        <SelectOption
+          disabled={state && state.includes("Yes")}
+          value="No"
+          selected={state && state.includes("No")}
+        >
           No
+        </SelectOption>
+        <SelectOption
+          value="Other"
+          selected={state && state.includes("Other")}
+          onClick={() => setIsOther(!isOther)}
+          disabled={state && state.length > 0}
+        >
+          Other
         </SelectOption>
       </Select>
     );

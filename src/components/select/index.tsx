@@ -2,7 +2,9 @@ import { FC, cloneElement, memo } from "react";
 import { Controller } from "react-hook-form";
 import { useToggle, useValidation } from "hooks";
 import { Error } from "components";
-import { ICArrowDown, ICChevronDown } from "icons";
+import { ICChevronDown } from "icons";
+import { Input } from "components/input";
+import { Button } from "components/button";
 
 export const Select: FC<ISelect> = memo(
   ({
@@ -15,6 +17,10 @@ export const Select: FC<ISelect> = memo(
     value,
     required = false,
     multiple = false,
+    register,
+    isInput,
+    setValue,
+    onCancel,
   }) => {
     const { open, toggle } = useToggle();
     const { validate } = useValidation({ required });
@@ -27,7 +33,7 @@ export const Select: FC<ISelect> = memo(
             error ? "border-red-400 shadow" : "border-gray-300"
           } ${multiple ? "min-h-12" : "h-12"}`}
         >
-          {multiple ? (
+          {multiple && value && value.length ? (
             <div>
               {(value || []).map((val, index) => (
                 <span className="text-gray-600 pr-2" key={index}>
@@ -72,21 +78,43 @@ export const Select: FC<ISelect> = memo(
       ></div>
     ));
 
-    return (
-      <div className={`flex flex-col items-start w-full ${className}`}>
-        {label && <label className="text-gray-800 mb-2">{label}</label>}
-        <Controller
-          name={name}
-          control={control}
-          rules={{ validate }}
-          render={({ onChange }) => (
-            <div className={`flex flex-col w-full relative`}>
-              {open ? <DropBox onChange={onChange} /> : <SelectBox />}
-            </div>
-          )}
-        />
-        {open && <BackDrop />}
-      </div>
-    );
+    if (isInput)
+      return (
+        <div className="w-full flex items-end">
+          <Input
+            label="CHO Counting"
+            name="CHOCounting"
+            register={register}
+            error={error}
+            value={value}
+          />
+          <Button
+            className="h-12 ml-2 bg-cyan-600 text-white"
+            onClick={() => {
+              setValue(name, multiple ? [] : "");
+              onCancel();
+            }}
+          >
+            Back
+          </Button>
+        </div>
+      );
+    else
+      return (
+        <div className={`flex flex-col items-start w-full ${className}`}>
+          {label && <label className="text-gray-800 mb-2">{label}</label>}
+          <Controller
+            name={name}
+            control={control}
+            rules={{ validate }}
+            render={({ onChange }) => (
+              <div className={`flex flex-col w-full relative`}>
+                {open ? <DropBox onChange={onChange} /> : <SelectBox />}
+              </div>
+            )}
+          />
+          {open && <BackDrop />}
+        </div>
+      );
   }
 );

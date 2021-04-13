@@ -11,4 +11,7 @@ interface ISelect {
   multiple?: boolean;
   onChange?: any;
   required?: boolean | undefined;
+  isInput?: boolean;
+  setValue?: any;
+  onCancel?: any;
 }

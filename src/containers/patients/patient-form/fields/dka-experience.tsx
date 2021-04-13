@@ -4,7 +4,7 @@ import { FC, memo } from "react";
 export const DKAExperience: FC<IPatientField> = memo(({ control, state }) => {
   return (
     <Switch
-      label="DKA Expreience In Past 12 Month Requiring Hospitalization"
+      label="In the past 12 months, have you had Diabetic Ketoacidosis (DKA) requiring a hospital admission?"
       name="DKAExpreience"
       control={control}
       checked={state}

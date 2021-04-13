@@ -7,4 +7,6 @@ interface ISelectOption {
   selected?: boolean;
   multiple?: boolean;
   state?: any;
+  disabled?: boolean;
+  onClick?:any
 }

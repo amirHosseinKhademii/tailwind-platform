@@ -12,19 +12,28 @@ export const SelectOption: FC<ISelectOption> = memo(
     selected,
     multiple = false,
     state = [],
+    disabled,
+    onClick,
   }) => {
     const { handleChange } = useSelectOption({ state });
 
     if (multiple)
       return (
         <div
-          className="flex flex-row items-center justify-start w-full z-50"
-          onClick={() => handleChange({ value, onChange })}
+          className={`flex flex-row items-center justify-start w-full z-50 ${
+            disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+          }`}
+          onClick={() => {
+            if (!disabled) {
+              handleChange({ value, onChange });
+              onClick && onClick(toggle);
+            }
+          }}
         >
           <Check checked={selected} className="mr-3" />
           <span
             key={key}
-            className={`cursor-pointer py-2 flex items-center hover:text-indigo-700  w-full ${
+            className={`py-2 flex items-center hover:text-indigo-700  w-full ${
               selected ? "text-indigo-700 font-semibold" : " text-gray-600"
             }`}
           >
@@ -36,12 +45,13 @@ export const SelectOption: FC<ISelectOption> = memo(
       return (
         <span
           key={key}
-          className={`cursor-pointer py-2 flex items-center hover:text-indigo-700  w-full z-50 ${
+          className={` py-2 flex items-center hover:text-indigo-700  w-full z-50 ${
             selected ? "text-indigo-700 font-semibold" : " text-gray-600"
-          }`}
+          } ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
           onClick={() => {
-            toggle();
             onChange(value);
+            toggle();
+            onClick && onClick(toggle);
           }}
         >
           {children}

@@ -1,12 +1,12 @@
 import { Input } from "components";
 import { FC, memo } from "react";
 
-export const PreferedContactTime: FC<IPatientField> = memo(
+export const PreferedContactDate: FC<IPatientField> = memo(
   ({ register, error }) => {
     return (
       <Input
-        label="Prefered Contact Time"
-        name="PreferedContactTime"
+        label="Prefered Contact Date"
+        name="PreferedContactDate"
         type="date"
         register={register}
         error={error}

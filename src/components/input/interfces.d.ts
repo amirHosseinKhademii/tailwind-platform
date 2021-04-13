@@ -13,5 +13,6 @@ interface IInput {
   max?: string | number | undefined;
   min?: string | number | undefined;
   size?: "small" | "default" | "large";
-  disabled?:boolean
+  disabled?: boolean;
+  onClick?: any;
 }

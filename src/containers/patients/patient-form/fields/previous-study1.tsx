@@ -5,8 +5,8 @@ export const PreviousStudy1: FC<IPatientField> = memo(
   ({ state, control, error }) => {
     return (
       <Select
-        label="Previous Study 1"
-        name="PreviousStudy1"
+        label="Previous Study"
+        name="PreviousStudy"
         control={control}
         value={state}
         error={error}
@@ -81,6 +81,24 @@ export const PreviousStudy1: FC<IPatientField> = memo(
           selected={state && state.includes("Insulet")}
         >
           Insulet
+        </SelectOption>
+        <SelectOption
+          value="Additional Signals"
+          selected={state && state.includes("Additional Signals")}
+        >
+          Additional Signals
+        </SelectOption>
+        <SelectOption
+          value="Optimapp"
+          selected={state && state.includes("Optimapp")}
+        >
+          Optimapp
+        </SelectOption>
+        <SelectOption
+          value="Biocap Feasibility"
+          selected={state && state.includes("Biocap Feasibility")}
+        >
+          Biocap Feasibility
         </SelectOption>
         <SelectOption value="Other" selected={state && state.includes("Other")}>
           Other

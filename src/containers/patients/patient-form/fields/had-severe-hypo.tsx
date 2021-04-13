@@ -4,7 +4,7 @@ import { FC, memo } from "react";
 export const HadSevereHypo: FC<IPatientField> = memo(({ control, state }) => {
   return (
     <Switch
-      label="Had Severe Hypoglycaemia Events Requiring 3rd Party Assistance?"
+      label="In the past 12 months, have you had a severe Hypoglycaemic event requiring 3rd party assistance?"
       name="HadSevereHypoglycaemiaEvents"
       control={control}
       checked={state}

@@ -5,7 +5,7 @@ export const HadAbnormalKidney: FC<IPatientField> = memo(
   ({ control, state }) => {
     return (
       <Switch
-        label="Had Abnormal kidney Function Diagnosis?"
+        label="Have you ever been diagnosed with abnormal kidney function?"
         name="HadAbnormalkidney"
         control={control}
         checked={state}
