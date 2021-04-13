@@ -11,6 +11,7 @@ export const CHOCounting: FC<IPatientField> = memo(
         value={state}
         error={error}
         multiple
+        input
       >
         <SelectOption value="DAFNE" selected={state && state.includes("DAFNE")}>
           DAFNE
@@ -21,11 +22,26 @@ export const CHOCounting: FC<IPatientField> = memo(
         >
           Food App
         </SelectOption>
-        <SelectOption value="Yes" selected={state && state.includes("Yes")}>
+        <SelectOption
+          value="Yes"
+          selected={state && state.includes("Yes")}
+          disabled={state && state.includes("No")}
+        >
           Yes
         </SelectOption>
-        <SelectOption value="No" selected={state && state.includes("No")}>
+        <SelectOption
+          disabled={state && state.includes("Yes")}
+          value="No"
+          selected={state && state.includes("No")}
+        >
           No
+        </SelectOption>
+        <SelectOption
+          value="Other"
+          selected={state && state.includes("Other")}
+          click={(toggle) => toggle()}
+        >
+          Other
         </SelectOption>
       </Select>
     );

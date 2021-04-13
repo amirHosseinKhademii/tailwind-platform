@@ -37,8 +37,11 @@ export const CurrentDiabetesManagement: FC<IPatientField> = memo(
         <SelectOption value="Looping" selected={state === "Looping"}>
           Looping
         </SelectOption>
-        <SelectOption value="MDI" selected={state === "MDI"}>
-          MDI
+        <SelectOption
+          value="Multiple Daily Injections"
+          selected={state === "Multiple Daily Injections"}
+        >
+          Multiple Daily Injections
         </SelectOption>
       </Select>
     );

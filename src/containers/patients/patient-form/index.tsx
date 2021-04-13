@@ -120,6 +120,7 @@ export const PatientForm = () => {
           control={control}
           state={state["CHOCounting"]}
           error={errors["CHOCounting"]?.message}
+          register={register}
         />
       </Grid>
       <Grid className=" pt-6 mt-4">
