@@ -89,7 +89,7 @@ export const Select: FC<ISelect> = memo(
             value={value}
           />
           <Button
-            className="h-12 ml-2 bg-cyan-300 text-white"
+            className="h-12 ml-2 bg-cyan-300 text-red-100"
             onClick={() => {
               setValue(name, multiple ? [] : "");
               onCancel();
