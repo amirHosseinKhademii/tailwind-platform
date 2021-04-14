@@ -19,6 +19,7 @@ export const Input: FC<IInput> = memo(
     disabled,
     value,
     onClick,
+    withError,
   }) => {
     const { validate } = useValidation({ required, max, min, later });
 
@@ -44,7 +45,7 @@ export const Input: FC<IInput> = memo(
           value={value}
           onClick={onClick}
           className={` ${
-            error
+            error || withError
               ? "border-red-400 shadow "
               : "border-gray-300 focus:ring-1  focus:ring-indigo-400"
           } ${

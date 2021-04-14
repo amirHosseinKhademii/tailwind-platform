@@ -5,25 +5,26 @@ export const PatientDetails = memo(() => {
   return (
     <div className="grid gird-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3 w-full">
       <Input size="small" disabled label="Current Study" value="Amir" />
-      <Input size="small" disabled label="Previous Styudy" value="Amir" />
+      <Input size="small" disabled label="Previous Study" value="Amir" />
       <Input size="small" disabled label="Gender" value="Male" />
-      <Input size="small" disabled label="Phone number" value="123456789" />
+      <Input size="small" disabled label="Phone Number" value="123456789" />
+      <Input size="small" disabled label="Phone Type" value="123456789" />
       <Input
         size="small"
         disabled
-        label="Prefered contact time"
+        label="Prefered Contact Date"
         value="Availability Detail"
       />
       <Input
         size="small"
         disabled
-        label="Prefered contact method"
+        label="Prefered Contact Method"
         value="Availability Detail"
       />
       <Input
         size="small"
         disabled
-        label="Email address"
+        label="Email Address"
         value="Availability Detail"
       />
       <Input size="small" disabled label="Subrub" value="Availability Detail" />
@@ -31,79 +32,91 @@ export const PatientDetails = memo(() => {
       <Input
         size="small"
         disabled
-        label="Date of diagnosis of T1D"
+        label="Diabetes Type"
         value="Availability Detail"
       />
       <Input
         size="small"
         disabled
-        label="CHO counting"
+        label="Date Of Diagnosis Of T1D"
         value="Availability Detail"
       />
       <Input
         size="small"
         disabled
-        label="Exercise type"
+        label="CHO Counting"
         value="Availability Detail"
       />
       <Input
         size="small"
         disabled
-        label="Exercise detail"
+        label="Exercise Type"
         value="Availability Detail"
       />
       <Input
         size="small"
         disabled
-        label="Diabetes management pump"
+        label="Exercise Detail"
         value="Availability Detail"
       />
       <Input
         size="small"
         disabled
-        label="Insulin"
+        label="Current Diabetes Management"
         value="Availability Detail"
       />
       <Input
         size="small"
         disabled
-        label="Current cgm wear"
+        label="Infusion Line Type"
         value="Availability Detail"
       />
       <Input
         size="small"
         disabled
-        label="Past cgm wear"
+        label="Current Insulin Use"
         value="Availability Detail"
       />
       <Input
         size="small"
         disabled
-        label="Frequency of sbgm"
+        label="Current CGM Wear"
         value="Availability Detail"
       />
       <Input
         size="small"
         disabled
-        label="Endorinologist"
+        label="Past CGM Wear"
         value="Availability Detail"
       />
       <Input
         size="small"
         disabled
-        label="Diabetes educator"
+        label="Frequency of Daily Fingerstick"
         value="Availability Detail"
       />
       <Input
         size="small"
         disabled
-        label="Latest hba1c reading"
+        label="Endocrinologist"
         value="Availability Detail"
       />
       <Input
         size="small"
         disabled
-        label="Latest hba1c reading date"
+        label="Diabetes Educator"
+        value="Availability Detail"
+      />
+      <Input
+        size="small"
+        disabled
+        label="Latest HbA1c Reading"
+        value="Availability Detail"
+      />
+      <Input
+        size="small"
+        disabled
+        label="Latest HbA1c Reading Date"
         value="Availability Detail"
       />
       <Input
@@ -149,11 +162,13 @@ export const PatientDetails = memo(() => {
         className="max-h-12"
       />
       <Input size="small" disabled label="Other Medical Issue" value="Test" />
+
       <Input
         size="small"
         disabled
         label="Will Come To St Vincent?"
         value="No"
+        withError
       />
       <Input size="small" disabled label="Has Internet Access?" value="Yes" />
       <Input
@@ -165,7 +180,7 @@ export const PatientDetails = memo(() => {
       <Input
         size="small"
         disabled
-        label="Discussion held and what was discussed"
+        label="Discussion Held And What Was Discussed"
         value="Availability Detail"
       />
       <Input
