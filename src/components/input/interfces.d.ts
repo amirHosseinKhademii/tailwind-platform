@@ -15,4 +15,5 @@ interface IInput {
   size?: "small" | "default" | "large";
   disabled?: boolean;
   onClick?: any;
+  withError?:boolean
 }

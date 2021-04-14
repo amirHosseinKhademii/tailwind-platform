@@ -1,15 +1,23 @@
-import { Input } from "components/input";
+import { Select, SelectOption } from "components";
 import { FC, memo } from "react";
+import { useAddPatient } from "../use-add-patient";
 
 export const DateOfDiagnosisOfT1D: FC<IPatientField> = memo(
-  ({ register, error }) => {
+  ({ state, control }) => {
+    const { years } = useAddPatient();
     return (
-      <Input
+      <Select
         label="Date Of Diagnosis Of T1D"
         name="DateOfDiagnosisOfT1D"
-        type="date"
-        register={register}
-      />
+        value={state}
+        control={control}
+      >
+        {years.map((year, index) => (
+          <SelectOption key={index} value={year} selected={state === year}>
+            {year}
+          </SelectOption>
+        ))}
+      </Select>
     );
   }
 );

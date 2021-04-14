@@ -1,4 +1,3 @@
-import { Text } from "components";
 import { PatientModal, PatientList } from "containers";
 
 const Patients = () => {

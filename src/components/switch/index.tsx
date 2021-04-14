@@ -31,8 +31,12 @@ export const Switch: FC<ISwitch> = memo(
         name={name}
         control={control}
         render={({ onChange }) => (
-          <div className={`grid grid-cols-6 h-20 overflow-hidden ${className}`}>
-            <span className="text-gray-800 self-start col-span-3">{label}</span>
+          <div
+            className={`grid grid-cols-6 gap-x-4 h-20 overflow-hidden ${className}`}
+          >
+            <span className="text-gray-800 self-start col-span-3 text-sm ">
+              {label}
+            </span>
             <div className="flex items-center justify-between col-span-3">
               <SwitchBox onChange={onChange} />
             </div>

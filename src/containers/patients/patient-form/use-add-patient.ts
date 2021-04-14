@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { useForm, useWatch } from "react-hook-form";
+import { years } from "utils";
 
 const defaultValues = {
   Availability: "",
@@ -54,7 +55,14 @@ const defaultValues = {
 };
 
 export const useAddPatient = () => {
-  const { handleSubmit, register, control, formState, errors,setValue } = useForm({
+  const {
+    handleSubmit,
+    register,
+    control,
+    formState,
+    errors,
+    setValue,
+  } = useForm({
     defaultValues,
   });
 
@@ -66,5 +74,6 @@ export const useAddPatient = () => {
     dirty: useMemo(() => formState.isDirty, [formState.isDirty]),
     state: useWatch({ control, defaultValue: defaultValues }),
     onSubmit: handleSubmit((state) => console.log(state)),
+    years: useMemo(() => years, []),
   };
 };

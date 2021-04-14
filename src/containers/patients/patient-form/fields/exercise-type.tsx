@@ -16,6 +16,9 @@ export const ExerciseType: FC<IPatientField> = memo(
         <SelectOption value="Structured" selected={state === "Structured"}>
           Structured
         </SelectOption>
+        <SelectOption value="Null" selected={state ===("Null")}>
+          Null
+        </SelectOption>
       </Select>
     );
   }

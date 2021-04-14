@@ -4,7 +4,7 @@ import { FC, memo } from "react";
 export const DiscussionHeld: FC<IPatientField> = memo(({ register, error }) => {
   return (
     <TextArea
-      label="Discussion held and what was discussed"
+      label="Discussion Held And What Was Discussed"
       name="Discussionheld"
       register={register}
     />

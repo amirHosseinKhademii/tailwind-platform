@@ -14,4 +14,5 @@ interface ISelect {
   isInput?: boolean;
   setValue?: any;
   onCancel?: any;
+  toggle?:any
 }

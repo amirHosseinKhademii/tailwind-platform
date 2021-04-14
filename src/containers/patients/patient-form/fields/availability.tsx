@@ -23,6 +23,9 @@ export const Availability: FC<IPatientField> = memo(
         <SelectOption value="Monthly" selected={state === "Monthly"}>
           Monthly
         </SelectOption>
+        <SelectOption value="Null" selected={state === "Null"}>
+          Null
+        </SelectOption>
       </Select>
     );
   }

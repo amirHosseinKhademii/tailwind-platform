@@ -30,6 +30,9 @@ export const PastCGMWear: FC<IPatientField> = memo(({ control, state }) => {
       <SelectOption value=" Dexcom G6" selected={state === " Dexcom G6"}>
         Dexcom G6
       </SelectOption>
+      <SelectOption value="Null" selected={state ===("Null")}>
+        Null
+      </SelectOption>
     </Select>
   );
 });

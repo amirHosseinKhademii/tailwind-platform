@@ -7,7 +7,7 @@ export const PreferedContactDate: FC<IPatientField> = memo(
       <Input
         label="Prefered Contact Date"
         name="PreferedContactDate"
-        type="date"
+        type="text"
         register={register}
         error={error}
         required

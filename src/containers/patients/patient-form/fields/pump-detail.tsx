@@ -3,7 +3,7 @@ import { FC, memo } from "react";
 
 export const PumpDetail: FC<IPatientField> = memo(
   ({ state, register, error }) => {
-    if (state === "Looping")
+    if (state === "Looping" || state === "Other")
       return (
         <TextArea
           label="Pump Details"

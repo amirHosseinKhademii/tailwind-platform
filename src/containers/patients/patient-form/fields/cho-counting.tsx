@@ -1,41 +1,44 @@
 import { Select, SelectOption } from "components";
-import { FC, memo, useState } from "react";
+import { FC, memo } from "react";
 
 export const CHOCounting: FC<IPatientField> = memo(
-  ({ control, state, error, register, setValue }) => {
-    const [isOther, setIsOther] = useState(false);
-
+  ({ control, state, error, register }) => {
     return (
       <Select
         label="CHO Counting"
         name="CHOCounting"
         control={control}
         register={register}
-        setValue={setValue}
         value={state}
         error={error}
-        isInput={isOther}
-        onCancel={() => setIsOther(!isOther)}
+        // setValue={setValue}
+        // isInput={isOther}
+        // onCancel={() => setIsOther(!isOther)}
         multiple
       >
-        <SelectOption value="DAFNE" selected={state && state.includes("DAFNE")}>
+        <SelectOption
+          value="DAFNE"
+          selected={state && state.includes("DAFNE")}
+          disabled={state && state.includes("Null")}
+        >
           DAFNE
         </SelectOption>
         <SelectOption
           value="Food App"
           selected={state && state.includes("Food App")}
+          disabled={state && state.includes("Null")}
         >
           Food App
         </SelectOption>
         <SelectOption
           value="Yes"
           selected={state && state.includes("Yes")}
-          disabled={state && state.includes("No")}
+          disabled={(state && state.includes("No")) || state.includes("Null")}
         >
           Yes
         </SelectOption>
         <SelectOption
-          disabled={state && state.includes("Yes")}
+          disabled={(state && state.includes("Yes")) || state.includes("Null")}
           value="No"
           selected={state && state.includes("No")}
         >
@@ -44,10 +47,13 @@ export const CHOCounting: FC<IPatientField> = memo(
         <SelectOption
           value="Other"
           selected={state && state.includes("Other")}
-          onClick={() => setIsOther(!isOther)}
-          disabled={state && state.length > 0}
+          // onClick={() => setIsOther(!isOther)}
+          disabled={state && state.includes("Null")}
         >
           Other
+        </SelectOption>
+        <SelectOption value="Null" selected={state && state.includes("Null")}>
+          Null
         </SelectOption>
       </Select>
     );
