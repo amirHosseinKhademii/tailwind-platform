@@ -20,7 +20,7 @@ export const SelectOption: FC<ISelectOption> = memo(
     if (multiple)
       return (
         <div
-          className={`flex flex-row items-center justify-start w-full z-50 ${
+          className={`flex flex-row items-center justify-start w-full z-40 ${
             disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"
           }`}
           onClick={() => {
@@ -45,7 +45,7 @@ export const SelectOption: FC<ISelectOption> = memo(
       return (
         <span
           key={key}
-          className={` py-2 flex items-center hover:text-indigo-700  w-full z-50 ${
+          className={` py-2 flex items-center hover:text-indigo-700  w-full z-40 ${
             selected ? "text-indigo-700 font-semibold" : " text-gray-600"
           } ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
           onClick={() => {

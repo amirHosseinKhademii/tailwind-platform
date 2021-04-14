@@ -1,10 +1,8 @@
 import { Select, SelectOption } from "components";
-import { FC, memo, useState } from "react";
+import { FC, memo } from "react";
 
 export const CHOCounting: FC<IPatientField> = memo(
-  ({ control, state, error, register, setValue }) => {
-    const [isOther, setIsOther] = useState(false);
-
+  ({ control, state, error, register }) => {
     return (
       <Select
         label="CHO Counting"

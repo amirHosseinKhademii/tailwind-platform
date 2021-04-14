@@ -8,8 +8,8 @@ export const TableCell: FC<ITableCell> = memo(
     const handleCheck = useCallback(
       (id) => (e) => {
         e.stopPropagation();
-        const exist = id && checkList.find((item) => item == id);
-        if (exist) setCheckList((prev) => prev.filter((item) => item != id));
+        const exist = id && checkList.find((item) => item === id);
+        if (exist) setCheckList((prev) => prev.filter((item) => item !== id));
         else setCheckList((prev) => [...prev, id]);
       },
       [checkList]
@@ -23,7 +23,7 @@ export const TableCell: FC<ITableCell> = memo(
       >
         {column.checkable && (
           <Check
-            checked={checkList.find((it) => it == item.id) ? true : false}
+            checked={checkList.find((it) => it === item.id) ? true : false}
             onClick={handleCheck(item.id)}
             className="mr-2"
           />

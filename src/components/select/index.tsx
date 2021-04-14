@@ -1,10 +1,10 @@
-import { FC, cloneElement, memo } from "react";
+import { FC, memo } from "react";
 import { Controller } from "react-hook-form";
 import { useToggle, useValidation } from "hooks";
-import { Error } from "components";
-import { ICChevronDown } from "icons";
-import { Input } from "components/input";
-import { Button } from "components/button";
+import { Input, Button } from "components";
+import { SelectBackDrop } from "./select-back-drop";
+import { SelectBox } from "./select-box";
+import { SelectDropBox } from "./select-drop-box";
 
 export const Select: FC<ISelect> = memo(
   ({
@@ -15,8 +15,8 @@ export const Select: FC<ISelect> = memo(
     name,
     children,
     value,
-    required = false,
-    multiple = false,
+    required,
+    multiple,
     register,
     isInput,
     setValue,
@@ -24,59 +24,6 @@ export const Select: FC<ISelect> = memo(
   }) => {
     const { open, toggle } = useToggle();
     const { validate } = useValidation({ required });
-
-    const SelectBox = memo(() => (
-      <div className="w-full flex flex-col">
-        <div
-          onClick={() => toggle()}
-          className={`focus:outline-none overflow-hidden  w-full flex flex-row items-center justify-between  cursor-pointer px-4  text-gray-300 rounded border ${
-            error ? "border-red-400 shadow" : "border-gray-300"
-          } ${multiple ? "min-h-12" : "h-12"}`}
-        >
-          {multiple && value && value.length ? (
-            <div>
-              {(value || []).map((val, index) => (
-                <span className="text-gray-600 pr-2" key={index}>
-                  {val},
-                </span>
-              ))}
-            </div>
-          ) : (
-            <span className="text-gray-600">{value}</span>
-          )}
-          <ICChevronDown className="w-4 h-4 text-gray-500" />
-        </div>
-        <Error error={error} />
-      </div>
-    ));
-
-    const DropBox: FC<ISelect> = memo(({ onChange }) => (
-      <div className="w-full flex flex-col items-start min-h-12 max-h-60 overflow-y-auto rounded  px-4 py-2  z-50 pt-18px  absolute top-1px border-2 shadow border-indigo-400 bg-white">
-        {children.length
-          ? children.map((child, index) =>
-              cloneElement(child, {
-                onChange,
-                toggle,
-                key: index,
-                multiple,
-                state: value,
-              })
-            )
-          : cloneElement(children, {
-              onChange,
-              toggle,
-              multiple,
-              state: value,
-            })}
-      </div>
-    ));
-
-    const BackDrop = memo(() => (
-      <div
-        className="opacity-0 absolute inset-0 z-20"
-        onClick={() => toggle()}
-      ></div>
-    ));
 
     if (isInput)
       return (
@@ -109,11 +56,27 @@ export const Select: FC<ISelect> = memo(
             rules={{ validate }}
             render={({ onChange }) => (
               <div className={`flex flex-col w-full relative`}>
-                {open ? <DropBox onChange={onChange} /> : <SelectBox />}
+                {open ? (
+                  <SelectDropBox
+                    onChange={onChange}
+                    toggle={toggle}
+                    value={value}
+                    multiple={multiple}
+                  >
+                    {children}
+                  </SelectDropBox>
+                ) : (
+                  <SelectBox
+                    toggle={toggle}
+                    value={value}
+                    error={error}
+                    multiple={multiple}
+                  />
+                )}
               </div>
             )}
           />
-          {open && <BackDrop />}
+          {open && <SelectBackDrop toggle={toggle} />}
         </div>
       );
   }

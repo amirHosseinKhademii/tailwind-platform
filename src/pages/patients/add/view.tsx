@@ -1,4 +1,3 @@
-import { Text } from "components";
 import { PatientForm } from "containers";
 
 const AddPatient = () => {
