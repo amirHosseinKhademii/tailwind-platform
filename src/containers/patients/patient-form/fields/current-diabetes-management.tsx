@@ -43,6 +43,12 @@ export const CurrentDiabetesManagement: FC<IPatientField> = memo(
         >
           Multiple Daily Injections
         </SelectOption>
+        <SelectOption value="Other" selected={state === "Other"}>
+          Other
+        </SelectOption>
+        <SelectOption value="Null" selected={state && state.includes("Null")}>
+          Null
+        </SelectOption>
       </Select>
     );
   }

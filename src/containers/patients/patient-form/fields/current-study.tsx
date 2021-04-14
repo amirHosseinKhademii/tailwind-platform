@@ -11,82 +11,78 @@ export const CurrentStudy: FC<IPatientField> = memo(
         value={state}
         error={error}
         required
-        multiple
       >
         <SelectOption
           value="Biocapillary Pilot"
-          selected={state && state.includes("Biocapillary Pilot")}
+          selected={state === "Biocapillary Pilot"}
         >
           Biocapillary Pilot
         </SelectOption>
         <SelectOption
           value="All in One"
-          selected={state && state.includes("All in One")}
+          selected={state && state === "All in One"}
         >
           All in One
         </SelectOption>
         <SelectOption
           value="Glysens PAVE"
-          selected={state && state.includes("Glysens PAVE")}
+          selected={state && state === "Glysens PAVE"}
         >
           Glysens PAVE
         </SelectOption>
         <SelectOption
           value="Glysens FREE"
-          selected={state && state.includes("Glysens FREE")}
+          selected={state && state === "Glysens FREE"}
         >
           Glysens FREE
         </SelectOption>
         <SelectOption
           value="Additional Signals PWOD"
-          selected={state && state.includes("Additional Signals PWOD")}
+          selected={state && state === "Additional Signals PWOD"}
         >
           Additional Signals PWOD
         </SelectOption>
         <SelectOption
           value="Fiasp Original V1"
-          selected={state && state.includes("Fiasp Original V1")}
+          selected={state && state === "Fiasp Original V1"}
         >
           Fiasp Original V1
         </SelectOption>
         <SelectOption
           value="Fiasp Extension V2"
-          selected={state && state.includes("Fiasp Extension V2")}
+          selected={state && state === "Fiasp Extension V2"}
         >
           Fiasp Extension V2
         </SelectOption>
-        <SelectOption value="Clear" selected={state && state.includes("Clear")}>
+        <SelectOption value="Clear" selected={state && state === "Clear"}>
           Clear
         </SelectOption>
         <SelectOption
           value="FAME 1 EYE"
-          selected={state && state.includes("FAME 1 EYE")}
+          selected={state && state === "FAME 1 EYE"}
         >
           FAME 1 EYE
         </SelectOption>
-        <SelectOption value="MEWS" selected={state && state.includes("MEWS")}>
+        <SelectOption value="MEWS" selected={state && state === "MEWS"}>
           MEWS
         </SelectOption>
-        <SelectOption
-          value="Serodus"
-          selected={state && state.includes("Serodus")}
-        >
+        <SelectOption value="Serodus" selected={state && state === "Serodus"}>
           Serodus
         </SelectOption>
-        <SelectOption value="FLASH" selected={state && state.includes("FLASH")}>
+        <SelectOption value="FLASH" selected={state && state === "FLASH"}>
           FLASH
         </SelectOption>
-        <SelectOption
-          value="Insulet"
-          selected={state && state.includes("Insulet")}
-        >
+        <SelectOption value="Insulet" selected={state && state === "Insulet"}>
           Insulet
         </SelectOption>
-        <SelectOption value="Zeus" selected={state && state.includes("Zeus")}>
+        <SelectOption value="Zeus" selected={state && state === "Zeus"}>
           Zeus
         </SelectOption>
-        <SelectOption value="Other" selected={state && state.includes("Other")}>
+        <SelectOption value="Other" selected={state && state === "Other"}>
           Other
+        </SelectOption>
+        <SelectOption value="Null" selected={state ===("Null")}>
+          Null
         </SelectOption>
       </Select>
     );

@@ -20,6 +20,9 @@ export const ComputerType: FC<IPatientField> = memo(
         <SelectOption value="Both" selected={state === "Both"}>
           Both
         </SelectOption>
+        <SelectOption value="Null" selected={state === "Null"}>
+          Null
+        </SelectOption>
       </Select>
     );
   }

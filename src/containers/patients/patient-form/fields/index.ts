@@ -47,3 +47,7 @@ export * from "./discussion-held";
 export * from "./study-for-consideration";
 export * from "./do-not-call-until";
 export * from "./submit";
+export * from "./cho-counting-other";
+export * from "./diabetes-type";
+export * from "./phone-type";
+export * from './infusion-line-type'

@@ -25,6 +25,9 @@ export const FrequencyOfDailyFingerstick: FC<IPatientField> = memo(
         <SelectOption value=">8" selected={state === ">8"}>
           {">8"}
         </SelectOption>
+        <SelectOption value="Null" selected={state ===("Null")}>
+          Null
+        </SelectOption>
       </Select>
     );
   }

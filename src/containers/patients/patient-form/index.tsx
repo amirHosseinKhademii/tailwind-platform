@@ -47,18 +47,14 @@ import {
   StudyForConsideration,
   DoNotCallUntil,
   Submit,
+  CHOCountingOther,
+  DiabetesType,
+  PhoneType,
+  InfusionLineType,
 } from "./fields";
 
 export const PatientForm = () => {
-  const {
-    onSubmit,
-    state,
-    register,
-    control,
-    dirty,
-    errors,
-    setValue,
-  } = useAddPatient();
+  const { onSubmit, state, register, control, dirty, errors } = useAddPatient();
 
   return (
     <Form className="w-full " onSubmit={onSubmit}>
@@ -104,6 +100,13 @@ export const PatientForm = () => {
             register={register}
             error={errors["PhoneNumber"]?.message}
           />
+          <PhoneType
+            control={control}
+            state={state["PhoneType"]}
+            error={errors["PhoneType"]?.message}
+          />
+        </Grid>
+        <Grid className=" pt-6 mt-4">
           <PreferedContactDate
             register={register}
             error={errors["PreferedContactDate"]?.message}
@@ -132,17 +135,29 @@ export const PatientForm = () => {
       </Text>
       <div className="w-full p-5">
         <Grid className=" mt-4 ">
+          <DiabetesType
+            control={control}
+            state={state["DiabetesType"]}
+            error={errors["DiabetesType"]?.message}
+          />
           <DateOfDiagnosisOfT1D
-            register={register}
+            control={control}
             error={errors["DateOfDiagnosisOfT1D"]?.message}
+            state={state["DateOfDiagnosisOfT1D"]}
           />
           <CHOCounting
             control={control}
             state={state["CHOCounting"]}
             error={errors["CHOCounting"]?.message}
             register={register}
-            setValue={setValue}
           />
+          {state["CHOCounting"] && state["CHOCounting"].includes("Other") && (
+            <CHOCountingOther
+              register={register}
+              state={state["CHOCountingOther"]}
+              error={state["CHOCountingOther"]?.message}
+            />
+          )}
         </Grid>
         <Grid className=" pt-6 mt-4">
           <ExerciseType
@@ -161,9 +176,14 @@ export const PatientForm = () => {
             state={state["CurrentDiabetesManagement"]}
             error={errors["CurrentDiabetesManagement"]?.message}
           />
+          <InfusionLineType
+            control={control}
+            state={state["InfusionLineType"]}
+            error={errors["InfusionLineType"]?.message}
+          />
           <PumpDetail
             register={register}
-            state={state["PumpDetails"]}
+            state={state["CurrentDiabetesManagement"]}
             error={errors["PumpDetails"]?.message}
           />
         </Grid>
