@@ -1,7 +1,12 @@
 import { Confirm, Modal } from "components";
-import { PatientForm } from "containers";
 import { useUi } from "hooks";
-import { memo } from "react";
+import { lazy, memo } from "react";
+
+const PatientForm = lazy(() =>
+  import("containers").then((module) => ({
+    default: module.PatientForm,
+  }))
+);
 
 export const PatientModal = memo(() => {
   const { uiState, toggleDialog } = useUi();
