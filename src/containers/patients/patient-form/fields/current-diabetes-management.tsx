@@ -2,13 +2,14 @@ import { Select, SelectOption } from "components";
 import { FC, memo } from "react";
 
 export const CurrentDiabetesManagement: FC<IPatientField> = memo(
-  ({ control, state, error }) => {
+  ({ control, state, setValue }) => {
     return (
       <Select
         label="Current Diabetes Management"
         name="CurrentDiabetesManagement"
         control={control}
         value={state}
+        setValue={setValue}
       >
         <SelectOption value="640G" selected={state === "640G"}>
           640G
@@ -45,9 +46,6 @@ export const CurrentDiabetesManagement: FC<IPatientField> = memo(
         </SelectOption>
         <SelectOption value="Other" selected={state === "Other"}>
           Other
-        </SelectOption>
-        <SelectOption value="Null" selected={state && state.includes("Null")}>
-          Null
         </SelectOption>
       </Select>
     );

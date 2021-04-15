@@ -54,7 +54,15 @@ import {
 } from "./fields";
 
 export const PatientForm = () => {
-  const { onSubmit, state, register, control, dirty, errors } = useAddPatient();
+  const {
+    onSubmit,
+    state,
+    register,
+    control,
+    dirty,
+    errors,
+    setValue,
+  } = useAddPatient();
 
   return (
     <Form className="w-full " onSubmit={onSubmit}>
@@ -77,11 +85,13 @@ export const PatientForm = () => {
             control={control}
             state={state["CurrentStudy"]}
             error={errors["CurrentStudy"]?.message}
+            setValue={setValue}
           />
           <PreviousStudy1
             control={control}
             state={state["PreviousStudy"]}
             error={errors["PreviousStudy"]?.message}
+            setValue={setValue}
           />
         </Grid>
         <Grid className=" pt-6 mt-4">
@@ -93,6 +103,7 @@ export const PatientForm = () => {
             control={control}
             state={state["Gender"]}
             error={errors["Gender"]?.message}
+            setValue={setValue}
           />
         </Grid>
         <Grid className=" pt-6 mt-4">
@@ -115,6 +126,7 @@ export const PatientForm = () => {
             control={control}
             state={state["PreferedContactMethod"]}
             error={errors["PreferedContactMethod"]?.message}
+            setValue={setValue}
           />
         </Grid>
         <Grid className=" pt-6 mt-4">
@@ -139,17 +151,20 @@ export const PatientForm = () => {
             control={control}
             state={state["DiabetesType"]}
             error={errors["DiabetesType"]?.message}
+            setValue={setValue}
           />
           <DateOfDiagnosisOfT1D
             control={control}
             error={errors["DateOfDiagnosisOfT1D"]?.message}
             state={state["DateOfDiagnosisOfT1D"]}
+            setValue={setValue}
           />
           <CHOCounting
             control={control}
             state={state["CHOCounting"]}
             error={errors["CHOCounting"]?.message}
             register={register}
+            setValue={setValue}
           />
           {state["CHOCounting"] && state["CHOCounting"].includes("Other") && (
             <CHOCountingOther
@@ -164,6 +179,7 @@ export const PatientForm = () => {
             control={control}
             state={state["ExerciseType"]}
             error={errors["ExerciseType"]?.message}
+            setValue={setValue}
           />
           <ExerciseDetail
             register={register}
@@ -175,11 +191,13 @@ export const PatientForm = () => {
             control={control}
             state={state["CurrentDiabetesManagement"]}
             error={errors["CurrentDiabetesManagement"]?.message}
+            setValue={setValue}
           />
           <InfusionLineType
             control={control}
             state={state["InfusionLineType"]}
             error={errors["InfusionLineType"]?.message}
+            setValue={setValue}
           />
           <PumpDetail
             register={register}
@@ -191,6 +209,7 @@ export const PatientForm = () => {
           <CurrentInsulinUse
             control={control}
             state={state["CurrentInsulinUse"]}
+            setValue={setValue}
           />
         </Grid>
         <Grid className=" pt-6 mt-4">
@@ -198,17 +217,20 @@ export const PatientForm = () => {
             control={control}
             state={state["CurrentCGMWear"]}
             error={errors["CurrentCGMWear"]?.message}
+            setValue={setValue}
           />
           <PastCGMWear
             control={control}
             state={state["PastCGMWear"]}
             error={errors["PastCGMWear"]?.message}
+            setValue={setValue}
           />
         </Grid>
         <Grid className=" pt-6 mt-4">
           <FrequencyOfDailyFingerstick
             control={control}
             state={state["FrequencyOfDailyFingerstick"]}
+            setValue={setValue}
           />
         </Grid>
         <Grid className=" pt-6 mt-4">
@@ -288,6 +310,7 @@ export const PatientForm = () => {
             control={control}
             error={errors["ComputerType"]?.message}
             state={state["ComputerType"]}
+            setValue={setValue}
           />
         </Grid>
         <Grid className=" pt-6 mt-4">
@@ -315,6 +338,7 @@ export const PatientForm = () => {
             control={control}
             state={state["Availability"]}
             error={errors["Availability"]?.message}
+            setValue={setValue}
           />
           <AvailabilityDetail
             register={register}

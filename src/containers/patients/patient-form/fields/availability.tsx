@@ -2,7 +2,7 @@ import { Select, SelectOption } from "components";
 import { FC, memo } from "react";
 
 export const Availability: FC<IPatientField> = memo(
-  ({ control, state, error }) => {
+  ({ control, state, error, setValue }) => {
     return (
       <Select
         label="Availability"
@@ -10,6 +10,7 @@ export const Availability: FC<IPatientField> = memo(
         control={control}
         value={state}
         error={error}
+        setValue={setValue}
       >
         <SelectOption value="Daily" selected={state === "Daily"}>
           Daily
@@ -22,9 +23,6 @@ export const Availability: FC<IPatientField> = memo(
         </SelectOption>
         <SelectOption value="Monthly" selected={state === "Monthly"}>
           Monthly
-        </SelectOption>
-        <SelectOption value="Null" selected={state === "Null"}>
-          Null
         </SelectOption>
       </Select>
     );
