@@ -2,7 +2,7 @@ import { Select, SelectOption } from "components";
 import { FC, memo } from "react";
 
 export const ComputerType: FC<IPatientField> = memo(
-  ({ control, error, state }) => {
+  ({ control, error, state, setValue }) => {
     return (
       <Select
         label="Computer Type"
@@ -10,6 +10,7 @@ export const ComputerType: FC<IPatientField> = memo(
         error={error}
         control={control}
         value={state}
+        setValue={setValue}
       >
         <SelectOption value="Windows" selected={state === "Windows"}>
           Windows
@@ -19,9 +20,6 @@ export const ComputerType: FC<IPatientField> = memo(
         </SelectOption>
         <SelectOption value="Both" selected={state === "Both"}>
           Both
-        </SelectOption>
-        <SelectOption value="Null" selected={state === "Null"}>
-          Null
         </SelectOption>
       </Select>
     );

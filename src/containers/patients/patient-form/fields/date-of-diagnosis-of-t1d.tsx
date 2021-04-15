@@ -3,7 +3,7 @@ import { FC, memo } from "react";
 import { useAddPatient } from "../use-add-patient";
 
 export const DateOfDiagnosisOfT1D: FC<IPatientField> = memo(
-  ({ state, control }) => {
+  ({ state, control, setValue }) => {
     const { years } = useAddPatient();
     return (
       <Select
@@ -11,6 +11,7 @@ export const DateOfDiagnosisOfT1D: FC<IPatientField> = memo(
         name="DateOfDiagnosisOfT1D"
         value={state}
         control={control}
+        setValue={setValue}
       >
         {years.map((year, index) => (
           <SelectOption key={index} value={year} selected={state === year}>

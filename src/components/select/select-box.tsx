@@ -1,9 +1,9 @@
 import { Error } from "components";
-import { ICChevronDown } from "icons";
+import { ICChevronDown, ICClose } from "icons";
 import { FC, memo } from "react";
 
 export const SelectBox: FC<ISelect> = memo(
-  ({ toggle, value, error, multiple }) => (
+  ({ toggle, value, error, multiple, setValue, name }) => (
     <div className="w-full flex flex-col">
       <div
         onClick={() => toggle()}
@@ -22,7 +22,20 @@ export const SelectBox: FC<ISelect> = memo(
         ) : (
           <span className="text-gray-600">{value}</span>
         )}
-        <ICChevronDown className="w-4 h-4 text-gray-500" />
+        <div className="flex items-center">
+          {value && (
+            <ICClose
+              className="w-5 h-5 text-gray-500  z-30 mr-2"
+              onClick={(e) => {
+                e.stopPropagation();
+                if (setValue) {
+                  setValue(name, "");
+                }
+              }}
+            />
+          )}
+          <ICChevronDown className="w-4 h-4 text-gray-500" />
+        </div>
       </div>
       <Error error={error} />
     </div>

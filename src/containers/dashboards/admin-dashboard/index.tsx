@@ -1,9 +1,10 @@
-import { Drawer } from "components/drawer";
-import { DropDown, DropDownOption } from "components";
+import { Fragment } from "react";
 import { useHistory, useLocation } from "react-router-dom";
+import { Drawer } from "components";
 import { ICPeoples } from "icons";
 import { useUi } from "hooks";
-import { Fragment } from "react";
+import { PatientDropDown } from "./patient-drop-down";
+import Logo from "assets/images/logo.jpg";
 
 export const AdminDashboard = () => {
   const { push } = useHistory();
@@ -13,37 +14,13 @@ export const AdminDashboard = () => {
 
   return (
     <Drawer>
-      <p className="text-white text-xl bg-cyan-700 h-14 flex items-center justify-center">
-        DTRG
-      </p>
+      <div className="w-full flex items-center justify-center">
+        <img className="w-16 h-14" src={Logo} alt="Logo" />
+      </div>
+
       {open ? (
         <Fragment>
-          <DropDown
-            label="Patients"
-            active={pathname.includes("patients")}
-            icon={() => (
-              <ICPeoples
-                className="w-6 h-6 mx-3 text-gray-400 cursor-pointer "
-                onClick={(e) => {
-                  e.stopPropagation();
-                  push("/admin/patients");
-                }}
-              />
-            )}
-          >
-            <DropDownOption
-              onClick={() => push("/admin/patients")}
-              active={pathname === "/admin/patients"}
-            >
-              Patients list
-            </DropDownOption>
-            <DropDownOption
-              onClick={() => push("/admin/patients/add")}
-              active={pathname === "/admin/patients/add"}
-            >
-              Add a new patient
-            </DropDownOption>
-          </DropDown>
+          <PatientDropDown pathname={pathname} push={push} />
         </Fragment>
       ) : (
         <div className=" flex flex-col items-center">

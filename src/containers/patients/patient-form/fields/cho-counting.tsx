@@ -2,7 +2,7 @@ import { Select, SelectOption } from "components";
 import { FC, memo } from "react";
 
 export const CHOCounting: FC<IPatientField> = memo(
-  ({ control, state, error, register }) => {
+  ({ control, state, error, register, setValue }) => {
     return (
       <Select
         label="CHO Counting"
@@ -11,30 +11,19 @@ export const CHOCounting: FC<IPatientField> = memo(
         register={register}
         value={state}
         error={error}
-        // setValue={setValue}
-        // isInput={isOther}
-        // onCancel={() => setIsOther(!isOther)}
+        setValue={setValue}
         multiple
       >
-        <SelectOption
-          value="DAFNE"
-          selected={state && state.includes("DAFNE")}
-          disabled={state && state.includes("Null")}
-        >
+        <SelectOption value="DAFNE" selected={state && state.includes("DAFNE")}>
           DAFNE
         </SelectOption>
         <SelectOption
           value="Food App"
           selected={state && state.includes("Food App")}
-          disabled={state && state.includes("Null")}
         >
           Food App
         </SelectOption>
-        <SelectOption
-          value="Yes"
-          selected={state && state.includes("Yes")}
-          disabled={(state && state.includes("No")) || state.includes("Null")}
-        >
+        <SelectOption value="Yes" selected={state && state.includes("Yes")}>
           Yes
         </SelectOption>
         <SelectOption
@@ -44,16 +33,8 @@ export const CHOCounting: FC<IPatientField> = memo(
         >
           No
         </SelectOption>
-        <SelectOption
-          value="Other"
-          selected={state && state.includes("Other")}
-          // onClick={() => setIsOther(!isOther)}
-          disabled={state && state.includes("Null")}
-        >
+        <SelectOption value="Other" selected={state && state.includes("Other")}>
           Other
-        </SelectOption>
-        <SelectOption value="Null" selected={state && state.includes("Null")}>
-          Null
         </SelectOption>
       </Select>
     );

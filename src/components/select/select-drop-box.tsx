@@ -1,4 +1,4 @@
-import { ICChevronUp } from "icons/chevron-up";
+import { ICChevronUp } from "icons";
 import { cloneElement, FC, memo } from "react";
 
 export const SelectDropBox: FC<ISelect> = memo(

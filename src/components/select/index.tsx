@@ -71,6 +71,8 @@ export const Select: FC<ISelect> = memo(
                     value={value}
                     error={error}
                     multiple={multiple}
+                    setValue={setValue}
+                    name={name}
                   />
                 )}
               </div>

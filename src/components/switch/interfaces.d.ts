@@ -7,4 +7,6 @@ interface ISwitch {
   control?: any;
   error?: any;
   onChange?: any;
+  toggle?:any;
+  open?:boolean
 }
