@@ -5,7 +5,7 @@ export const HadFeetNeuropathy: FC<IPatientField> = memo(
   ({ control, state }) => {
     return (
       <Switch
-        label="Have you ever been diagnosed with foot neuropathy?"
+        label="Foot neuropathy?"
         name="HadFeetNeuropathy"
         control={control}
         checked={state}

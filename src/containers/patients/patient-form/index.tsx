@@ -159,6 +159,8 @@ export const PatientForm = () => {
             state={state["DateOfDiagnosisOfT1D"]}
             setValue={setValue}
           />
+        </Grid>
+        <Grid className=" pt-6 mt-4">
           <CHOCounting
             control={control}
             state={state["CHOCounting"]}
@@ -260,15 +262,16 @@ export const PatientForm = () => {
             state={state["DKAExpreience"]}
             error={errors["DKADetail"]?.message}
           />
-        </Grid>
-        <Grid className=" pt-6 mt-4">
           <HadSevereHypo
             control={control}
             state={state["HadSevereHypoglycaemiaEvents"]}
           />
-          <HadUnawareHypo control={control} state={state["HadUnawareHypo"]} />
         </Grid>
         <Grid className=" pt-6 mt-4">
+          <Text>Have you ever been diagnosed with:</Text>
+        </Grid>
+        <Grid className="mt-4" cols="4">
+          <HadUnawareHypo control={control} state={state["HadUnawareHypo"]} />
           <HadAbnormalKidney
             control={control}
             state={state["HadAbnormalkidney"]}
@@ -281,6 +284,8 @@ export const PatientForm = () => {
             control={control}
             state={state["HadFeetNeuropathy"]}
           />
+        </Grid>
+        <Grid className="mt-4">
           <OtherMedicalIssue
             register={register}
             error={errors["OtherMedicalIssue"]?.message}

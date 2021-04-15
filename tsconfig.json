@@ -26,7 +26,8 @@
       "provider/*": ["./provider/*"],
       "pages/*": ["./pages/*"],
       "test/*": ["./test/*"],
-      "layouts/*": ["./layouts/*"]
+      "layouts/*": ["./layouts/*"],
+      "assets/*": ["./assets/*"]
     }
   },
   "include": ["src"]
