@@ -1,10 +1,8 @@
 import { Modal, Button } from "components";
-import { useUi } from "hooks";
 import { FC, memo } from "react";
 
 export const Confirm: FC<IConfirm> = memo(
-  ({ onConfirm, title = "Are You Sure?", description }) => {
-    const { toggleDialog } = useUi();
+  ({ onConfirm, onCancel, description, title = "Are You Sure?" }) => {
     return (
       <Modal
         size="sm"
@@ -24,17 +22,14 @@ export const Confirm: FC<IConfirm> = memo(
           <Button
             role="cancel"
             className="h-10 bg-gray-300 w-20 xl:w-40"
-            onClick={() => toggleDialog({ open: false, type: null })}
+            onClick={onCancel}
           >
             Cancel
           </Button>
           <Button
             className="h-10 bg-red-600 text-white w-20 xl:w-40"
             role="confirm"
-            onClick={() => {
-              onConfirm();
-              toggleDialog({ open: false, type: null });
-            }}
+            onClick={onConfirm}
           >
             Confirm
           </Button>
