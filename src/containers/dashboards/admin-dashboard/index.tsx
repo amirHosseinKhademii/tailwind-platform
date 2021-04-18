@@ -13,7 +13,7 @@ export const AdminDashboard = () => {
   const { open } = uiState.drawer;
 
   return (
-    <Drawer>
+    <Drawer open={open}>
       <div className="w-full flex items-center justify-center">
         <img className="w-16 h-14" src={Logo} alt="Logo" />
       </div>
