@@ -33,6 +33,7 @@ export const Modal: FC<IModal> = memo(
               slot="header"
             >
               <ICClose
+                role="close"
                 className=" w-6 h-6 md:w-10 md:h-10  text-gray-600 mr-2 md:mr-8 my-4 md:my-6 cursor-pointer"
                 onClick={onClose}
               />
