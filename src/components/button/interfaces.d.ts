@@ -4,4 +4,6 @@ interface IButton {
   children?: any;
   disabled?: boolean;
   type?: "submit" | "button" | "reset";
+  role?: string;
+  id?: string;
 }

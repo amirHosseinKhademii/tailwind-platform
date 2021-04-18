@@ -16,7 +16,7 @@ describe("Button", () => {
   //   expect(button).toMatchSnapshot();
   // });
   it("SHOUD RENDER BUTTON", () => {
-    const wrapper = idFinder(component, "button");
+    const wrapper = component.find("button");
     expect(wrapper.length).toBe(1);
   });
   it("SHOUD RENDER OPACITY 50 % ON DISABLED MODE", () => {
