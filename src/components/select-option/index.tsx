@@ -23,8 +23,9 @@ export const SelectOption: FC<ISelectOption> = memo(
           className={`flex flex-row items-center justify-start w-full z-40 ${
             disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"
           }`}
-          onClick={() => {
+          onClick={(e) => {
             if (!disabled) {
+              e.stopPropagation();
               handleChange({ value, onChange });
               onClick && onClick(toggle);
             }
