@@ -1,8 +1,10 @@
 import { LinkNav } from "components";
 import { useUi } from "hooks";
 import { ICClose, ICMenu, ICPerson } from "icons";
+import { useHistory } from "react-router";
 
 export const Header = () => {
+  const { push } = useHistory();
   const { toggleDrawer, uiState } = useUi();
   const { open } = uiState.drawer;
 
@@ -30,7 +32,11 @@ export const Header = () => {
         )}
       </div>
 
-      <LinkNav size="small" path="/login" className="text-gray-700">
+      <LinkNav
+        size="small"
+        className="text-gray-700"
+        onClick={() => push("/login")}
+      >
         <ICPerson className="w-8 h-8 text-lime-600" />
       </LinkNav>
     </header>

@@ -1,12 +1,10 @@
-import { FC } from "react";
-import { useHistory } from "react-router";
+import { FC, memo } from "react";
 
-export const LinkNav: FC<ILinkNav> = ({ children, size, path }) => {
-  const { push } = useHistory();
-
+export const LinkNav: FC<ILinkNav> = memo(({ children, size, onClick }) => {
   return (
     <button
-      onClick={() => (path ? push(path) : {})}
+      slot="wrapper"
+      onClick={onClick}
       className={` cursor-pointer focus:outline-none  ${
         size === "title"
           ? "text-lg"
@@ -18,4 +16,4 @@ export const LinkNav: FC<ILinkNav> = ({ children, size, path }) => {
       {children}
     </button>
   );
-};
+});
