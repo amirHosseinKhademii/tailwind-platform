@@ -1,15 +1,12 @@
 import { Error } from ".";
-import { idFinder, useTree, setUp } from "test";
+import { idFinder, setUp, slotFinder } from "test";
 
 describe("Error", () => {
   let component;
   beforeEach(() => (component = setUp(Error, { error: "test" })));
-  it("SHOULD MATCH SNAPSHOT", () => {
-    let error = useTree(Error);
-    expect(error).toMatchSnapshot();
-  });
+
   it("SHOULD RENDER WRAPPER", () => {
-    const wrapper = idFinder(component, "error");
+    const wrapper = slotFinder(component, "wrapper");
     expect(wrapper).toHaveLength(1);
   });
   it("SHOULD RENDER NOTHING WHEN PROPS IS UNDEFINED", () => {
