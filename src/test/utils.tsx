@@ -6,6 +6,8 @@ const setUp = (Component, props) => shallow(<Component {...props} />);
 
 const idFinder = (component, attr) => component.find(`[id='${attr}']`);
 
+const slotFinder = (component, attr) => component.find(`[slot='${attr}']`);
+
 const classFinder = (component, attr) => component.find(attr);
 
 const typeFinder = (component, attr) => component.find(`[type='${attr}']`);
@@ -20,4 +22,13 @@ const useTree = (Component) => {
   return instance.toJSON();
 };
 
-export { idFinder, classFinder, itif, useHook, setUp, useTree, typeFinder };
+export {
+  idFinder,
+  classFinder,
+  itif,
+  useHook,
+  setUp,
+  useTree,
+  typeFinder,
+  slotFinder,
+};

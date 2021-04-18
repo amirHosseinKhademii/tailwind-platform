@@ -16,7 +16,7 @@ export const DropDown: FC<IDropdown> = memo(
         <button
           className={`w-full flex justify-between items-center cursor-pointer text-white focus:outline-none ${className}`}
           onClick={() => toggle()}
-          id="button"
+          role="button"
         >
           <div className="flex items-center">
             {icon && icon()}
@@ -24,9 +24,9 @@ export const DropDown: FC<IDropdown> = memo(
           </div>
 
           {open ? (
-            <ICChevronDown className="w-3 h-3" id="arrow-up" />
+            <ICChevronDown className="w-3 h-3" role="close" id="close" />
           ) : (
-            <ICChevronRight className="w-3 h-3 " id="arrow-down" />
+            <ICChevronRight className="w-3 h-3 " />
           )}
         </button>
         <div
@@ -34,7 +34,11 @@ export const DropDown: FC<IDropdown> = memo(
             open ? " h-auto min-h-10" : "h-0"
           }`}
         >
-          {open && <div className="flex flex-col pt-2 pl-4">{children}</div>}
+          {open && (
+            <div className="flex flex-col pt-2 pl-4" slot="children">
+              {children}
+            </div>
+          )}
         </div>
       </div>
     );

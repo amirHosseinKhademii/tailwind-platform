@@ -3,4 +3,5 @@ interface IIcon {
   onClick?: any;
   children?: any;
   id?: string;
+  role?: string;
 }
