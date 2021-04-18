@@ -5,9 +5,14 @@ import { ICClose } from "icons";
 const modalRoot = document.getElementById("modal-root");
 
 export const Modal: FC<IModal> = memo(
-  ({ children, onClose, className, size }) => {
+  ({ children, onClose, className, size, slot, role, id }) => {
     return createPortal(
-      <div className="fixed inset-0 flex justify-center items-start z-40 pt-10 md:pt-32  ">
+      <div
+        className="fixed inset-0 flex justify-center items-start z-40 pt-10 md:pt-32  "
+        slot={slot}
+        id={id}
+        role={role}
+      >
         <div
           slot="modal"
           className={` flex flex-col items-center bg-white z-50 rounded  border border-gray-400 max-h-11/12 lg:max-h-10/12 ${
@@ -28,6 +33,7 @@ export const Modal: FC<IModal> = memo(
               slot="header"
             >
               <ICClose
+                role="close"
                 className=" w-6 h-6 md:w-10 md:h-10  text-gray-600 mr-2 md:mr-8 my-4 md:my-6 cursor-pointer"
                 onClick={onClose}
               />

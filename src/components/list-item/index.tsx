@@ -4,9 +4,10 @@ export const ListItem: FC<IListItem> = memo(({ children, className }) => {
   return (
     <div
       className={`flex flex-row justify-between items-center rounded shadow  ${className}`}
+      slot="wrapper"
     >
       {typeof children !== "object" ? (
-        <div>{children}</div>
+        <div slot='children'>{children}</div>
       ) : (
         children.length > 0 && (
           <Fragment>

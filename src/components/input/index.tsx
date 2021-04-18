@@ -24,9 +24,13 @@ export const Input: FC<IInput> = memo(
     const { validate } = useValidation({ required, max, min, later });
 
     return (
-      <div className={`flex flex-col items-start w-full  ${className}`}>
+      <div
+        className={`flex flex-col items-start w-full  ${className}`}
+        slot="wrapper"
+      >
         {label && (
           <label
+            slot="label"
             className={` ${
               size === "small"
                 ? "text-2xs mb-1 text-gray-700"
@@ -37,6 +41,7 @@ export const Input: FC<IInput> = memo(
           </label>
         )}
         <input
+        slot='input'
           type={type}
           placeholder={placeholder}
           ref={register && register({ validate })}

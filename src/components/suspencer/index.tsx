@@ -1,7 +1,7 @@
-import { Suspense } from "react";
+import { FC, memo, Suspense } from "react";
 
-const PageLoading = () => <div></div>;
+const PageLoading = memo(() => <div></div>);
 
-export const Suspencer = ({ children }) => {
+export const Suspencer: FC<ISuspencer> = memo(({ children }) => {
   return <Suspense fallback={<PageLoading />}>{children}</Suspense>;
-};
+});

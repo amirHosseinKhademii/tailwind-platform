@@ -25,7 +25,8 @@ export const PatientModal = memo(() => {
     return (
       <Confirm
         description="You are deleting this patient."
-        onConfirm={() => console.log("Deleted")}
+        onConfirm={() => toggleDialog({ open: false, type: null })}
+        onCancel={() => toggleDialog({ open: false, type: null })}
       />
     );
   else return null;
