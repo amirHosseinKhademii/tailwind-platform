@@ -12,6 +12,11 @@ module.exports = {
         orange: colors.orange,
         amber: colors.amber,
         cyan: colors.cyan,
+        custom: {
+          gray: {
+            100: "#f7f7f7",
+          },
+        },
       },
       spacing: {
         18: "4.5rem",
@@ -24,7 +29,7 @@ module.exports = {
         "2xs": ["0.6rem", { lineHeight: "0.85rem" }],
       },
       width: {
-        drawer: "calc(100% - 4rem)",
+        drawer: "calc(100% - 5rem)",
         "drawer-open": "calc(100% - 16rem)",
       },
       minHeight: {

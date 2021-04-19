@@ -17,7 +17,7 @@ export const PatientDetails = memo(() => {
         value="Test"
       />
       <Input size="small" disabled label="Email Address" value="Test" />
-      <Input size="small" disabled label="Subrub" value="Test" />
+      <Input size="small" disabled label="Suburb" value="Test" />
       <Input size="small" disabled label="State" value="Test" />
       <Input size="small" disabled label="Diabetes Type" value="Test" />
       <Input

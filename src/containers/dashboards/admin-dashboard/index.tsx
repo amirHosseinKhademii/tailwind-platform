@@ -14,8 +14,8 @@ export const AdminDashboard = () => {
 
   return (
     <Drawer open={open}>
-      <div className="w-full flex items-center justify-center">
-        <img className="w-16 h-14" src={Logo} alt="Logo" />
+      <div className="w-full flex items-center justify-center bg-custom-gray-100">
+        <img className="w-20 h-20" src={Logo} alt="Logo" />
       </div>
 
       {open ? (
