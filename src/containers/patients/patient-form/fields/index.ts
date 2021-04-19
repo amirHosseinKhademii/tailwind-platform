@@ -10,7 +10,6 @@ export * from "./gender";
 export * from "./phone-number";
 export * from "./prefered-contact-method";
 export * from "./prefered-contact-date";
-export * from "./subrub";
 export * from "./state";
 export * from "./past-cgm-wear";
 export * from "./cho-counting";
@@ -50,4 +49,5 @@ export * from "./submit";
 export * from "./cho-counting-other";
 export * from "./diabetes-type";
 export * from "./phone-type";
-export * from './infusion-line-type'
+export * from "./infusion-line-type";
+export * from "./suburb";

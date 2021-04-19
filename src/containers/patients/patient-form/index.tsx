@@ -31,7 +31,7 @@ import {
   PreviousStudy1,
   PumpDetail,
   State,
-  Subrub,
+  Suburb,
   Surname,
   DateOfDiagnosisOfT1D,
   OtherMedicalIssue,
@@ -134,7 +134,7 @@ export const PatientForm = () => {
             register={register}
             error={errors["EmailAddress"]?.message}
           />
-          <Subrub register={register} error={errors["Subrub"]?.message} />
+          <Suburb register={register} error={errors["Suburb"]?.message} />
           <State register={register} error={errors["State"]?.message} />
         </Grid>
       </div>
@@ -270,20 +270,23 @@ export const PatientForm = () => {
         <Grid className=" pt-6 mt-4">
           <Text>Have you ever been diagnosed with:</Text>
         </Grid>
-        <Grid className="mt-4" cols="4">
-          <HadUnawareHypo control={control} state={state["HadUnawareHypo"]} />
-          <HadAbnormalKidney
-            control={control}
-            state={state["HadAbnormalkidney"]}
-          />
-          <HadretionopathyDiag
-            control={control}
-            state={state["HadRetionopathyDiagnosis"]}
-          />
-          <HadFeetNeuropathy
-            control={control}
-            state={state["HadFeetNeuropathy"]}
-          />
+        <Grid className="mt-4">
+          <div className="col-span-1 grid grid-cols-1 ">
+            <HadUnawareHypo control={control} state={state["HadUnawareHypo"]} />
+            <HadAbnormalKidney
+              control={control}
+              state={state["HadAbnormalkidney"]}
+            />
+            <HadretionopathyDiag
+              control={control}
+              state={state["HadRetionopathyDiagnosis"]}
+            />
+            <HadFeetNeuropathy
+              control={control}
+              state={state["HadFeetNeuropathy"]}
+            />
+          </div>
+          <div className="col-span-2" />
         </Grid>
         <Grid className="mt-4">
           <OtherMedicalIssue

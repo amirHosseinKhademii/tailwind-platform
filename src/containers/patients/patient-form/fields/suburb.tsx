@@ -1,11 +1,11 @@
 import { Input } from "components";
 import { FC, memo } from "react";
 
-export const Subrub: FC<IPatientField> = memo(({ register, error }) => {
+export const Suburb: FC<IPatientField> = memo(({ register, error }) => {
   return (
     <Input
-      label="Subrub"
-      name="Subrub"
+      label="Suburb"
+      name="Suburb"
       register={register}
       error={error}
       max={20}
