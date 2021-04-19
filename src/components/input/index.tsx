@@ -41,10 +41,10 @@ export const Input: FC<IInput> = memo(
           </label>
         )}
         <input
-        slot='input'
+          {...register(name, { validate })}
+          slot="input"
           type={type}
           placeholder={placeholder}
-          ref={register && register({ validate })}
           name={name}
           disabled={disabled}
           value={value}

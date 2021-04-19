@@ -11,12 +11,12 @@ export const Switch: FC<ISwitch> = memo(
       <Controller
         name={name}
         control={control}
-        render={({ onChange }) => (
+        render={({ field }) => (
           <div
             className={`flex items-center h-20 overflow-hidden ${className}`}
           >
             <div className="flex items-center justify-between mr-4">
-              <SwitchBox onChange={onChange} open={open} toggle={toggle} />
+              <SwitchBox {...field} open={open} toggle={toggle} />
             </div>
             <span className="text-gray-800  ">{label}</span>
           </div>

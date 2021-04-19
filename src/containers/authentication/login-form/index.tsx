@@ -3,7 +3,11 @@ import { memo } from "react";
 import { useForm } from "react-hook-form";
 
 export const LoginForm = memo(() => {
-  const { register, handleSubmit, errors } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   return (
     <Form

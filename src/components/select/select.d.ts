@@ -3,7 +3,7 @@ interface ISelect {
   label?: string;
   register?: any;
   error?: string;
-  name?: string;
+  name?: any;
   id?: string;
   control?: any;
   children?: any;
@@ -14,5 +14,6 @@ interface ISelect {
   isInput?: boolean;
   setValue?: any;
   onCancel?: any;
-  toggle?:any
+  toggle?: any;
+  ref?: any;
 }
