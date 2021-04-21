@@ -1,7 +1,7 @@
 import { FC, memo } from "react";
 import { Controller } from "react-hook-form";
 import { useToggle, useValidation } from "hooks";
-import { Input, Button } from "components";
+import { Input, Button, Error } from "components";
 import { SelectBackDrop } from "./select-back-drop";
 import { SelectBox } from "./select-box";
 import { SelectDropBox } from "./select-drop-box";
@@ -50,11 +50,12 @@ export const Select: FC<ISelect> = memo(
       return (
         <div className={`flex flex-col items-start w-full ${className}`}>
           {label && <label className="text-gray-800 mb-2">{label}</label>}
+
           <Controller
             name={name}
             control={control}
             rules={{ validate }}
-            render={({ onChange }) => (
+            render={({ field: { onChange } }) => (
               <div className={`flex flex-col w-full relative`}>
                 {open ? (
                   <SelectDropBox
@@ -67,6 +68,7 @@ export const Select: FC<ISelect> = memo(
                   </SelectDropBox>
                 ) : (
                   <SelectBox
+                    onChange={onChange}
                     toggle={toggle}
                     value={value}
                     error={error}
@@ -78,6 +80,7 @@ export const Select: FC<ISelect> = memo(
               </div>
             )}
           />
+          <Error error={error} />
           {open && <SelectBackDrop toggle={toggle} />}
         </div>
       );

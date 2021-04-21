@@ -55,22 +55,15 @@ const defaultValues = {
 };
 
 export const useAddPatient = () => {
-  const {
-    handleSubmit,
-    register,
-    control,
-    formState,
-    errors,
-    setValue,
-  } = useForm({
+  const { handleSubmit, register, control, formState, setValue } = useForm({
     defaultValues,
   });
 
   return {
     register,
     control,
-    errors,
     setValue,
+    errors: formState.errors,
     dirty: useMemo(() => formState.isDirty, [formState.isDirty]),
     state: useWatch({ control, defaultValue: defaultValues }),
     onSubmit: handleSubmit((state) => console.log(state)),

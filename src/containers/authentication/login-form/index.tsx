@@ -3,11 +3,15 @@ import { memo } from "react";
 import { useForm } from "react-hook-form";
 
 export const LoginForm = memo(() => {
-  const { register, handleSubmit, errors } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   return (
     <Form
-      className="w-11/12 md:w-2/3 lg:w-1/2 mx-auto mt-20 grid grid-cols-1 gap-y-8 border border-gray-300 rounded shadow "
+      className="w-11/12 md:w-2/3 lg:w-1/2 mx-auto mt-20 grid grid-cols-1 gap-y-8 border border-gray-300 rounded shadow bg-gray-200 "
       onSubmit={handleSubmit((state) => console.log(state))}
     >
       <div className="text-center pt-6 pb-3  bg-cyan-600 h-18 text-white rounded-t text-lg font-semibold ">

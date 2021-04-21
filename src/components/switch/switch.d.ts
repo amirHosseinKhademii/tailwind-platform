@@ -3,10 +3,10 @@ interface ISwitch {
   checked?: boolean | undefined;
   onClick?: any;
   label?: string;
-  name?: string;
+  name?: any;
   control?: any;
   error?: any;
   onChange?: any;
-  toggle?:any;
-  open?:boolean
+  toggle?: any;
+  open?: boolean;
 }

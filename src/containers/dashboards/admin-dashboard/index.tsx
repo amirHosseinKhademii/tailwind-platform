@@ -14,14 +14,14 @@ export const AdminDashboard = () => {
 
   return (
     <Drawer open={open}>
-      <div className="w-full flex items-center justify-center bg-custom-gray-100">
-        <img className="w-20 h-20" src={Logo} alt="Logo" />
+      <div className="w-full flex items-center justify-center ">
+        <img className="w-18 h-18" src={Logo} alt="Logo" />
       </div>
 
       {open ? (
-        <Fragment>
+        <div className="">
           <PatientDropDown pathname={pathname} push={push} />
-        </Fragment>
+        </div>
       ) : (
         <div className=" flex flex-col items-center">
           <ICPeoples

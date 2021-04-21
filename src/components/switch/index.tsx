@@ -11,7 +11,7 @@ export const Switch: FC<ISwitch> = memo(
       <Controller
         name={name}
         control={control}
-        render={({ onChange }) => (
+        render={({ field: { onChange } }) => (
           <div
             className={`flex items-center h-20 overflow-hidden ${className}`}
           >
