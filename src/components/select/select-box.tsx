@@ -5,7 +5,7 @@ import { FC, memo } from "react";
 export const SelectBox: FC<ISelect> = memo(
   ({ toggle, value, error, multiple, setValue, name, ref }) => {
     return (
-      <div className="w-full flex flex-col" ref={ref}>
+      <div className="w-full flex flex-col bg-white rounded" ref={ref}>
         <div
           onClick={() => toggle()}
           className={`focus:outline-none overflow-hidden  w-full flex flex-row items-center justify-between  cursor-pointer px-4  text-gray-300 rounded border ${
@@ -38,7 +38,7 @@ export const SelectBox: FC<ISelect> = memo(
             <ICChevronDown className="w-4 h-4 text-gray-500" />
           </div>
         </div>
-        <Error error={error} />
+        {/* <Error error={error} /> */}
       </div>
     );
   }

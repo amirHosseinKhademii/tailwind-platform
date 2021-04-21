@@ -3,8 +3,8 @@ import { FC, memo } from "react";
 export const SwitchBox: FC<ISwitch> = memo(({ onChange, toggle, open }) => (
   <div className="">
     <div
-      className={`w-14 h-8 rounded-full  border flex flex-row items-center cursor-pointer px-1  ${
-        open ? "bg-indigo-300 justify-end" : "bg-gray-300 justify-start"
+      className={`w-14 h-8 rounded-full  border border-indigo-300 flex flex-row items-center cursor-pointer px-1  ${
+        open ? "bg-indigo-300 justify-end" : "bg-gray-200 justify-start"
       }`}
       onClick={() => {
         onChange(!open);

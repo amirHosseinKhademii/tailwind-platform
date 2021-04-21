@@ -41,7 +41,7 @@ export const Input: FC<IInput> = memo(
           </label>
         )}
         <input
-          {...register(name, { validate })}
+          {...(register && { ...register(name, { validate }) })}
           slot="input"
           type={type}
           placeholder={placeholder}

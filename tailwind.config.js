@@ -30,7 +30,7 @@ module.exports = {
       },
       width: {
         drawer: "calc(100% - 5rem)",
-        "drawer-open": "calc(100% - 16rem)",
+        "drawer-open": "calc(100% - 18rem)",
       },
       minHeight: {
         0: "0px",

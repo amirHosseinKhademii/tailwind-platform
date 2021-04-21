@@ -20,7 +20,7 @@ export const TextArea: FC<ITextArea> = memo(
       <div className={`flex flex-col items-start w-full ${className}`}>
         {label && <label className="text-gray-800 mb-2">{label}</label>}
         <textarea
-          {...register(name, { validate })}
+          {...(register && { ...register(name, { validate }) })}
           placeholder={placeholder}
           name={name}
           className={` ${

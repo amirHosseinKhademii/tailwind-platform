@@ -7,12 +7,7 @@ export const DropDown: FC<IDropdown> = memo(
     const { open, toggle } = useToggle(active);
 
     return (
-      <div
-        className={`w-full  flex flex-col p-4 hover:bg-blue-gray-800 ${
-          open && "bg-blue-gray-800"
-        }`}
-        id="drop-down"
-      >
+      <div className={`w-full  flex flex-col p-4  `} id="drop-down">
         <button
           className={`w-full flex justify-between items-center cursor-pointer text-white focus:outline-none ${className}`}
           onClick={() => toggle()}

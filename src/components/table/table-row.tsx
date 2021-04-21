@@ -6,7 +6,7 @@ export const TableRow: FC<ITableRow> = memo(({ item, columns, expandable }) => {
   const { open, toggle } = useToggle();
 
   return (
-    <div className="w-full flex flex-col border-b border-gray-200">
+    <div className="w-full flex flex-col border-b border-gray-200 bg-white">
       <div
         onClick={() => (expandable ? toggle() : {})}
         className={`w-full flex items-center justify-start p-4   ${
