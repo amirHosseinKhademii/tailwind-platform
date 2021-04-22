@@ -47,7 +47,7 @@ import {
   StudyForConsideration,
   DoNotCallUntil,
   Submit,
-  CHOCountingOther,
+  CHOCountingDetails,
   DiabetesType,
   PhoneType,
   InfusionLineType,
@@ -169,10 +169,10 @@ export const PatientForm = () => {
             setValue={setValue}
           />
           {state["CHOCounting"] && state["CHOCounting"].includes("Other") && (
-            <CHOCountingOther
+            <CHOCountingDetails
               register={register}
-              state={state["CHOCountingOther"]}
-              error={state["CHOCountingOther"]?.message}
+              state={state["CHOCountingDetails"]}
+              error={state["CHOCountingDetails"]?.message}
             />
           )}
         </Grid>
