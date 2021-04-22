@@ -6,16 +6,20 @@ export const Pagination: FC<IPagination> = memo(
     return (
       <div
         className={`w-full flex flex-row justify-between items-center ${className}`}
+        slot="wrapper"
       >
-        <div></div>
+        <div />
         {total / 10 > 1 && (
           <div className="flex items-center">
-            <ICChevronLeft className="w-4 h-4 text-gray-700 mr-3" />
-
+            <ICChevronLeft
+              className="w-4 h-4 text-gray-700 mr-3"
+              role="left-arrow"
+            />
             {Array.from(new Array(total))
               .slice(0, 2)
               .map((item, index) => (
                 <button
+                  slot="paginator"
                   key={index}
                   className={`w-10 h-10 rounded-lg flex items-center justify-center mr-2 shadow  hover:text-white  focus:outline-none ${
                     page === index + 1
@@ -26,7 +30,10 @@ export const Pagination: FC<IPagination> = memo(
                   {index + 1}
                 </button>
               ))}
-            <ICChevronRight className="w-4 h-4 text-gray-700 ml-2" />
+            <ICChevronRight
+              className="w-4 h-4 text-gray-700 ml-2"
+              role="right-arrow"
+            />
           </div>
         )}
       </div>
