@@ -10,8 +10,8 @@ describe("Drawer", () => {
     const wrapper = slotFinder(component, "wrapper");
     expect(wrapper).toHaveLength(1);
   });
-  it("SHOULD RENDER W-52 CLASSNAME", () => {
-    const wrapper = classFinder(component, ".w-52");
+  it("SHOULD RENDER W-72 CLASSNAME", () => {
+    const wrapper = classFinder(component, ".w-72");
     expect(wrapper).toHaveLength(1);
   });
   it("SHOULD RENDER CHILDREN", () => {
