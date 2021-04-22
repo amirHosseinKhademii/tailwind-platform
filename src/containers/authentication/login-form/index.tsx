@@ -25,7 +25,7 @@ export const LoginForm = memo(() => {
           required
           placeholder="Enter your email"
           error={errors["email"]?.message}
-          className=""
+          className="mt-10"
         />
         <Input
           register={register}

@@ -1,12 +1,12 @@
 import { Input } from "components";
 import { FC, memo } from "react";
 
-export const CHOCountingOther: FC<IPatientField> = memo(
+export const CHOCountingDetails: FC<IPatientField> = memo(
   ({ register, error, state }) => {
     return (
       <Input
-        label="Other CHO Counting"
-        name="CHOCountingOther"
+        label="Other CHO Details"
+        name="CHOCountingDetails"
         register={register}
         error={error}
         value={state}

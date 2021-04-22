@@ -23,11 +23,15 @@ export const CHOCounting: FC<IPatientField> = memo(
         >
           Food App
         </SelectOption>
-        <SelectOption value="Yes" selected={state && state.includes("Yes")}>
+        <SelectOption
+          value="Yes"
+          selected={state && state.includes("Yes")}
+          disabled={state && state.includes("No")}
+        >
           Yes
         </SelectOption>
         <SelectOption
-          disabled={(state && state.includes("Yes")) || state.includes("Null")}
+          disabled={state && state.includes("Yes")}
           value="No"
           selected={state && state.includes("No")}
         >
