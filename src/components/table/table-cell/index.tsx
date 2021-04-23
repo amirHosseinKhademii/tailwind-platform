@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, useState } from "react";
+import { FC, memo } from "react";
 import { Check } from "components";
 import { useTableCell } from "./use-table-cell";
 

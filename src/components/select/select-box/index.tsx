@@ -1,4 +1,3 @@
-import { Error } from "components";
 import { ICChevronDown, ICClose } from "icons";
 import { FC, memo } from "react";
 
