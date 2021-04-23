@@ -6,6 +6,7 @@ export const SelectDropBox: FC<ISelect> = memo(
     <div
       className="w-full flex flex-col items-start min-h-12 max-h-60 overflow-y-auto rounded  px-4 py-2  z-50 pt-18px  absolute top-1px border-2 shadow border-indigo-400 bg-white"
       ref={ref}
+      slot="wrapper"
     >
       <ICChevronUp
         onClick={(e) => {
@@ -13,6 +14,7 @@ export const SelectDropBox: FC<ISelect> = memo(
           toggle();
         }}
         className="w-4 h-4 text-gray-500 absolute right-4 top-3 cursor-pointer z-50"
+        role="arrow-up"
       />
       {children.length
         ? children.map((child, index) =>
