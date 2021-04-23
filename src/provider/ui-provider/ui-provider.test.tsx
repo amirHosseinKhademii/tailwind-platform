@@ -14,11 +14,13 @@ describe("Use Ui", () => {
     customRender({
       consumer: (
         <UiContext.Consumer>
-          {({ dialog }) => <span>Received:{dialog.type}</span>}
+          {({ dialog }) => (
+            <span>{dialog.type !== undefined && "Working"}</span>
+          )}
         </UiContext.Consumer>
       ),
       state: initialState,
     });
-    expect(screen.getByText(/^Received:/).textContent).toBe("Received:dialog");
+    expect(screen.getByText("Working")).toBeInTheDocument();
   });
 });
