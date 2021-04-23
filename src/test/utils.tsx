@@ -10,6 +10,8 @@ const slotFinder = (component, attr) => component.find(`[slot='${attr}']`);
 
 const roleFinder = (component, attr) => component.find(`[role='${attr}']`);
 
+const keyFinder = (component, attr) => component.find(`[key='${attr}']`);
+
 const classFinder = (component, attr) => component.find(attr);
 
 const typeFinder = (component, attr) => component.find(`[type='${attr}']`);
@@ -34,4 +36,5 @@ export {
   typeFinder,
   slotFinder,
   roleFinder,
+  keyFinder,
 };
