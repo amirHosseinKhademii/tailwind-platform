@@ -5,8 +5,13 @@ import { FC, memo } from "react";
 export const SelectBox: FC<ISelect> = memo(
   ({ toggle, value, error, multiple, setValue, name, ref }) => {
     return (
-      <div className="w-full flex flex-col bg-white rounded" ref={ref}>
+      <div
+        className="w-full flex flex-col bg-white rounded"
+        ref={ref}
+        slot="wrapper"
+      >
         <div
+          role="toggler"
           onClick={() => toggle()}
           className={`focus:outline-none overflow-hidden  w-full flex flex-row items-center justify-between  cursor-pointer px-4  text-gray-300 rounded border ${
             error ? "border-red-400 shadow" : "border-gray-300"
@@ -26,6 +31,7 @@ export const SelectBox: FC<ISelect> = memo(
           <div className="flex items-center">
             {value && (
               <ICClose
+                role="delete"
                 className="w-5 h-5 text-gray-500  z-30 mr-2"
                 onClick={(e) => {
                   e.stopPropagation();
@@ -35,10 +41,12 @@ export const SelectBox: FC<ISelect> = memo(
                 }}
               />
             )}
-            <ICChevronDown className="w-4 h-4 text-gray-500" />
+            <ICChevronDown
+              className="w-4 h-4 text-gray-500"
+              role="arrow-down"
+            />
           </div>
         </div>
-        {/* <Error error={error} /> */}
       </div>
     );
   }

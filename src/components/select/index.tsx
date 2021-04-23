@@ -48,15 +48,25 @@ export const Select: FC<ISelect> = memo(
       );
     else
       return (
-        <div className={`flex flex-col items-start w-full ${className}`}>
-          {label && <label className="text-gray-800 mb-2">{label}</label>}
+        <div
+          className={`flex flex-col items-start w-full ${className}`}
+          slot="wrapper"
+        >
+          {label && (
+            <label className="text-gray-800 mb-2" slot="label">
+              {label}
+            </label>
+          )}
 
           <Controller
             name={name}
             control={control}
             rules={{ validate }}
             render={({ field: { onChange } }) => (
-              <div className={`flex flex-col w-full relative`}>
+              <div
+                className={`flex flex-col w-full relative`}
+                slot="controlled"
+              >
                 {open ? (
                   <SelectDropBox
                     onChange={onChange}
