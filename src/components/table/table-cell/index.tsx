@@ -1,22 +1,14 @@
 import { FC, memo, useCallback, useState } from "react";
-import { Check } from "components/check";
+import { Check } from "components";
+import { useTableCell } from "./use-table-cell";
 
 export const TableCell: FC<ITableCell> = memo(
   ({ column, index, item, columns }) => {
-    const [checkList, setCheckList] = useState([]);
-
-    const handleCheck = useCallback(
-      (id) => (e) => {
-        e.stopPropagation();
-        const exist = id && checkList.find((item) => item === id);
-        if (exist) setCheckList((prev) => prev.filter((item) => item !== id));
-        else setCheckList((prev) => [...prev, id]);
-      },
-      [checkList]
-    );
+    const { handleCheck, checkList } = useTableCell();
 
     return (
       <div
+        slot="wrapper"
         className={`flex items-center ${column.width} ${
           index === columns.length - 1 ? " justify-end" : "justify-start"
         }`}

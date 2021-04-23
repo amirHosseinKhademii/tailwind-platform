@@ -1,6 +1,6 @@
 import { useToggle } from "hooks/use-toggle";
 import { FC, memo } from "react";
-import { TableCell } from "./table-cell";
+import { TableCell } from "../table-cell";
 
 export const TableRow: FC<ITableRow> = memo(({ item, columns, expandable }) => {
   const { open, toggle } = useToggle();
