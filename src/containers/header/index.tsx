@@ -10,7 +10,7 @@ export const Header = () => {
 
   return (
     <header
-      className={` h-18 flex items-center justify-between pr-4 md:pr-10 shadow px-2 bg-blue-gray-900 $${
+      className={` h-18 flex items-center justify-between pr-4 md:pr-10 shadow px-2 bg-blue-gray-800 $${
         open
           ? "w-full md:transform md:translate-x-72 md:w-drawer-open"
           : " w-full md:transform md:translate-x-20 md:w-drawer "

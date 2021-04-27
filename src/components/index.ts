@@ -20,3 +20,4 @@ export * from "./confirm";
 export * from "./table";
 export * from "./link-nav";
 export * from "./check";
+export * from "./skeleton";
