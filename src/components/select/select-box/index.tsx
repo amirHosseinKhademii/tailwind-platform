@@ -35,7 +35,11 @@ export const SelectBox: FC<ISelect> = memo(
                 onClick={(e) => {
                   e.stopPropagation();
                   if (setValue) {
-                    setValue(name, "", { shouldValidate: true });
+                    setValue(
+                      name,
+                      ""
+                      //{ shouldValidate: true }
+                    );
                   }
                 }}
               />
