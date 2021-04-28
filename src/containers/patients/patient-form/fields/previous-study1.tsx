@@ -6,7 +6,7 @@ export const PreviousStudy1: FC<IPatientField> = memo(
     return (
       <Select
         label="Previous Study"
-        name="PreviousStudy"
+        name="previous_study"
         control={control}
         value={state}
         error={error}

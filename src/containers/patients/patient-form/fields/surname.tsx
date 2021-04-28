@@ -1,14 +1,15 @@
 import { Input } from "components";
 import { FC, memo } from "react";
 
-export const Surname: FC<IPatientField> = memo(({ register, error }) => {
+export const Surname: FC<IPatientField> = memo(({ register, error, state }) => {
   return (
     <Input
       label="Surname"
-      name="Surname"
+      name="surname"
       register={register}
       error={error}
-      max={50}
+      value={state}
+      max={64}
       required
     />
   );

@@ -74,42 +74,49 @@ export const PatientForm = () => {
       </Text>
       <div className="w-full p-5">
         <Grid className="mt-4">
-          <Surname register={register} error={errors["Surname"]?.message} />
+          <Surname
+            register={register}
+            error={errors["surname"]?.message}
+            state={state["surname"]}
+          />
           <ChristianName
             register={register}
-            error={errors["ChristianName"]?.message}
+            error={errors["christian_name"]?.message}
+            state={state["christian_name"]}
           />
         </Grid>
         <Grid className=" pt-6 mt-4">
           <CurrentStudy
             control={control}
-            state={state["CurrentStudy"]}
-            error={errors["CurrentStudy"]?.message}
+            state={state["current_study"]}
+            error={errors["current_study"]?.message}
             setValue={setValue}
           />
           <PreviousStudy1
             control={control}
-            state={state["PreviousStudy"]}
-            error={errors["PreviousStudy"]?.message}
+            state={state["previous_study"]}
+            error={errors["previous_study"]?.message}
             setValue={setValue}
           />
         </Grid>
         <Grid className=" pt-6 mt-4">
           <DateOfBirth
             register={register}
-            error={errors["DateOfBirth"]?.message}
+            error={errors["date_of_birth"]?.message}
+            state={state["date_of_birth"]}
           />
           <Gender
             control={control}
-            state={state["Gender"]}
-            error={errors["Gender"]?.message}
+            state={state["gender"]}
+            error={errors["gender"]?.message}
             setValue={setValue}
           />
         </Grid>
         <Grid className=" pt-6 mt-4">
           <PhoneNumber
             register={register}
-            error={errors["PhoneNumber"]?.message}
+            error={errors["phone_number"]?.message}
+            state={state["phone_number"]}
           />
           <PhoneType
             control={control}
@@ -120,22 +127,32 @@ export const PatientForm = () => {
         <Grid className=" pt-6 mt-4">
           <PreferedContactDate
             register={register}
-            error={errors["PreferedContactDate"]?.message}
+            error={errors["preferred_contact_time"]?.message}
+            state={state["preferred_contact_time"]}
           />
           <PreferedContactMethod
             control={control}
-            state={state["PreferedContactMethod"]}
-            error={errors["PreferedContactMethod"]?.message}
+            state={state["preferred_contact_method"]}
+            error={errors["preferred_contact_method"]?.message}
             setValue={setValue}
           />
         </Grid>
         <Grid className=" pt-6 mt-4">
           <EmailAddress
             register={register}
-            error={errors["EmailAddress"]?.message}
+            error={errors["email"]?.message}
+            state={state["email"]}
           />
-          <Suburb register={register} error={errors["Suburb"]?.message} />
-          <State register={register} error={errors["State"]?.message} />
+          <Suburb
+            register={register}
+            error={errors["suburb"]?.message}
+            state={state["suburb"]}
+          />
+          <State
+            register={register}
+            error={errors["state"]?.message}
+            state={state["state"]}
+          />
         </Grid>
       </div>
 

@@ -7,7 +7,7 @@ export const Gender: FC<IPatientField> = memo(
       <Select
         control={control}
         label="Gender"
-        name="Gender"
+        name="gender"
         value={state}
         error={error}
         required

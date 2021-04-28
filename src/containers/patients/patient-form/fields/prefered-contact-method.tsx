@@ -6,7 +6,7 @@ export const PreferedContactMethod: FC<IPatientField> = memo(
     return (
       <Select
         label="Prefered Contact Method"
-        name="PreferedContactMethod"
+        name="preferred_contact_method"
         control={control}
         value={state}
         error={error}

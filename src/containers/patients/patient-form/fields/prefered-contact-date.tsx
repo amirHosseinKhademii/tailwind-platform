@@ -2,14 +2,16 @@ import { Input } from "components";
 import { FC, memo } from "react";
 
 export const PreferedContactDate: FC<IPatientField> = memo(
-  ({ register, error }) => {
+  ({ register, error, state }) => {
     return (
       <Input
         label="Prefered Contact Date"
-        name="PreferedContactDate"
+        name="preferred_contact_time"
         type="text"
         register={register}
         error={error}
+        value={state}
+        max={20}
         required
       />
     );
