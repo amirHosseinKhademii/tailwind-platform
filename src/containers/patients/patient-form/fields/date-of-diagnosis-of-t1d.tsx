@@ -1,10 +1,9 @@
 import { Select, SelectOption } from "components";
 import { FC, memo } from "react";
-import { useAddPatient } from "../use-add-patient";
+import { years } from "utils";
 
 export const DateOfDiagnosisOfT1D: FC<IPatientField> = memo(
   ({ state, control, setValue }) => {
-    const { years } = useAddPatient();
     return (
       <Select
         label="Date Of Diagnosis Of T1D"

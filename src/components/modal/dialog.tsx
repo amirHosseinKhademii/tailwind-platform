@@ -26,7 +26,7 @@ export const Dialog: FC<IModal> = memo(
         >
           {onClose && (
             <div
-              className=" w-full flex justify-end items-center"
+              className=" w-full flex justify-end items-center bg-gray-300 "
               slot="header"
             >
               <ICClose
@@ -37,7 +37,7 @@ export const Dialog: FC<IModal> = memo(
             </div>
           )}
           <div
-            className={`w-full h-full overflow-auto   ${className} `}
+            className={`w-full h-full overflow-auto bg-gray-300  ${className} `}
             slot="body"
           >
             {children}

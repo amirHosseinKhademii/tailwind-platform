@@ -53,7 +53,8 @@ import {
   InfusionLineType,
 } from "./fields";
 
-export const PatientForm = () => {
+export const PatientForm = (props?: IPatientForm) => {
+  const { isEditing } = props;
   const {
     onSubmit,
     state,
@@ -62,7 +63,7 @@ export const PatientForm = () => {
     isDirty,
     errors,
     setValue,
-  } = useAddPatient();
+  } = useAddPatient({ isEditing });
 
   return (
     <Form className="w-full " onSubmit={onSubmit}>

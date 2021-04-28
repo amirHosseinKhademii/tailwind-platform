@@ -1,7 +1,5 @@
-import { useMemo } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { useService } from "hooks";
-import { years } from "utils";
 
 const defaultValues = {
   surname: "",
@@ -19,8 +17,11 @@ const defaultValues = {
   state: "",
 };
 
-export const useAddPatient = () => {
-  const { usePost } = useService();
+export const useAddPatient = (props: IPatientForm) => {
+  const { isEditing, editInitials } = props;
+
+  const { usePost, usePut } = useService();
+
   const {
     handleSubmit,
     register,
@@ -33,6 +34,8 @@ export const useAddPatient = () => {
 
   const { mutate: save } = usePost({ url: "" });
 
+  const { mutate: edit } = usePut({ url: "" });
+
   return {
     register,
     control,
@@ -40,10 +43,9 @@ export const useAddPatient = () => {
     errors,
     isDirty,
     state: useWatch({ control, defaultValue: defaultValues }),
-    years: useMemo(() => years, []),
     onSubmit: handleSubmit((state) => {
       console.log(state);
-      //save(state);
+      // isEditing ? edit(state) : save(state);
     }),
   };
 };

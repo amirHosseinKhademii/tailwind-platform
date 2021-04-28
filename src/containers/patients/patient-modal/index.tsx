@@ -15,10 +15,10 @@ export const PatientModal = memo(() => {
     return (
       <Modal
         size="xl"
-        className="px-10 py-8"
+        className="px-10 py-8 "
         onClose={() => toggleDialog({ open: false, type: null })}
       >
-        <PatientForm />
+        <PatientForm isEditing />
       </Modal>
     );
   else if (uiState.dialog.open && uiState.dialog.type === "patient-delete")

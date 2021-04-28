@@ -1,5 +1,5 @@
-import axios from "axios";
 import { useMutation, useQuery, useQueryClient } from "react-query";
+import axios from "axios";
 
 export const useService = () => {
   const { invalidateQueries } = useQueryClient();
@@ -14,16 +14,16 @@ export const useService = () => {
     },
     usePost: (props: IUseService) => {
       const { url, onError, onSuccess } = props;
-      const asyncSave = async (model) => await axios.post(url, model);
-      return useMutation(asyncSave, {
+      const asyncPost = async (model) => await axios.post(url, model);
+      return useMutation(asyncPost, {
         ...(onSuccess && { onSuccess }),
         ...(onError && { onError }),
       });
     },
     usePut: (props: IUseService) => {
       const { url, onError, onSuccess } = props;
-      const asyncEdit = async (model) => await axios.put(url, model);
-      return useMutation(asyncEdit, {
+      const asyncPut = async (model) => await axios.put(url, model);
+      return useMutation(asyncPut, {
         ...(onSuccess && { onSuccess }),
         ...(onError && { onError }),
       });
