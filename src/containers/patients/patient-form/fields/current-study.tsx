@@ -15,7 +15,7 @@ export const CurrentStudy: FC<IPatientField> = memo(
       >
         <SelectOption
           value="Biocapillary Pilot"
-          selected={state === "Biocapillary Pilot"}
+          selected={state && state === "Biocapillary Pilot"}
         >
           Biocapillary Pilot
         </SelectOption>

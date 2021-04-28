@@ -1,72 +1,49 @@
 import { useMemo } from "react";
 import { useForm, useWatch } from "react-hook-form";
+import { useService } from "hooks";
 import { years } from "utils";
 
 const defaultValues = {
-  Availability: "",
-  AvailabilityDetail: "",
-  CHOCounting: "",
-  ChristianName: "",
-  ComputerType: "",
-  ContactDate: "",
-  CurrentCGMWear: "",
-  CurrentStudy: "",
-  DKAExpreience: "",
-  DateDetailsUpdated: "",
-  DateOfBirth: "",
-  DateOfDiagnosisOfT1D: "",
-  DiabetesEducator: "",
-  DiabetesManagementPump: "",
-  DiabeticHistory: "",
-  Discussionheld: "",
-  DoNotCallUntil: "",
-  EmailAddress: "",
-  Endocrinologist: "",
-  ExerciseDetail: "",
-  ExerciseType: "",
-  FrequencyOfSBGM: "",
-  Gender: "",
-  HadAbnormalkidney: false,
-  HadFeetNeuropathy: false,
-  HadRetionopathyDiagnosis: false,
-  HadSevereHypoglycaemiaEvents: false,
-  HadUnawareHypo: false,
-  HasInternetAccess: false,
-  Insulin: "",
-  LatestHbA1cReading: "",
-  LatestHbA1cReadingDate: "",
-  Logistics: "",
-  NextStep: "",
-  OtherMedicalIssue: "",
-  PWODReferral: "",
-  PastCGMWear: "",
-  PatientBio: "",
-  PhoneNumber: "",
-  PreferedContactMethod: "",
-  PreferedContactTime: "",
-  PreviousStudy1: "",
-  PreviousStudy2: "",
-  PreviousStudy3: "",
-  State: "",
-  StudyForConsideration: "",
-  Subrub: "",
-  Surname: "",
-  WillComeToStVincent: false,
+  surname: "",
+  christian_name: "",
+  current_study: "",
+  previous_study: "",
+  date_of_birth: "",
+  gender: "",
+  phone_number: "",
+  phone_type: "",
+  preferred_contact_time: "",
+  preferred_contact_method: "",
+  email: "",
+  suburb: "",
+  state: "",
 };
 
 export const useAddPatient = () => {
-  const { handleSubmit, register, control, formState, setValue } = useForm({
+  const { usePost } = useService();
+  const {
+    handleSubmit,
+    register,
+    control,
+    formState: { isDirty, errors },
+    setValue,
+  } = useForm({
     defaultValues,
   });
+
+  const { mutate: save } = usePost({ url: "" });
 
   return {
     register,
     control,
     setValue,
-    errors: formState.errors,
-    dirty: useMemo(() => formState.isDirty, [formState.isDirty]),
+    errors,
+    isDirty,
     state: useWatch({ control, defaultValue: defaultValues }),
-    onSubmit: handleSubmit((state) => console.log(state)),
     years: useMemo(() => years, []),
+    onSubmit: handleSubmit((state) => {
+      console.log(state);
+      //save(state);
+    }),
   };
 };

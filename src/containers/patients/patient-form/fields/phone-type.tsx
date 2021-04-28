@@ -6,7 +6,7 @@ export const PhoneType: FC<IPatientField> = memo(
     return (
       <Select
         label="Phone Type"
-        name="PhoneType"
+        name="phone_type"
         control={control}
         value={state}
         error={error}

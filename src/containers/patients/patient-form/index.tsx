@@ -59,7 +59,7 @@ export const PatientForm = () => {
     state,
     register,
     control,
-    dirty,
+    isDirty,
     errors,
     setValue,
   } = useAddPatient();
@@ -120,8 +120,8 @@ export const PatientForm = () => {
           />
           <PhoneType
             control={control}
-            state={state["PhoneType"]}
-            error={errors["PhoneType"]?.message}
+            state={state["phone_type"]}
+            error={errors["phone_type"]?.message}
           />
         </Grid>
         <Grid className=" pt-6 mt-4">
@@ -378,7 +378,7 @@ export const PatientForm = () => {
           />
         </Grid>
       </div>
-      <Submit dirty={dirty} />
+      <Submit dirty={isDirty} />
     </Form>
   );
 };
