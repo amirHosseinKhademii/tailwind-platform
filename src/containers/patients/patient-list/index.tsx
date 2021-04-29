@@ -1,7 +1,7 @@
 import { Fragment, memo } from "react";
 import { useHistory } from "react-router";
 import { Button, Input, Table, Text } from "components";
-import { ICPlus } from "icons";
+import { ICPlus, ICSearch } from "icons";
 import { usePatientList } from "./use-patient-list";
 
 export const PatientList = memo(() => {
@@ -15,12 +15,13 @@ export const PatientList = memo(() => {
           Patients List
         </Text>
         <div className="flex items-center w-2/3 lg:w-1/2">
-          <Input className="mr-4" placeholder="Search content here ..." />
-          <Button
-            className="w-14 bg-indigo-800 h-12"
-            onClick={() => push("/admin/patients/add")}
-          >
-            <ICPlus className="w-6 h-6 text-white" />
+          <Input
+            className="mr-4"
+            placeholder="Search content here ..."
+            icon={() => <ICSearch className="w-5 h-5 text-gray-400 " />}
+          />
+          <Button onClick={() => push("/admin/patients/add")} icon>
+            <ICPlus className="w-8 h-8 text-cyan-600" />
           </Button>
         </div>
       </div>

@@ -6,4 +6,5 @@ interface IButton {
   type?: "submit" | "button" | "reset";
   role?: string;
   id?: string;
+  icon?: boolean;
 }

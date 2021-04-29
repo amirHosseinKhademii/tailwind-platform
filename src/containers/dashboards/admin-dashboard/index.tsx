@@ -4,6 +4,7 @@ import { ICPeoples } from "icons";
 import { useUi } from "hooks";
 import { PatientDropDown } from "./patient-drop-down";
 import Logo from "assets/images/logo.jpg";
+import { classNames } from "utils";
 
 export const AdminDashboard = () => {
   const { push } = useHistory();
@@ -13,8 +14,13 @@ export const AdminDashboard = () => {
 
   return (
     <Drawer open={open}>
-      <div className="w-full flex items-center justify-center ">
-        <img className="w-18 h-18" src={Logo} alt="Logo" />
+      <div className="w-full flex items-center justify-center my-2 ">
+        <img
+          className="w-14 h-14 cursor-pointer"
+          src={Logo}
+          alt="Logo"
+          onClick={() => push("/")}
+        />
       </div>
 
       {open ? (
@@ -24,7 +30,10 @@ export const AdminDashboard = () => {
       ) : (
         <div className=" flex flex-col items-center">
           <ICPeoples
-            className="w-6 h-6 mt-4  text-gray-400 cursor-pointer"
+            className={classNames(
+              "w-6 h-6 mt-4   cursor-pointer hover:animate-bounce",
+              pathname.includes("patients") ? "text-teal-500" : "text-gray-400"
+            )}
             onClick={() => push("/admin/patients")}
           />
         </div>

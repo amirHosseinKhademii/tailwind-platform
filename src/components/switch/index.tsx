@@ -13,7 +13,7 @@ export const Switch: FC<ISwitch> = memo(
         control={control}
         render={({ field: { onChange } }) => (
           <div
-            className={`flex items-center h-20 overflow-hidden ${className}`}
+            className={`flex items-center h-20 overflow-hidden hover:animate-pulse ${className}`}
           >
             <div className="flex items-center justify-between mr-4">
               <SwitchBox onChange={onChange} open={open} toggle={toggle} />

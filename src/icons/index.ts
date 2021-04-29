@@ -15,3 +15,4 @@ export * from "./chevron-down";
 export * from "./peoples";
 export * from "./chevron-left";
 export * from "./person";
+export * from "./search";

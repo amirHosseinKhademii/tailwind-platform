@@ -1,5 +1,7 @@
-import { ICChevronDown, ICClose } from "icons";
 import { FC, memo } from "react";
+import { Button } from "components";
+import { ICChevronDown, ICClose, ICDelete } from "icons";
+import { classNames } from "utils";
 
 export const SelectBox: FC<ISelect> = memo(
   ({ toggle, value, error, multiple, setValue, name, ref }) => {
@@ -12,9 +14,11 @@ export const SelectBox: FC<ISelect> = memo(
         <div
           role="toggler"
           onClick={() => toggle()}
-          className={`focus:outline-none overflow-hidden  w-full flex flex-row items-center justify-between  cursor-pointer px-4  text-gray-300 rounded border ${
+          className={classNames(
+            "focus:outline-none overflow-hidden  w-full flex flex-row items-center justify-between  cursor-pointer px-4  text-gray-300 rounded border",
+            multiple ? "min-h-12" : "h-12",
             error ? "border-red-400 shadow" : "border-gray-300"
-          } ${multiple ? "min-h-12" : "h-12"}`}
+          )}
         >
           {multiple && value && value.length ? (
             <div>
@@ -29,25 +33,27 @@ export const SelectBox: FC<ISelect> = memo(
           )}
           <div className="flex items-center">
             {value && (
-              <ICClose
-                role="delete"
-                className="w-5 h-5 text-gray-500  z-30 mr-2"
+              <Button
+                icon
                 onClick={(e) => {
                   e.stopPropagation();
                   if (setValue) {
-                    setValue(
-                      name,
-                      ""
-                      //{ shouldValidate: true }
-                    );
+                    setValue(name, "");
                   }
                 }}
-              />
+              >
+                <ICDelete
+                  role="delete"
+                  className="w-4 h-4 text-red-400  z-30 mr-2"
+                />
+              </Button>
             )}
-            <ICChevronDown
-              className="w-4 h-4 text-gray-500"
-              role="arrow-down"
-            />
+            <Button icon>
+              <ICChevronDown
+                className="w-4 h-4 text-gray-500"
+                role="arrow-down"
+              />
+            </Button>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { Button } from "components/button";
 import { ICChevronUp } from "icons";
 import { cloneElement, FC, memo } from "react";
 
@@ -8,14 +9,17 @@ export const SelectDropBox: FC<ISelect> = memo(
       ref={ref}
       slot="wrapper"
     >
-      <ICChevronUp
+      <Button
+        icon
+        className="absolute right-4 top-3 z-50"
         onClick={(e) => {
           e.stopPropagation();
           toggle();
         }}
-        className="w-4 h-4 text-gray-500 absolute right-4 top-3 cursor-pointer z-50"
-        role="arrow-up"
-      />
+      >
+        <ICChevronUp className="w-4 h-4 text-gray-500   " role="arrow-up" />
+      </Button>
+
       {children.length
         ? children.map((child, index) =>
             cloneElement(child, {

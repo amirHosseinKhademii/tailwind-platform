@@ -6,13 +6,13 @@ export const Confirm: FC<IConfirm> = memo(
     return (
       <Modal
         size="sm"
-        className="flex flex-col items-center justify-center px-4 md:px-10 xl:px-26 py-10"
+        className="flex flex-col items-center justify-center px-4 md:px-10 xl:px-26 py-10 bg-gray-500"
         slot="dialog"
       >
         <span className="text-lg text-gray-800" slot="title">
           {title}
         </span>
-        <span className="pt-10 text-gray-600" slot="description">
+        <span className="pt-10 text-gray-300" slot="description">
           {description}
         </span>
         <div

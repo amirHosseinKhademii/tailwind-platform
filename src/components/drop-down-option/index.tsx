@@ -1,15 +1,17 @@
 import { FC, memo } from "react";
+import { classNames } from "utils";
 
 export const DropDownOption: FC<IDropdownOption> = memo(
   ({ children, onClick, active }) => {
     return (
       <span
         slot="wrapper"
-        className={` my-2 cursor-pointer  px-4 ${
+        className={classNames(
           active
-            ? "text-cyan-600  rounded  hover:text-cyan-500"
-            : " hover:text-cyan-500 text-gray-300"
-        }`}
+            ? "text-teal-500  rounded  hover:text-cyan-500"
+            : " text-gray-300",
+          "my-2 cursor-pointer hover:animate-pulse px-4"
+        )}
         onClick={onClick}
       >
         {children}
