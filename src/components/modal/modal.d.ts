@@ -3,7 +3,8 @@ interface IModal {
   children?: any;
   onClose?: MouseEventHandler<HTMLDivElement>;
   className?: string;
-  id?:string;
-  role?:string;
-  slot?:string
+  id?: string;
+  role?: string;
+  slot?: string;
+  title?: string;
 }

@@ -1,18 +1,21 @@
+import { Button } from "components/button";
 import { ICClose } from "icons";
 import { FC, memo } from "react";
+import { classNames } from "utils";
 
 export const Dialog: FC<IModal> = memo(
-  ({ children, onClose, className, size, slot, role, id }) => {
+  ({ children, onClose, className, size, slot, role, id, title }) => {
     return (
       <div
-        className="fixed inset-0 flex justify-center items-start z-40 pt-10 md:pt-32  "
+        className="fixed inset-0 flex justify-center items-start z-40 pt-10 md:pt-32 "
         slot={slot}
         id={id}
         role={role}
       >
         <div
           slot="modal"
-          className={` flex flex-col items-center bg-white z-50 rounded  border border-gray-400 max-h-11/12 lg:max-h-10/12 ${
+          className={classNames(
+            "flex flex-col items-center z-50 rounded  border border-gray-400 max-h-11/12 lg:max-h-10/12",
             size === "xl"
               ? "w-10/12"
               : size === "lg"
@@ -22,18 +25,28 @@ export const Dialog: FC<IModal> = memo(
               : size === "sm"
               ? "w-10/12 lg:w-4/12"
               : "w-10/12 lg:w-1/2"
-          } `}
+          )}
         >
           {onClose && (
             <div
-              className=" w-full flex justify-end items-center bg-gray-300 "
+              className=" w-full flex justify-between items-center bg-gray-300 "
               slot="header"
             >
-              <ICClose
-                role="close"
-                className=" w-6 h-6 md:w-10 md:h-10  text-gray-600 mr-2 md:mr-8 my-4 md:my-6 cursor-pointer"
+              {title ? (
+                <span className="pl-8 text-2xl text-gray-700">{title}</span>
+              ) : (
+                <div />
+              )}
+              <Button
+                icon
+                className="mr-2 md:mr-8 my-4 md:my-6 "
                 onClick={onClose}
-              />
+              >
+                <ICClose
+                  role="close"
+                  className=" w-6 h-6 md:w-8 md:h-8  text-gray-600"
+                />
+              </Button>
             </div>
           )}
           <div

@@ -11,9 +11,8 @@ export const DropDown: FC<IDropdown> = memo(
       <div className={`w-full  flex flex-col p-4  `} id="drop-down">
         <button
           className={classNames(
-            "w-full flex justify-between items-center cursor-pointer text-white focus:outline-none ",
-            className,
-            !open ? "hover:animate-bounce" : "hover:animate-pulse"
+            "w-full flex justify-between items-center cursor-pointer text-white focus:outline-none hover:animate-pulse ",
+            className
           )}
           onClick={() => toggle()}
           role="button"

@@ -15,7 +15,7 @@ export const Header = () => {
         open
           ? "w-full md:transform md:translate-x-72 md:w-drawer-open"
           : " w-full md:transform md:translate-x-20 md:w-drawer ",
-        "h-16 flex items-center justify-between pr-4 md:pr-10 shadow px-2 bg-white"
+        "h-16 flex items-center justify-between pr-4 md:pr-10 shadow px-2 bg-blue-gray-50"
       )}
     >
       <div className="flex items-center">

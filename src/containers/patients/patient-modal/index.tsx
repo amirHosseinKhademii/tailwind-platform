@@ -17,6 +17,7 @@ export const PatientModal = memo(() => {
         size="xl"
         className="px-10 py-8 "
         onClose={() => toggleDialog({ open: false, type: null })}
+        title="Edit patient information"
       >
         <PatientForm isEditing />
       </Modal>

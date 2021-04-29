@@ -28,11 +28,11 @@ export const AdminDashboard = () => {
           <PatientDropDown pathname={pathname} push={push} />
         </div>
       ) : (
-        <div className=" flex flex-col items-center">
+        <div className=" flex flex-col items-center mt-4">
           <ICPeoples
             className={classNames(
-              "w-6 h-6 mt-4   cursor-pointer hover:animate-bounce",
-              pathname.includes("patients") ? "text-teal-500" : "text-gray-400"
+              "w-7 h-7 cursor-pointer hover:animate-bounce",
+              pathname.includes("patients") ? "text-teal-400" : "text-gray-400"
             )}
             onClick={() => push("/admin/patients")}
           />

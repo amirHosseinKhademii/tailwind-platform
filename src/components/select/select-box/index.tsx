@@ -44,7 +44,7 @@ export const SelectBox: FC<ISelect> = memo(
               >
                 <ICDelete
                   role="delete"
-                  className="w-4 h-4 text-red-400  z-30 mr-2"
+                  className="w-4 h-4 text-red-500  z-30 mr-2"
                 />
               </Button>
             )}
