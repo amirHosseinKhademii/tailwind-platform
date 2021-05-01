@@ -14,6 +14,11 @@ module.exports = {
         amber: colors.amber,
         cyan: colors.cyan,
       },
+      maxHeight: {
+        "10/12": "83.333333%",
+        "11/12": "91.666667%",
+      },
+
       width: { open: "calc(100% - 18rem )", close: "calc(100% - 5rem )" },
     },
   },
