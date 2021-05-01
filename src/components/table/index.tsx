@@ -1,5 +1,7 @@
-import { Pagination } from "components";
 import { FC, memo } from "react";
+import { Pagination } from "components";
+import { classNames } from "utils";
+
 import { TableHead } from "./table-head";
 import { TableRow } from "./table-row";
 
@@ -7,7 +9,7 @@ export const Table: FC<ITable> = memo(
   ({ className, columns, data, expandable }) => {
     return (
       <div
-        className={`w-full flex flex-col items-start ${className}`}
+        className={classNames("w-full col-start ", className)}
         slot="wrapper"
       >
         <TableHead columns={columns} />

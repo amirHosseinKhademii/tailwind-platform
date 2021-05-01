@@ -26,10 +26,7 @@ export const Input: FC<IInput> = memo(
     const { validate } = useValidation({ required, max, min, later });
 
     return (
-      <div
-        className={`flex flex-col items-start w-full  relative ${className}`}
-        slot="wrapper"
-      >
+      <div className={`w-full col-start relative ${className}`} slot="wrapper">
         {label && (
           <label
             slot="label"
@@ -52,7 +49,7 @@ export const Input: FC<IInput> = memo(
           value={value}
           onClick={onClick}
           className={classNames(
-            " w-full border  rounded  focus:outline-none focus:shadow  text-gray-600 ",
+            " w-full border rounded  focus:outline-none focus:shadow  text-gray-600 ",
             error || withError
               ? "border-red-400 shadow "
               : "border-gray-300 focus:ring-1  focus:ring-indigo-400",

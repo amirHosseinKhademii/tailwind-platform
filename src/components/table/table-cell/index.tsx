@@ -1,5 +1,7 @@
 import { FC, memo } from "react";
 import { Check } from "components";
+import { classNames } from "utils";
+
 import { useTableCell } from "./use-table-cell";
 
 export const TableCell: FC<ITableCell> = memo(
@@ -9,9 +11,11 @@ export const TableCell: FC<ITableCell> = memo(
     return (
       <div
         slot="wrapper"
-        className={`flex items-center ${column.width} ${
-          index === columns.length - 1 ? " justify-end" : "justify-start"
-        }`}
+        className={classNames(
+          "flex items-center",
+          index === columns.length - 1 ? " justify-end" : "justify-start",
+          column.width
+        )}
       >
         {column.checkable && (
           <Check

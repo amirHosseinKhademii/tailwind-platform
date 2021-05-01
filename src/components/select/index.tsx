@@ -2,6 +2,8 @@ import { FC, memo } from "react";
 import { Controller } from "react-hook-form";
 import { useToggle, useValidation } from "hooks";
 import { Input, Button, Error } from "components";
+import { classNames } from "utils";
+
 import { SelectBackDrop } from "./select-back-drop";
 import { SelectBox } from "./select-box";
 import { SelectDropBox } from "./select-drop-box";
@@ -49,7 +51,7 @@ export const Select: FC<ISelect> = memo(
     else
       return (
         <div
-          className={`flex flex-col items-start w-full ${className}`}
+          className={classNames("w-full col-start", className)}
           slot="wrapper"
         >
           {label && (
@@ -63,10 +65,7 @@ export const Select: FC<ISelect> = memo(
             control={control}
             rules={{ validate }}
             render={({ field: { onChange } }) => (
-              <div
-                className={`flex flex-col w-full relative`}
-                slot="controlled"
-              >
+              <div className={`w-full flex-col relative`} slot="controlled">
                 {open ? (
                   <SelectDropBox
                     onChange={onChange}

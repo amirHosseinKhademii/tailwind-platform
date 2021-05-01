@@ -4,13 +4,10 @@ import { ICChevronLeft, ICChevronRight } from "icons";
 export const Pagination: FC<IPagination> = memo(
   ({ className, total, page }) => {
     return (
-      <div
-        className={`w-full flex flex-row justify-between items-center ${className}`}
-        slot="wrapper"
-      >
+      <div className={`w-full row-between ${className}`} slot="wrapper">
         <div />
         {total / 10 > 1 && (
-          <div className="flex items-center">
+          <div className="row-items-center">
             <ICChevronLeft
               className="w-4 h-4 text-gray-700 mr-3"
               role="left-arrow"
@@ -21,7 +18,7 @@ export const Pagination: FC<IPagination> = memo(
                 <button
                   slot="paginator"
                   key={index}
-                  className={`w-10 h-10 rounded-lg flex items-center justify-center mr-2 shadow  hover:text-white  focus:outline-none ${
+                  className={`w-10 h-10 rounded-lg row-center mr-2 shadow  hover:text-white  focus:outline-none ${
                     page === index + 1
                       ? "bg-cyan-600 text-white hover:opacity-80"
                       : "hover:bg-indigo-500"

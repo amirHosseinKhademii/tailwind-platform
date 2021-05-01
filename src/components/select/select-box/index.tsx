@@ -1,13 +1,13 @@
 import { FC, memo } from "react";
 import { Button } from "components";
-import { ICChevronDown, ICClose, ICDelete } from "icons";
+import { ICChevronDown, ICDelete } from "icons";
 import { classNames } from "utils";
 
 export const SelectBox: FC<ISelect> = memo(
   ({ toggle, value, error, multiple, setValue, name, ref }) => {
     return (
       <div
-        className="w-full flex flex-col bg-white rounded"
+        className="w-full flex-col bg-white rounded"
         ref={ref}
         slot="wrapper"
       >
@@ -15,7 +15,7 @@ export const SelectBox: FC<ISelect> = memo(
           role="toggler"
           onClick={() => toggle()}
           className={classNames(
-            "focus:outline-none overflow-hidden  w-full flex flex-row items-center justify-between  cursor-pointer px-4  text-gray-300 rounded border",
+            " w-full row-between focus:outline-none overflow-hidden cursor-pointer px-4  rounded border text-gray-300",
             multiple ? "min-h-12" : "h-12",
             error ? "border-red-400 shadow" : "border-gray-300"
           )}

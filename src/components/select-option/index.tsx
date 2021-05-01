@@ -1,5 +1,7 @@
 import { FC, memo } from "react";
 import { Check } from "components";
+import { classNames } from "utils";
+
 import { useSelectOption } from "./use-select-option";
 
 export const SelectOption: FC<ISelectOption> = memo(
@@ -21,9 +23,10 @@ export const SelectOption: FC<ISelectOption> = memo(
       return (
         <div
           slot="wrapper"
-          className={`flex flex-row items-center justify-start w-full z-40 ${
-            disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"
-          }`}
+          className={classNames(
+            "w-full row-start z-40",
+            disabled && "cursor-not-allowed opacity-50"
+          )}
         >
           <Check
             checked={selected}
@@ -39,9 +42,10 @@ export const SelectOption: FC<ISelectOption> = memo(
           <span
             slot="child"
             key={key}
-            className={`py-2 flex items-center hover:text-indigo-700  w-full ${
+            className={classNames(
+              "w-full flex items-center py-2 hover:text-indigo-700",
               selected ? "text-indigo-700 font-semibold" : " text-gray-600"
-            }`}
+            )}
           >
             {children}
           </span>
@@ -52,9 +56,11 @@ export const SelectOption: FC<ISelectOption> = memo(
         <span
           slot="wrapper"
           key={key}
-          className={` py-2 flex items-center hover:text-indigo-700  w-full z-40 ${
-            selected ? "text-indigo-700 font-semibold" : " text-gray-600"
-          } ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
+          className={classNames(
+            "w-fullflex items-center py-2 z-40 hover:text-indigo-700",
+            selected ? "text-indigo-700 font-semibold" : " text-gray-600",
+            disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
+          )}
           onClick={() => {
             onChange(value);
             toggle();

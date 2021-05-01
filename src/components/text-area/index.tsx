@@ -18,12 +18,7 @@ export const TextArea: FC<ITextArea> = memo(
     const { validate } = useValidation({ required, max, min });
 
     return (
-      <div
-        className={classNames(
-          "flex flex-col items-start w-full resize-y",
-          className
-        )}
-      >
+      <div className={classNames("w-full col-start resize-y", className)}>
         {label && <label className="text-gray-800 mb-2">{label}</label>}
         <textarea
           {...(register && { ...register(name, { validate }) })}

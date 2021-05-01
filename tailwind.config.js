@@ -80,6 +80,7 @@ module.exports = {
       opacity: ["disabled"],
       textColor: ["visited"],
       borderColor: ["checked"],
+      cursor: ["hover", "focus", "disabled"],
     },
   },
   plugins: [],

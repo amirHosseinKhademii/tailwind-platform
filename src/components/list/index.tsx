@@ -1,11 +1,9 @@
 import { FC, memo } from "react";
+import { classNames } from "utils";
 
 export const List: FC<IList> = memo(({ children, className }) => {
   return (
-    <div
-      className={`w-full flex flex-col items-start ${className}`}
-      slot="wrapper"
-    >
+    <div className={classNames("w-full col-start", className)} slot="wrapper">
       {children}
     </div>
   );
