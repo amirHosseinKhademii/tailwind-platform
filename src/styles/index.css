@@ -806,8 +806,8 @@ video {
 .h-7 {
 	height: 1.75rem;
 }
-.max-h-11\/12 {
-	max-height: 91.666667%;
+.max-h-\[85\%\] {
+	max-height: 85%;
 }
 .max-h-60 {
 	max-height: 15rem;
@@ -1385,10 +1385,6 @@ video {
 	}
 }
 @media (min-width: 1024px) {
-
-	.lg\:max-h-10\/12 {
-		max-height: 83.333333%;
-	}
 
 	.lg\:w-8\/12 {
 		width: 66.666667%;

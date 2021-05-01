@@ -15,7 +15,7 @@ export const Dialog: FC<IModal> = memo(
         <div
           slot="modal"
           className={classNames(
-            "col-center z-50 rounded  border border-gray-400 max-h-11/12 lg:max-h-10/12",
+            "col-center z-50 rounded  border border-gray-400 max-h-[85%] ",
             size === "xl"
               ? "w-10/12"
               : size === "lg"
