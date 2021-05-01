@@ -1,7 +1,7 @@
 import { FC, memo } from "react";
 import { useValidation } from "hooks";
 import { Error } from "components";
-import { classNames } from "utils/classes";
+import { classNames } from "utils";
 
 export const TextArea: FC<ITextArea> = memo(
   ({

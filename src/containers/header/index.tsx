@@ -1,10 +1,11 @@
-import { Button, LinkNav } from "components";
-import { useUi } from "hooks";
-import { ICClose, ICMenu, ICPerson } from "icons";
+import { memo } from "react";
 import { useHistory } from "react-router";
 import { classNames } from "utils";
+import { Button } from "components";
+import { useUi } from "hooks";
+import { ICClose, ICMenu, ICPerson } from "icons";
 
-export const Header = () => {
+export const Header = memo(() => {
   const { push } = useHistory();
   const { toggleDrawer, uiState } = useUi();
   const { open } = uiState.drawer;
@@ -12,26 +13,20 @@ export const Header = () => {
   return (
     <header
       className={classNames(
+        "w-full row-between h-16 pr-4 md:pr-10 shadow px-2 bg-blue-gray-50",
         open
-          ? "w-full md:transform md:translate-x-72 md:w-drawer-open"
-          : " w-full md:transform md:translate-x-20 md:w-drawer ",
-        "h-16 flex items-center justify-between pr-4 md:pr-10 shadow px-2 bg-blue-gray-50"
+          ? "md:transform md:translate-x-72 md:w-drawer-open"
+          : " md:transform md:translate-x-20 md:w-drawer "
       )}
     >
       <div className="flex items-center">
         {open ? (
           <Button icon onClick={() => toggleDrawer()}>
-            <ICClose
-              id="close"
-              className="w-10 h-10  cursor-pointer self-center  text-gray-500"
-            />
+            <ICClose id="close" className="w-10 h-10  text-gray-500" />
           </Button>
         ) : (
           <Button icon onClick={() => toggleDrawer()}>
-            <ICMenu
-              id="menu"
-              className="w-8 h-8  cursor-pointer self-center ml-4  text-gray-500 "
-            />
+            <ICMenu id="menu" className="w-8 h-8 ml-4 text-gray-500 " />
           </Button>
         )}
       </div>
@@ -41,4 +36,4 @@ export const Header = () => {
       </Button>
     </header>
   );
-};
+});

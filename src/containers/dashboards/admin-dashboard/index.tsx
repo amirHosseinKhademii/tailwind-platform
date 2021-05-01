@@ -2,9 +2,10 @@ import { useHistory, useLocation } from "react-router-dom";
 import { Drawer } from "components";
 import { ICPeoples } from "icons";
 import { useUi } from "hooks";
+import { classNames } from "utils";
+
 import { PatientDropDown } from "./patient-drop-down";
 import Logo from "assets/images/logo.jpg";
-import { classNames } from "utils";
 
 export const AdminDashboard = () => {
   const { push } = useHistory();
@@ -14,7 +15,7 @@ export const AdminDashboard = () => {
 
   return (
     <Drawer open={open}>
-      <div className="w-full flex items-center justify-center my-2 ">
+      <div className="w-full row-center my-2 ">
         <img
           className="w-14 h-14 cursor-pointer"
           src={Logo}
@@ -28,7 +29,7 @@ export const AdminDashboard = () => {
           <PatientDropDown pathname={pathname} push={push} />
         </div>
       ) : (
-        <div className=" flex flex-col items-center mt-4">
+        <div className="col-center mt-4">
           <ICPeoples
             className={classNames(
               "w-7 h-7 cursor-pointer hover:animate-bounce",

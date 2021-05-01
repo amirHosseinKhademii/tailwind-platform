@@ -12,10 +12,10 @@ export const AdminLayout = ({ children }) => {
       <Header />
       <div
         className={classNames(
+          "w-full trans",
           open
-            ? "w-full md:transform md:translate-x-64 md:w-drawer-open"
-            : "w-full md:transform md:translate-x-16 md:w-drawer",
-          "transition ease-linear duration-200"
+            ? "md:transform md:translate-x-64 md:w-drawer-open"
+            : "md:transform md:translate-x-16 md:w-drawer"
         )}
       >
         {children}
