@@ -47,7 +47,7 @@ export const Dialog: FC<IModal> = memo(
             </div>
           )}
           <div
-            className={`w-full h-full overflow-auto bg-gray-300  ${className} `}
+            className={`w-full h-full overflow-auto  ${className} `}
             slot="body"
           >
             {children}
