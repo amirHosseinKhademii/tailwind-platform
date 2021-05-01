@@ -6,9 +6,8 @@ export const Button: FC<IButton> = memo(
     return (
       <button
         className={classNames(
-          "rounded focus:outline-none  flex items-center justify-center transition transform hover:-translate-y-1 hover:scale-105 ",
-          disabled ? "opacity-50" : "",
-          icon ? "" : "shadow",
+          "btn disabled:opacity-50 ",
+          !icon && "shadow",
           className
         )}
         disabled={disabled}
