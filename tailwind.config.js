@@ -2,6 +2,7 @@ const colors = require("tailwindcss/colors");
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false,
+  mode: "jit",
   theme: {
     extend: {
       colors: {
@@ -12,18 +13,6 @@ module.exports = {
         orange: colors.orange,
         amber: colors.amber,
         cyan: colors.cyan,
-        custom: {
-          gray: {
-            100: "#f7f7f7",
-          },
-        },
-      },
-      spacing: {
-        18: "4.5rem",
-        110: "30rem",
-        130: "35rem",
-        170: "40rem",
-        192: "48rem",
       },
       fontSize: {
         "2xs": ["0.6rem", { lineHeight: "0.85rem" }],
@@ -75,13 +64,7 @@ module.exports = {
     },
   },
   variants: {
-    extend: {
-      animation: ["hover", "focus"],
-      opacity: ["disabled"],
-      textColor: ["visited"],
-      borderColor: ["checked"],
-      cursor: ["hover", "focus", "disabled"],
-    },
+    extend: {},
   },
   plugins: [],
 };
