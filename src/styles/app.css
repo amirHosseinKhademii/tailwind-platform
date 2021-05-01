@@ -12,4 +12,7 @@
   .row-around {
     @apply flex flex-row justify-around;
   }
+  .trans {
+    @apply transition ease-linear duration-200;
+  }
 }
