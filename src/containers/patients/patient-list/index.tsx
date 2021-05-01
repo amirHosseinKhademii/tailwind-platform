@@ -9,8 +9,8 @@ export const PatientList = memo(() => {
   const { push } = useHistory();
 
   return (
-    <Fragment>
-      <div className="flex items-baseline justify-between border-b border-gray-400 w-full pb-4">
+    <div className="col-center my-6 px-10 md:px-20">
+      <div className="w-full flex items-baseline justify-between border-b border-gray-400  pb-4">
         <Text size="header" className="w-1/3 flex flex-col items-start mt-10">
           Patients List
         </Text>
@@ -28,6 +28,6 @@ export const PatientList = memo(() => {
       <div className=" w-full my-10">
         <Table data={data} columns={columns} expandable />
       </div>
-    </Fragment>
+    </div>
   );
 });

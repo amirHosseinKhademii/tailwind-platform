@@ -13,10 +13,10 @@ export const Header = memo(() => {
   return (
     <header
       className={classNames(
-        "w-full row-between h-16 pr-4 md:pr-10 shadow px-2 bg-blue-gray-50",
+        " row-between h-16 pr-4 md:pr-10 shadow px-2 bg-blue-gray-50",
         open
-          ? "md:transform md:translate-x-72 md:w-drawer-open"
-          : " md:transform md:translate-x-20 md:w-drawer "
+          ? "md:transform md:translate-x-72 md:w-open"
+          : "md:transform md:translate-x-20 md:w-close"
       )}
     >
       <div className="flex items-center">
@@ -31,7 +31,7 @@ export const Header = memo(() => {
         )}
       </div>
 
-      <Button icon className="text-gray-700 " onClick={() => push("/login")}>
+      <Button icon className="text-gray-700" onClick={() => push("/login")}>
         <ICPerson className="w-8 h-8 text-gray-500 " />
       </Button>
     </header>

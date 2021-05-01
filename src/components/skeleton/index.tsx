@@ -9,7 +9,7 @@ export const Skeleton = () => {
         <div className="w-8 h-8 mt-4  bg-gray-500 rounded " />
       </div>
 
-      <div className="w-full md:transform md:translate-x-20 md:w-drawer py-16 px-10 flex flex-col ">
+      <div className="w-full md:transform md:translate-x-20 md:w-[100%-5rem] py-16 px-10 flex flex-col ">
         <div className="bg-gray-400 animate-pulse h-32 rounded" />
         <div className="bg-gray-400 animate-pulse h-170 w-full mt-10 rounded" />
       </div>

@@ -32,7 +32,7 @@ export const Input: FC<IInput> = memo(
             slot="label"
             className={classNames(
               size === "small"
-                ? "text-2xs mb-1 text-gray-700"
+                ? "text-[10px] mb-1 text-gray-700"
                 : "mb-2 text-gray-700"
             )}
           >
@@ -56,7 +56,7 @@ export const Input: FC<IInput> = memo(
             size === "large"
               ? "h-14 "
               : size === "small"
-              ? "h-8 text-2xs"
+              ? "h-8 text-[10px]"
               : "h-12",
             disabled && " bg-gray-200",
             icon ? "px-10" : "px-4"

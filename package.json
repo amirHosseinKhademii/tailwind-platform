@@ -103,7 +103,7 @@
     "node-fetch": "^2.6.1",
     "optimize-css-assets-webpack-plugin": "5.0.4",
     "pnp-webpack-plugin": "1.6.4",
-    "postcss": "^8.2.8",
+    "postcss": "^8.2.13",
     "postcss-cli": "^8.3.1",
     "postcss-flexbugs-fixes": "4.2.1",
     "postcss-loader": "3.0.0",

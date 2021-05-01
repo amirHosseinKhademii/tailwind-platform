@@ -14,8 +14,8 @@ export const AdminLayout = ({ children }) => {
         className={classNames(
           "w-full trans",
           open
-            ? "md:transform md:translate-x-64 md:w-drawer-open"
-            : "md:transform md:translate-x-16 md:w-drawer"
+            ? "md:transform md:translate-x-72 md:w-open"
+            : "md:transform md:translate-x-20 md:w-close"
         )}
       >
         {children}
