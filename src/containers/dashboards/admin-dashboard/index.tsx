@@ -33,7 +33,7 @@ export const AdminDashboard = () => {
           <ICPeoples
             className={classNames(
               "w-7 h-7 cursor-pointer hover:animate-bounce",
-              pathname.includes("patients") ? "text-teal-400" : "text-gray-400"
+              pathname.includes("patients") ? "text-cyan-600" : "text-gray-400"
             )}
             onClick={() => push("/admin/patients")}
           />
