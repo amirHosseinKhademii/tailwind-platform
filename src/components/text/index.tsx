@@ -1,8 +1,9 @@
 import { FC, memo } from "react";
 
-export const Text: FC<IText> = memo(({ className, size, children }) => {
+export const Text: FC<IText> = memo(({ className, size, children, slot }) => {
   return (
-    <p
+    <span
+      slot={slot}
       className={`${
         !className || (!className.includes("text") && "text-gray-600")
       } ${
@@ -14,6 +15,6 @@ export const Text: FC<IText> = memo(({ className, size, children }) => {
       } ${className}`}
     >
       {children}
-    </p>
+    </span>
   );
 });

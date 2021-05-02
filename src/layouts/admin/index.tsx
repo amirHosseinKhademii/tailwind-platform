@@ -1,4 +1,4 @@
-import { AdminDashboard, Header } from "containers";
+import { AdminDashboard, AdminHeader } from "containers";
 import { useUi } from "hooks";
 import { classNames } from "utils";
 
@@ -7,12 +7,12 @@ export const AdminLayout = ({ children }) => {
   const { open } = uiState.drawer;
 
   return (
-    <div className=" bg-blue-gray-100 fixed inset-0 overflow-y-auto overflow-x-hidden">
+    <div className=" bg-blue-gray-100 fixed inset-0 overflow-y-auto overflow-x-hidden ">
       <AdminDashboard />
-      <Header />
+      <AdminHeader />
       <div
         className={classNames(
-          "w-full trans",
+          "w-full trans col-center my-10 px-10 md:px-20",
           open
             ? "md:transform md:translate-x-72 md:w-open"
             : "md:transform md:translate-x-20 md:w-close"

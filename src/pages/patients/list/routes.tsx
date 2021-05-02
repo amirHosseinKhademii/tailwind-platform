@@ -1,9 +1,9 @@
 import { lazy } from "react";
 
-export const routes = {
+export const route = {
   path: "/admin/patients",
   name: "ROUTE:ADMIN:PATIENTS",
   exact: true,
   layout: "admin",
-  component: lazy(() => import("./view")),
+  component: lazy(() => import(".")),
 };
