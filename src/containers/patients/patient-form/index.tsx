@@ -68,7 +68,7 @@ export const PatientForm = (props?: IPatientForm) => {
 
   return (
     <div className="w-full">
-      <PatientFormToolbar />
+      {!isEditing && <PatientFormToolbar />}
       <Form className="w-full px-5" onSubmit={onSubmit}>
         <Tab text="Patient Bio" className="mt-10">
           <Grid className="mt-4">
