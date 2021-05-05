@@ -10,7 +10,7 @@ export const Check: FC<ICheck> = memo(
         disabled={disabled}
         checked={checked}
         className={classNames("w-5 h-5 checked:bg-indigo-600", className)}
-        onClick={(e) => !disabled && onClick(e)}
+        onClick={(e) => !disabled && onClick && onClick(e)}
       />
     );
   }

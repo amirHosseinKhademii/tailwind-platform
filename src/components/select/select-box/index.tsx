@@ -1,7 +1,7 @@
 import { FC, memo } from "react";
-import { Button } from "components";
-import { ICChevronDown, ICDelete } from "icons";
 import { classNames } from "utils";
+import { SelectBoxActions } from "./select-box-actions";
+import { SelectBoxValue } from "./select-box-value";
 
 export const SelectBox: FC<ISelect> = memo(
   ({ toggle, value, error, multiple, setValue, name, ref }) => {
@@ -20,41 +20,13 @@ export const SelectBox: FC<ISelect> = memo(
             error ? "border-red-400 shadow" : "border-gray-300"
           )}
         >
-          {multiple && value && value.length ? (
-            <div>
-              {(value || []).map((val, index) => (
-                <span className="text-gray-600 pr-2" key={index}>
-                  {val},
-                </span>
-              ))}
-            </div>
-          ) : (
-            <span className="text-gray-600">{value}</span>
-          )}
-          <div className="flex items-center">
-            {value && (
-              <Button
-                icon
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (setValue) {
-                    setValue(name, "");
-                  }
-                }}
-              >
-                <ICDelete
-                  role="delete"
-                  className="w-4 h-4 text-red-500  z-30 mr-2"
-                />
-              </Button>
-            )}
-            <Button icon>
-              <ICChevronDown
-                className="w-4 h-4 text-gray-500"
-                role="arrow-down"
-              />
-            </Button>
-          </div>
+          <SelectBoxValue multiple={multiple} value={value} />
+          <SelectBoxActions
+            multiple={multiple}
+            value={value}
+            setValue={setValue}
+            name={name}
+          />
         </div>
       </div>
     );
