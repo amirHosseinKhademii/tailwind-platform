@@ -8,7 +8,7 @@ export const TableRow: FC<ITableRow> = memo(({ item, columns, expand }) => {
   const { open, toggle } = useToggle();
 
   return (
-    <div className="w-full flex flex-col border-b border-gray-200 bg-white">
+    <div className="w-full flex flex-col border-b border-gray-300 bg-white">
       <div
         onClick={() => (expand ? toggle() : {})}
         className={classNames(

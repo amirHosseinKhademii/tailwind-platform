@@ -37,7 +37,7 @@ export const LoginForm = memo(() => {
         />
         <Button
           type="submit"
-          className="bg-rose-700 text-white w-1/2 md:w-1/3 mx-auto mb-6 h-10"
+          className="bg-lime-600 text-white w-1/2 md:w-1/3 mx-auto mb-6 h-12"
         >
           Log In
         </Button>
