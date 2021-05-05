@@ -13,7 +13,7 @@ export const AdminHeader = memo(() => {
   return (
     <header
       className={classNames(
-        " row-between h-16 pr-4 md:pr-10 shadow px-2 bg-blue-gray-50",
+        " row-between h-20 pr-4 md:pr-10 px-2 bg-gradient-to-b from-blue-gray-500",
         open
           ? "md:transform md:translate-x-72 md:w-open"
           : "md:transform md:translate-x-20 md:w-close"
@@ -22,17 +22,17 @@ export const AdminHeader = memo(() => {
       <div className="flex items-center">
         {open ? (
           <Button icon onClick={() => toggleDrawer()}>
-            <ICClose id="close" className="w-10 h-10  text-gray-500" />
+            <ICClose id="close" className="w-12 h-12  text-gray-500" />
           </Button>
         ) : (
           <Button icon onClick={() => toggleDrawer()}>
-            <ICMenu id="menu" className="w-8 h-8 ml-4 text-gray-500 " />
+            <ICMenu id="menu" className="w-10 h-10 ml-4 text-gray-500 " />
           </Button>
         )}
       </div>
 
-      <Button icon className="text-gray-700" onClick={() => push("/login")}>
-        <ICPerson className="w-8 h-8 text-gray-500 " />
+      <Button icon className="" onClick={() => push("/login")}>
+        <ICPerson className="w-10 h-10 text-gray-500 " />
       </Button>
     </header>
   );
