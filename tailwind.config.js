@@ -20,5 +20,8 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-background-extended"),
+    require("tailwindcss-gradients"),
+  ],
 };
