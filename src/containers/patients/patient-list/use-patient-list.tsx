@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { PatientDetails } from "./patient-details";
+
 import { PatientActions } from "./patient-actions";
 
 export const usePatientList = () => {
@@ -24,18 +24,21 @@ export const usePatientList = () => {
         lastName: "Khademi",
         birthDay: "1990-04-05",
         id: "1",
-        expand: () => <PatientDetails />,
+       
       },
       {
         name: "Ali",
         lastName: "Khademi",
         birthDay: "1990-04-05",
         id: "2",
-        expand: () => <PatientDetails />,
+       
       },
     ],
     []
   );
+
+
+
 
   return { columns, data };
 };

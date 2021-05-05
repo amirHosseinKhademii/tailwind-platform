@@ -6,7 +6,7 @@ import { TableHead } from "./table-head";
 import { TableRow } from "./table-row";
 
 export const Table: FC<ITable> = memo(
-  ({ className, columns, data, expandable }) => {
+  ({ className, columns, data, expand }) => {
     return (
       <div
         className={classNames("w-full col-start ", className)}
@@ -19,7 +19,7 @@ export const Table: FC<ITable> = memo(
             item={item}
             columns={columns}
             index={index}
-            expandable={expandable}
+            expand={expand}
           />
         ))}
         <Pagination className="mt-10" total={data.length} page={1} />
