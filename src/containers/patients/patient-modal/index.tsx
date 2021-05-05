@@ -15,7 +15,7 @@ export const PatientModal = memo(() => {
     return (
       <Modal
         size="xl"
-        className="px-10 py-8 bg-blue-gray-300"
+        className="px-10 py-8 "
         onClose={() => toggleDialog({ open: false, type: null })}
         header="Edit patient information"
         withHeader

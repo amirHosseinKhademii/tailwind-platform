@@ -6,7 +6,10 @@ export const ModalHeader: FC<IModal> = memo(
   ({ header, onClose, withHeader }) => {
     if (withHeader)
       return (
-        <div className=" w-full row-between bg-gray-300 " slot="header">
+        <div
+          className=" w-full row-between bg-gradient-to-b from-gray-400 to-gray-200 "
+          slot="header"
+        >
           {header ? (
             <span className="pl-8 text-2xl text-gray-700">{header}</span>
           ) : (

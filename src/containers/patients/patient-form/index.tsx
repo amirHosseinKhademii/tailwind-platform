@@ -70,7 +70,12 @@ export const PatientForm = (props?: IPatientForm) => {
     <div className="w-full">
       {!isEditing && <PatientFormToolbar />}
       <Form className="w-full  px-5" onSubmit={onSubmit}>
-        <Tab expandable initialIsOpen text="Patient Bio" className="mt-10">
+        <Tab
+          expandable
+          initialIsOpen={!isEditing}
+          text="Patient Bio"
+          className="mt-10"
+        >
           <Grid className="mt-4">
             <Surname
               register={register}
@@ -154,7 +159,12 @@ export const PatientForm = (props?: IPatientForm) => {
           </Grid>
         </Tab>
 
-        <Tab expandable initialIsOpen text="Medical History" className="mt-10">
+        <Tab
+          expandable
+          initialIsOpen={!isEditing}
+          text="Medical History"
+          className="mt-10"
+        >
           <Grid className=" mt-4 ">
             <DiabetesType
               control={control}
@@ -308,7 +318,12 @@ export const PatientForm = (props?: IPatientForm) => {
           </Grid>
         </Tab>
 
-        <Tab expandable initialIsOpen text="Logistics" className="mt-10">
+        <Tab
+          expandable
+          initialIsOpen={!isEditing}
+          text="Logistics"
+          className="mt-10"
+        >
           <Grid className="mt-4 ">
             <WillComeToSt
               control={control}
