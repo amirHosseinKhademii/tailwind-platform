@@ -1,11 +1,11 @@
 import { setUp, slotFinder } from "test";
-import { Dialog } from "./dialog";
+import { ModalDom } from "./modal-dom";
 
 describe("Dialog", () => {
   let component;
   beforeEach(
     () =>
-      (component = setUp(Dialog, {
+      (component = setUp(ModalDom, {
         slot: "dialog",
         children: <p>test child</p>,
         onClose: () => {},

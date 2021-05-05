@@ -6,5 +6,6 @@ interface IModal {
   id?: string;
   role?: string;
   slot?: string;
-  title?: string;
+  header?: string;
+  withHeader?: boolean;
 }

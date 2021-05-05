@@ -1,5 +1,7 @@
 import { Form, Grid, Text, Tab } from "components";
 import { useAddPatient } from "./use-add-patient";
+import { PatientFormToolbar } from "./patient-form-toolbar";
+import { PatientFormSubmit } from "./patient-form-submit";
 import {
   CHOCounting,
   ChristianName,
@@ -46,13 +48,11 @@ import {
   DiscussionHeld,
   StudyForConsideration,
   DoNotCallUntil,
-  Submit,
   CHOCountingDetails,
   DiabetesType,
   PhoneType,
   InfusionLineType,
 } from "./fields";
-import { PatientFormToolbar } from "./patient-form-toolbar";
 
 export const PatientForm = (props?: IPatientForm) => {
   const { isEditing } = props;
@@ -61,7 +61,7 @@ export const PatientForm = (props?: IPatientForm) => {
     state,
     register,
     control,
-    isDirty,
+
     errors,
     setValue,
   } = useAddPatient({ isEditing });
@@ -69,7 +69,7 @@ export const PatientForm = (props?: IPatientForm) => {
   return (
     <div className="w-full">
       {!isEditing && <PatientFormToolbar />}
-      <Form className="w-full px-5" onSubmit={onSubmit}>
+      <Form className="w-full  px-5" onSubmit={onSubmit}>
         <Tab expandable initialIsOpen text="Patient Bio" className="mt-10">
           <Grid className="mt-4">
             <Surname
@@ -368,7 +368,7 @@ export const PatientForm = (props?: IPatientForm) => {
           </Grid>
         </Tab>
 
-        <Submit dirty={isDirty} />
+        <PatientFormSubmit />
       </Form>
     </div>
   );

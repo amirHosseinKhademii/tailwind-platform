@@ -6,7 +6,7 @@ export const Confirm: FC<IConfirm> = memo(
     return (
       <Modal
         size="sm"
-        className="col-center px-4 md:px-10 xl:px-26 py-10 bg-gray-500"
+        className="col-center px-4 md:px-10 xl:px-26 py-10 bg-gradient-to-b from-blue-gray-500"
         slot="dialog"
       >
         <span className="text-lg text-gray-800" slot="title">
