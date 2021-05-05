@@ -7,4 +7,5 @@ interface IButton {
   role?: string;
   id?: string;
   icon?: boolean;
+  loading?:boolean
 }

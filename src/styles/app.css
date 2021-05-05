@@ -3,9 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  .btn {
-    @apply rounded focus:outline-none  flex items-center justify-center transition transform hover:-translate-y-1 hover:scale-105;
-  }
+ 
   .col-center {
     @apply flex flex-col items-center justify-center;
   }

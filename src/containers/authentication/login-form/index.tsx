@@ -11,13 +11,13 @@ export const LoginForm = memo(() => {
 
   return (
     <Form
-      className="w-11/12 md:w-2/3 lg:w-1/2 mx-auto mt-20 grid grid-cols-1 gap-y-8 border border-gray-300 rounded shadow bg-gray-200 "
+      className="w-11/12 md:w-2/3 lg:w-1/2 mx-auto mt-20 grid grid-cols-1 gap-y-8 rounded shadow "
       onSubmit={handleSubmit((state) => console.log(state))}
     >
       <div className="text-center pt-6 pb-3  bg-cyan-600 h-18 text-white rounded-t text-lg font-semibold ">
         Log in
       </div>
-      <div className="grid grid-cols-1 gap-y-10 px-10 py-4 bg-gradient-to-b from-cyan-300 to-cyan-100">
+      <div className="grid grid-cols-1 gap-y-10 px-10 py-4 bg-gradient-to-b from-cyan-300 ">
         <Input
           register={register}
           name="email"
