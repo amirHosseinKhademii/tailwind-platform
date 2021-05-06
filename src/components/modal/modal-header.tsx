@@ -7,7 +7,7 @@ export const ModalHeader: FC<IModal> = memo(
     if (withHeader)
       return (
         <div
-          className=" w-full row-between bg-gradient-to-b from-gray-400 to-gray-200 "
+          className=" w-full row-between bg-gradient-to-b from-cyan-400 to-cyan-200 "
           slot="header"
         >
           {header ? (

@@ -26,6 +26,7 @@ export const PatientModal = memo(() => {
   else if (uiState.dialog.open && uiState.dialog.type === "patient-delete")
     return (
       <Confirm
+        type="delete"
         description="You are deleting this patient."
         onConfirm={() => toggleDialog({ open: false, type: null })}
         onCancel={() => toggleDialog({ open: false, type: null })}
