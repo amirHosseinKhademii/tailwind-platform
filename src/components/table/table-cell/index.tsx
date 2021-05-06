@@ -17,7 +17,7 @@ export const TableCell: FC<ITableCell> = memo(
           column.width
         )}
       >
-        {column.checkable && (
+        {column.withCheck && (
           <Check
             checked={checkList.find((it) => it === item.id) ? true : false}
             onClick={handleCheck(item.id)}

@@ -1,10 +1,8 @@
 import { memo } from "react";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router";
 import { Button, Form, Input } from "components";
 
-export const LoginForm = memo(() => {
-  const { push } = useHistory();
+export const PasswordForm = memo(() => {
   const {
     register,
     handleSubmit,
@@ -17,7 +15,7 @@ export const LoginForm = memo(() => {
       onSubmit={handleSubmit((state) => console.log(state))}
     >
       <div className="text-center pt-6 pb-3  bg-cyan-600 h-18 text-white rounded-t text-lg font-semibold ">
-        Log in
+        Recover your password
       </div>
       <div className="grid grid-cols-1 gap-y-10 px-10 py-4 bg-gradient-to-b from-cyan-300 ">
         <Input
@@ -29,30 +27,13 @@ export const LoginForm = memo(() => {
           error={errors["email"]?.message}
           className="mt-10"
         />
-        <Input
-          register={register}
-          name="password"
-          type="password"
-          required
-          placeholder="Enter your Password"
-          error={errors["password"]?.message}
-        />
         <div className="col-center w-full my-6" slot="actions">
           <Button
             className="h-10 w-1/3 mb-6 bg-pink-700 text-white"
             role="confirm"
             type="submit"
           >
-            login
-          </Button>
-          <Button
-            icon
-            role="cancel"
-            className="h-10 w-1/3 bg-gradient-to-b from-lime-500  text-white"
-            type="button"
-            onClick={() => push("/forgot-password")}
-          >
-            Forgot password
+            Sumbit
           </Button>
         </div>
       </div>

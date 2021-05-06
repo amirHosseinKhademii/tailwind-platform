@@ -5,7 +5,7 @@ import { PatientActions } from "./patient-actions";
 export const usePatientList = () => {
   const columns = useMemo(
     () => [
-      { head: "Name", key: "name", width: "w-1/3", checkable: true },
+      { head: "Name", key: "name", width: "w-1/3" },
       { head: "Last Name", key: "lastName", width: "w-1/3" },
       { head: "Birth Date", key: "birthDay", width: "w-1/3" },
       {
@@ -24,21 +24,16 @@ export const usePatientList = () => {
         lastName: "Khademi",
         birthDay: "1990-04-05",
         id: "1",
-       
       },
       {
         name: "Ali",
         lastName: "Khademi",
         birthDay: "1990-04-05",
         id: "2",
-       
       },
     ],
     []
   );
-
-
-
 
   return { columns, data };
 };

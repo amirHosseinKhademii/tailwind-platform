@@ -4,9 +4,9 @@ export const PatientFormSubmit = () => {
   return (
     <Button
       type="submit"
-      className="bg-lime-600 text-white w-1/2 md:w-1/6 h-12 my-14 ml-auto"
+      className=" w-1/2 md:w-1/6 h-12 my-10 ml-auto bg-pink-700 text-white"
     >
-      Save
+      Save Patient
     </Button>
   );
 };
