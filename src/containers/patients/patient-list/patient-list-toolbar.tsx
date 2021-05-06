@@ -18,7 +18,7 @@ export const PatientListToolbar = memo(() => {
         <Input
           className="mr-4"
           placeholder="Search content here ..."
-          icon={() => <ICSearch className="w-5 h-5 text-gray-400 " />}
+          icon={() => <ICSearch className="w-5 h-5 text-gray-600 " />}
         />
         <Button icon onClick={() => push("/admin/patients/add")}>
           <ICPlus className="w-8 h-8 text-cyan-600" />

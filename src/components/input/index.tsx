@@ -49,16 +49,17 @@ export const Input: FC<IInput> = memo(
           value={value}
           onClick={onClick}
           className={classNames(
-            " w-full border rounded  focus:outline-none focus:shadow  text-gray-600 ",
+            " w-full border rounded  focus:outline-none focus:shadow  text-gray-700 placeholder-gray-500 ",
             error || withError
-              ? "border-red-400 shadow "
-              : "border-gray-300 focus:ring-1  focus:ring-indigo-400",
+              ? "border-red-400 shadow bg-gradient-to-r from-red-300 "
+              : disabled
+              ? "bg-gray-300"
+              : "border-gray-300 focus:ring-2 focus:ring-indigo-400 bg-gradient-to-r from-indigo-300",
             size === "large"
               ? "h-14 "
               : size === "small"
               ? "h-8 text-[10px]"
               : "h-12",
-            disabled && " bg-gray-200",
             icon ? "px-10" : "px-4"
           )}
         />
