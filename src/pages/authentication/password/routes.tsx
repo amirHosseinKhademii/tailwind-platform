@@ -1,7 +1,7 @@
 import { lazy } from "react";
 
 export const route = {
-  path: "/forgot-password",
+  path: "/authentication/password",
   name: "ROUTE:FORGOT_PASSWORD",
   exact: true,
   layout: "admin",

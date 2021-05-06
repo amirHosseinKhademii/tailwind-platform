@@ -1,4 +1,5 @@
 import { FC, memo } from "react";
+import { ICLoading } from "icons";
 import { classNames } from "utils";
 
 export const Button: FC<IButton> = memo(
@@ -29,7 +30,11 @@ export const Button: FC<IButton> = memo(
           className
         )}
       >
-        {children}
+        {loading ? (
+          <ICLoading className="w-6 h-6 text-blue-gray-500" />
+        ) : (
+          children
+        )}
       </button>
     );
   }

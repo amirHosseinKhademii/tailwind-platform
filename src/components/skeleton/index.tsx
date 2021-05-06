@@ -1,10 +1,10 @@
+import { ICLoading } from "icons";
+
 const Skeleton = () => {
   return (
-    <div className="w-full  py-16 px-10 flex-col items-center">
-      <div className="w-full bg-cyan-200 animate-pulse h-[200px] rounded" />
-      <div className="w-full bg-cyan-200 animate-pulse h-[300px] rounded mt-10" />
-      <div className="w-full bg-cyan-200 animate-pulse h-40 rounded mt-10" />
+    <div className="fixed inset-0 w-full h-full flex justify-center items-center pt-64">
+      <ICLoading className="w-20 h-20 text-gray-400" />
     </div>
   );
 };
-export  {Skeleton};
+export { Skeleton };

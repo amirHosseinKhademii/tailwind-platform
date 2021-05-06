@@ -50,7 +50,7 @@ export const LoginForm = memo(() => {
             role="cancel"
             className="h-10 w-1/3 bg-gradient-to-b from-cyan-400  text-white"
             type="button"
-            onClick={() => push("/forgot-password")}
+            onClick={() => push("/authentication/password")}
           >
             Forgot password
           </Button>

@@ -7,10 +7,8 @@ export const DropDownOption: FC<IDropdownOption> = memo(
       <span
         slot="wrapper"
         className={classNames(
-          active
-            ? " rounded hover:text-cyan-500 text-teal-500"
-            : " text-gray-300",
-          "my-2 cursor-pointer hover:animate-pulse px-4"
+          active ? "text-cyan-300 font-semibold" : " text-gray-300",
+          " cursor-pointer hover:animate-pulse px-4 pb-3 text-sm"
         )}
         onClick={onClick}
       >

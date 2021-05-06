@@ -22,13 +22,13 @@ export const PatientDropDown: FC<{ pathname?: string; push?: any }> = memo(
           onClick={() => push("/admin/patients")}
           active={pathname === "/admin/patients"}
         >
-          Patients list
+          List
         </DropDownOption>
         <DropDownOption
           onClick={() => push("/admin/patients/add")}
           active={pathname === "/admin/patients/add"}
         >
-          Add a new patient
+          Add
         </DropDownOption>
       </DropDown>
     );

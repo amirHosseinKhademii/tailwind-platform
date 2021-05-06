@@ -1,11 +1,12 @@
 import { useHistory, useLocation } from "react-router-dom";
-import { Drawer } from "components";
-import { ICPeoples } from "icons";
+import { Button, Drawer } from "components";
+import { ICPeoples, ICPerson } from "icons";
 import { useUi } from "hooks";
 import { classNames } from "utils";
 
 import { PatientDropDown } from "./patient-drop-down";
 import Logo from "assets/images/logo.jpg";
+import { AuthDropDown } from "./auth-drop-down";
 
 export const AdminDashboard = () => {
   const { push } = useHistory();
@@ -15,7 +16,7 @@ export const AdminDashboard = () => {
 
   return (
     <Drawer open={open}>
-      <div className="w-full row-center my-2 ">
+      <div className="w-full row-center mt-2 mb-6 ">
         <img
           className="w-14 h-14 cursor-pointer"
           src={Logo}
@@ -26,17 +27,31 @@ export const AdminDashboard = () => {
 
       {open ? (
         <div className="">
+          <AuthDropDown pathname={pathname} push={push} />
           <PatientDropDown pathname={pathname} push={push} />
         </div>
       ) : (
-        <div className="col-center mt-4">
-          <ICPeoples
-            className={classNames(
-              "w-7 h-7 cursor-pointer hover:animate-bounce",
-              pathname.includes("patients") ? "text-cyan-600" : "text-gray-400"
-            )}
-            onClick={() => push("/admin/patients")}
-          />
+        <div className="col-center mt-10">
+          <Button icon onClick={() => push("/authentication/login")}>
+            <ICPerson
+              className={classNames(
+                "w-6 h-6  mb-4",
+                pathname.includes("authentication")
+                  ? "text-cyan-700"
+                  : "text-gray-400"
+              )}
+            />
+          </Button>
+          <Button icon onClick={() => push("/admin/patients")}>
+            <ICPeoples
+              className={classNames(
+                "w-6 h-6 ",
+                pathname.includes("patients")
+                  ? "text-cyan-700"
+                  : "text-gray-400"
+              )}
+            />
+          </Button>
         </div>
       )}
     </Drawer>

@@ -16,3 +16,4 @@ export * from "./peoples";
 export * from "./chevron-left";
 export * from "./person";
 export * from "./search";
+export * from "./loading";

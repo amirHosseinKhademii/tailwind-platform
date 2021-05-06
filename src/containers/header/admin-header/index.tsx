@@ -31,8 +31,11 @@ export const AdminHeader = memo(() => {
         )}
       </div>
 
-      <Button icon className="" onClick={() => push("/login")}>
-        <ICPerson className="w-10 h-10 text-gray-300 " />
+      <Button icon className="" onClick={() => push("/authentication/login")}>
+        <img
+          className="w-10 h-10 rounded-full"
+          src="https://picsum.photos/200/300"
+        />
       </Button>
     </header>
   );
