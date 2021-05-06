@@ -1,8 +1,10 @@
-import { Button, Form, Input } from "components";
 import { memo } from "react";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router";
+import { Button, Form, Input } from "components";
 
 export const LoginForm = memo(() => {
+  const { push } = useHistory();
   const {
     register,
     handleSubmit,
@@ -35,12 +37,24 @@ export const LoginForm = memo(() => {
           placeholder="Enter your Password"
           error={errors["password"]?.message}
         />
-        <Button
-          type="submit"
-          className="bg-lime-600 text-white w-1/2 md:w-1/3 mx-auto mb-6 h-12"
-        >
-          Log In
-        </Button>
+        <div className="col-center w-full my-6" slot="actions">
+          <Button
+            className="h-10 w-1/3 mb-6 bg-pink-700 text-white"
+            role="confirm"
+            type="submit"
+          >
+            login
+          </Button>
+          <Button
+            icon
+            role="cancel"
+            className="h-10 w-1/3 bg-gradient-to-b from-lime-500  text-gray-700"
+            type="button"
+            onClick={() => push("/forgot-password")}
+          >
+            Forgot password
+          </Button>
+        </div>
       </div>
     </Form>
   );

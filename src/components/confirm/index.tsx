@@ -18,13 +18,13 @@ export const Confirm: FC<IConfirm> = memo(
         <div className="row-around w-full mt-10" slot="actions">
           <Button
             role="cancel"
-            className="h-12 bg-gradient-to-b from-gray-300 w-20 xl:w-40"
+            className="h-10 bg-gray-300 w-20 xl:w-40"
             onClick={onCancel}
           >
             Cancel
           </Button>
           <Button
-            className="h-12 bg-gradient-to-b from-red-700  text-white w-20 xl:w-40 mb-6"
+            className="h-10 w-20 xl:w-40 mb-6 bg-red-600 text-white"
             role="confirm"
             onClick={onConfirm}
           >
