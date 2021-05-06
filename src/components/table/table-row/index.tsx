@@ -12,7 +12,7 @@ export const TableRow: FC<ITableRow> = memo(({ item, columns, expand }) => {
       <div
         onClick={() => (expand ? toggle() : {})}
         className={classNames(
-          "w-full row-start p-4 ",
+          "w-full row-start py-4 px-6 ",
           open
             ? "bg-gradient-to-b from-cyan-300 to-cyan-200"
             : "hover:bg-cyan-100",

@@ -9,12 +9,12 @@ export const PatientListToolbar = memo(() => {
     <Toolbar>
       <Text
         size="header"
-        className="w-1/3 flex flex-col items-start "
+        className="w-3/4 flex flex-col items-start "
         slot="start"
       >
-        Patients List
+        Patients
       </Text>
-      <div className="flex items-center w-2/3 lg:w-1/2" slot="end">
+      <div className="flex items-center w-1/4 " slot="end">
         <Input
           className="mr-4"
           placeholder="Search content here ..."

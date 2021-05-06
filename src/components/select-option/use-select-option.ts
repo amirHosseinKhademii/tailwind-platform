@@ -8,9 +8,12 @@ export const useSelectOption = ({ state }) => {
           state !== undefined &&
           state.length > 0 &&
           state.find((item) => item === value);
-        const payload = existed
-          ? [...state.filter((item) => item !== value)]
-          : [...state, value];
+        const payload =
+          state !== undefined
+            ? existed
+              ? [...state.filter((item) => item !== value)]
+              : [...state, value]
+            : [value];
         onChange(payload);
       },
       [state]
